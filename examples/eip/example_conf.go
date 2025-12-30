@@ -15,7 +15,7 @@
 package eipexamples
 
 import (
-	"github.com/baidubce/bce-sdk-go/services/eip"
+	"github.com/wenyining/bce-sdk-go/services/eip"
 )
 
 var (

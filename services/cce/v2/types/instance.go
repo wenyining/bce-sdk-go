@@ -10,8 +10,8 @@ modification history
 package types
 
 import (
-	bccapi "github.com/baidubce/bce-sdk-go/services/bcc/api"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	bccapi "github.com/wenyining/bce-sdk-go/services/bcc/api"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 // InstanceSpec 已有节点需要用户提供：ClusterRole 、短ID，密码，镜像ID,镜像类型, docker storage(可选); BBC要额外加preservedData、raidId、sysRootSize

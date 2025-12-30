@@ -17,7 +17,7 @@ package tag
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/util/log"
+	"github.com/wenyining/bce-sdk-go/util/log"
 	"os"
 	"path/filepath"
 	"reflect"

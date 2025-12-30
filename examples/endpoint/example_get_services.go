@@ -17,7 +17,7 @@ package endpointexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/endpoint"
+	"github.com/wenyining/bce-sdk-go/services/endpoint"
 )
 
 func GetServices() {

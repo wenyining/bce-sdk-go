@@ -18,7 +18,7 @@ package appblbexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/appblb"
+	"github.com/wenyining/bce-sdk-go/services/appblb"
 )
 
 // 以下为示例代码，实际开发中请根据需要进行修改和补充

@@ -15,7 +15,7 @@
 package appblbexamples
 
 import (
-	"github.com/baidubce/bce-sdk-go/services/appblb"
+	"github.com/wenyining/bce-sdk-go/services/appblb"
 )
 
 func UpdateAppSSLListener() {

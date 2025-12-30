@@ -17,7 +17,7 @@ package eipexamples
 import (
 	"fmt"
 
-	EIP "github.com/baidubce/bce-sdk-go/services/eip"
+	EIP "github.com/wenyining/bce-sdk-go/services/eip"
 )
 
 func BindEip() {

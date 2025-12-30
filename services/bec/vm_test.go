@@ -3,7 +3,7 @@ package bec
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/bec/api"
+	"github.com/wenyining/bce-sdk-go/services/bec/api"
 	"testing"
 )
 

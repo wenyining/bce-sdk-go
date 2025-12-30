@@ -2,7 +2,7 @@ package peerconnexamples
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func AcceptPeerConnApply() {
@@ -16,7 +16,7 @@ func AcceptPeerConnApply() {
 	clientToken := getClientToken()
 	if err := client.AcceptPeerConnApply(peerConnId, clientToken); err != nil {
 		fmt.Println("accept peer conn error: ", err)
-		return 
+		return
 	}
 	fmt.Printf("accept peer conn %s success.", peerConnId)
 }

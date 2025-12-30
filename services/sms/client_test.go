@@ -9,8 +9,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/baidubce/bce-sdk-go/services/sms/api"
-	"github.com/baidubce/bce-sdk-go/util/log"
+	"github.com/wenyining/bce-sdk-go/services/sms/api"
+	"github.com/wenyining/bce-sdk-go/util/log"
 )
 
 var (

@@ -3,7 +3,7 @@ package ldexample
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/localDns"
+	"github.com/wenyining/bce-sdk-go/services/localDns"
 )
 
 func ListPrivateZone() {

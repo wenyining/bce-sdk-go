@@ -30,7 +30,7 @@ DOC Client 是 DOC 服务的客户端，为开发者与 DOC 服务进行交互�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/doc"
+	"github.com/wenyining/bce-sdk-go/services/doc"
 )
 
 func main() {
@@ -53,7 +53,7 @@ func main() {
 下面一段代码可以让客户端使用代理访问 DOC 服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/doc"
+// import "github.com/wenyining/bce-sdk-go/services/doc"
 
 //创建 DOC Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -68,7 +68,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/doc"
+// import "github.com/wenyining/bce-sdk-go/services/doc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 client, _ := doc.NewClient(AK, SK)
@@ -83,7 +83,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/doc"
+// import "github.com/wenyining/bce-sdk-go/services/doc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 client, _ := doc.NewClient(AK, SK)

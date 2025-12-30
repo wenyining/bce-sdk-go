@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/model"
-	"github.com/baidubce/bce-sdk-go/services/cdn/api"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/services/cdn/api"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 const (

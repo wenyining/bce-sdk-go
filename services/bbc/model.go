@@ -17,7 +17,7 @@
 package bbc
 
 import (
-	"github.com/baidubce/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/model"
 )
 
 type PaymentTimingType string

@@ -3,8 +3,8 @@ package rbac
 import (
 	"encoding/json"
 	"fmt"
-	v2 "github.com/baidubce/bce-sdk-go/services/cce/v2"
-	"github.com/baidubce/bce-sdk-go/services/cce/v2/model"
+	v2 "github.com/wenyining/bce-sdk-go/services/cce/v2"
+	"github.com/wenyining/bce-sdk-go/services/cce/v2/model"
 )
 
 // ListRBAC 根据用户 ID 查询该用户已有的 RBAC 权限

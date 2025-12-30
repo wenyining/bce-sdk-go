@@ -17,7 +17,7 @@
 // Package blb defines the Normal BLB services of BCE. The supported APIs are all defined in sub-package
 package blb
 
-import "github.com/baidubce/bce-sdk-go/bce"
+import "github.com/wenyining/bce-sdk-go/bce"
 
 const (
 	DEFAULT_SERVICE_DOMAIN = "blb." + bce.DEFAULT_REGION + ".baidubce.com"

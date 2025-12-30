@@ -1,6 +1,6 @@
 package model
 
-import nrv1 "github.com/baidubce/bce-sdk-go/services/cce/v2/model/remedy/api/v1"
+import nrv1 "github.com/wenyining/bce-sdk-go/services/cce/v2/model/remedy/api/v1"
 
 type ConditionType string
 type MsgTplType string

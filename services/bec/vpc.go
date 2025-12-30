@@ -20,9 +20,9 @@ package bec
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
-	"github.com/baidubce/bce-sdk-go/services/bec/api"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/services/bec/api"
 	"strconv"
 )
 

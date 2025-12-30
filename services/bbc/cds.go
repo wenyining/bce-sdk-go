@@ -1,19 +1,20 @@
 package bbc
 
 import (
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 	"strconv"
 )
 
 // ListCDSVolume - list all cds volumes with the given parameters
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - queryArgs: the optional arguments to list cds volumes
+//   - cli: the client agent which can perform sending request
+//   - queryArgs: the optional arguments to list cds volumes
+//
 // RETURNS:
-//     - *ListCDSVolumeResult: the result of cds volume list
-//     - error: nil if success otherwise the specific error
+//   - *ListCDSVolumeResult: the result of cds volume list
+//   - error: nil if success otherwise the specific error
 func ListCDSVolume(cli bce.Client, queryArgs *ListCDSVolumeArgs) (*ListCDSVolumeResult, error) {
 	// Build the request
 	req := &bce.BceRequest{}

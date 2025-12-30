@@ -16,26 +16,26 @@
 package blbexamples
 
 import (
-    "fmt"
+	"fmt"
 
-    "github.com/baidubce/bce-sdk-go/services/blb"
+	"github.com/wenyining/bce-sdk-go/services/blb"
 )
 
 func DescribeUDPListeners() {
-    ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
+	ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
 
-    BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
+	BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
 
-    BlbID := "blb id"
-    describeUDPListenersArgs := &blb.DescribeListenerArgs{
-        ListenerPort: 53,    // listener端口号
-    }
+	BlbID := "blb id"
+	describeUDPListenersArgs := &blb.DescribeListenerArgs{
+		ListenerPort: 53, // listener端口号
+	}
 
-    response, err := BlbClient.DescribeUDPListeners(BlbID, describeUDPListenersArgs) //查询UDP Listeners
+	response, err := BlbClient.DescribeUDPListeners(BlbID, describeUDPListenersArgs) //查询UDP Listeners
 
-    if err != nil {
-        panic(err)
-    }
-                    
-    fmt.Println(response)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(response)
 }

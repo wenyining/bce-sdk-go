@@ -3,8 +3,8 @@ package etgatewayexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/model"
-	"github.com/baidubce/bce-sdk-go/services/etGateway"
+	"github.com/wenyining/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/services/etGateway"
 )
 
 // CreateEtGateway 函数用于创建ET网关

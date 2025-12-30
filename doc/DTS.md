@@ -36,7 +36,7 @@ DTS Client是DTS服务的客户端，为开发者与DTS服务进行交互提供�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/dts"
+	"github.com/wenyining/bce-sdk-go/services/dts"
 )
 
 func main() {
@@ -75,9 +75,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/dts" //导入DTS服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/dts" //导入DTS服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -129,7 +129,7 @@ func main() {
 DTS支持HTTPS传输协议，您可以通过在创建DTS Client对象时指定的Endpoint中指明HTTPS的方式，在DTS GO SDK中使用HTTPS访问DTS服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 ENDPOINT := "https://dts.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -145,7 +145,7 @@ dtsClient, _ := dts.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问DTS服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 //创建DTS Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -161,7 +161,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "dts.baidubce.com"
@@ -177,7 +177,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "dts.baidubce.com"
@@ -229,7 +229,7 @@ DTS（Data Transmission Service）提供数据迁移、数据同步、数据订�
 
 使用以下代码可以创建一个DTS任务
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 args := &dts.CreateDtsArgs{
     // 幂等性Token，是一个长度不超过64位的ASCII字符串，选填参数（关于幂等性，可以参考下面专门介绍幂等性的章节内容）
@@ -264,7 +264,7 @@ for _, e := range result.DtsTasks {
 
 使用以下代码可以删除一个DTS任务
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 err := client.DeleteDts(dtsId)
 if err != nil {
@@ -279,7 +279,7 @@ fmt.Println("delete dts success\n")
 
 使用以下代码可以查看一个DTS任务详情
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 result, err := client.GetDetail(dtsId)
 if err != nil {
@@ -308,7 +308,7 @@ if result.DtsIdPos != "" {
 
 使用以下代码可以查看DTS任务列表
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 args := &dts.ListDtsArgs{
 	// 任务类型（单向同步类型：migration；双向同步类型：bidirect）
@@ -338,7 +338,7 @@ for _, e := range result.Task {
 
 使用以下代码可以查看DTS任务列表
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 args := &dts.ListDtsWithPageArgs{
 	// 任务类型数组（单向同步类型：migration；双向同步类型：bidirect）
@@ -378,7 +378,7 @@ for _, e := range result.Result {
 
 使用以下代码可以配置一个DTS任务
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 dataType :=[]string{"schema","base"}
 srcConnection := dts.Connection{
@@ -429,7 +429,7 @@ fmt.Println("config dts success, dtsId: ", result.DtsId)
 
 使用以下代码可以对一个DTS任务前置检查
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 result, err := client.PreCheck(taskId)
 if err != nil {
@@ -444,7 +444,7 @@ fmt.Println("result success: ",result.Success)
 
 使用以下代码可以查看前置检查结果
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 result, err := client.GetPreCheck(taskId)
 if err != nil {
@@ -462,7 +462,7 @@ for _, e := range result.Result {
 
 使用以下代码可以尝试强制通过一个DTS任务预检查，根据响应结果可以检查强制通过预检查操作是否成功
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 response, err := client.SkipPreCheck(taskId)
 if err != nil {
@@ -480,7 +480,7 @@ fmt.Println("response result: ",response.Result)
 
 使用以下代码可以启动一个DTS任务
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 err := client.StartDts(taskId)
 if err != nil {
@@ -495,7 +495,7 @@ fmt.Println("start dts success\n")
 
 使用以下代码可以暂停一个DTS任务
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 err := client.PauseDts(taskId)
 if err != nil {
@@ -510,7 +510,7 @@ fmt.Println("pause dts success\n")
 
 使用以下代码可以结束一个DTS任务
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 err := client.ShutdownDts(taskId)
 if err != nil {
@@ -525,7 +525,7 @@ fmt.Println("shutdown dts success\n")
 
 使用以下代码可以更新任务名称
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 args := &dts.UpdateTaskNameArgs {
     TaskName: "go-sdkkk",
@@ -543,7 +543,7 @@ fmt.Println("update task name success\n")
 
 使用以下代码可以变更链路规格
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 args := &dts.ResizeTaskStandardArgs {
     // 幂等性Token，是一个长度不超过64位的ASCII字符串，选填参数（关于幂等性，可以参考下面专门介绍幂等性的章节内容）
@@ -564,7 +564,7 @@ fmt.Println("response orderId: ", response.OrderId)
 
 使用以下代码可以查询数据库Schema
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/dts"
+// import "github.com/wenyining/bce-sdk-go/services/dts"
 
 args := &dts.GetSchemaArgs {
     Connection: dts.Connection{
@@ -621,14 +621,14 @@ if err != nil {
 
 ## SDK日志
 
-DTS GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+DTS GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 DTS GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

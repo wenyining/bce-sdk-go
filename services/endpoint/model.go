@@ -14,7 +14,7 @@
 
 package endpoint
 
-import "github.com/baidubce/bce-sdk-go/model"
+import "github.com/wenyining/bce-sdk-go/model"
 
 type Endpoint struct {
 	EndpointId  string           `json:"endpointId"`

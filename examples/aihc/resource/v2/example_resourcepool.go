@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	aihcv2 "github.com/baidubce/bce-sdk-go/services/aihc/v2"
-	v2 "github.com/baidubce/bce-sdk-go/services/aihc/v2/api"
+	aihcv2 "github.com/wenyining/bce-sdk-go/services/aihc/v2"
+	v2 "github.com/wenyining/bce-sdk-go/services/aihc/v2/api"
 )
 
 func DescribeResourcePools() {

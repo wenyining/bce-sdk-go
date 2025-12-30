@@ -41,7 +41,7 @@ HAVIP Client是HAVIP服务的客户端，为开发者与HAVIP服务进行交互�
 
 ```go
 import (
-"github.com/baidubce/bce-sdk-go/services/havip"
+"github.com/wenyining/bce-sdk-go/services/havip"
 )
 
 func main() {
@@ -80,9 +80,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
   "fmt"
 
-  "github.com/baidubce/bce-sdk-go/auth"           //导入认证模块
-  "github.com/baidubce/bce-sdk-go/services/havip" //导入HAVIP服务模块
-  "github.com/baidubce/bce-sdk-go/services/sts"   //导入STS服务模块
+  "github.com/wenyining/bce-sdk-go/auth"           //导入认证模块
+  "github.com/wenyining/bce-sdk-go/services/havip" //导入HAVIP服务模块
+  "github.com/wenyining/bce-sdk-go/services/sts"   //导入STS服务模块
 )
 
 func main() {
@@ -134,7 +134,7 @@ func main() {
 HAVIP支持HTTPS传输协议，您可以通过在创建HAVIP Client对象时指定的Endpoint中指明HTTPS的方式，在HAVIP GO SDK中使用HTTPS访问HAVIP服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 ENDPOINT := "https://bcc.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -150,7 +150,7 @@ havipClient, _ := havip.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问HAVIP服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 //创建HAVIP Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -166,7 +166,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bcc.bj.baidubce.com"
@@ -182,7 +182,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bcc.bj.baidubce.com"
@@ -229,7 +229,7 @@ ExpireSeconds | int   | 签名字符串的有效期
 
 使用以下代码获取公共服务
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 result, err := client.GetServices()
     if err != nil {
@@ -244,7 +244,7 @@ fmt.Println(string(r))
 
 使用以下代码可以申请一个HAVIP。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 args := &havip.CreateHaVipArgs{
 	Name:             "havipGoSdkTest",
@@ -266,7 +266,7 @@ fmt.Println("create havip success, havip: ", result.HaVipId)
 
 使用以下代码可以查询HAVIP列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 args := &havip.ListHaVipArgs{
         vpcId:    "vpc-rndav7yrmbi6",
@@ -297,7 +297,7 @@ res, err := client.ListHaVip(args)
 ## 查询HAVIP详情
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 result, err := havip.GetHaVipDetail("havip-ied0wq4fs8va")
 if err != nil {
     fmt.Printf("select havip error: %+v\n", err)
@@ -310,7 +310,7 @@ fmt.Println("select havip success", string(r))
 ## 更新HAVIP
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 args := &havip.UpdateHaVipArgs{
             HaVipId:     "havip-swqx77k5f2cn",
             Name:        "name",
@@ -328,7 +328,7 @@ fmt.Printf("update havip success\n")
 
 使用以下代码可以释放指定的HAVIP。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 args := &havip.DeleteHaVipArgs{
     HaVipId: "havip-swqx77k5f2cn",
@@ -349,7 +349,7 @@ fmt.Printf("delete havip success\n")
 
 使用以下代码可以为HAVIP绑定实例。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 args := &havip.HaVipInstanceArgs{
     HaVipId: "havip-swqx77k5f2cn",
@@ -371,7 +371,7 @@ fmt.Printf("havip attach instance success\n")
 
 使用以下代码可以为HAVIP解绑实例。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 args := &havip.HaVipInstanceArgs{
     HaVipId: "havip-swqx77k5f2cn",
@@ -393,7 +393,7 @@ fmt.Printf("havip detach instance success\n")
 
 使用以下代码可以为HAVIP绑定公网IP。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 args := &havip.HaVipBindPublicIpArgs{
     HaVipId: "havip-swqx77k5f2cn",
@@ -412,7 +412,7 @@ fmt.Printf("havip bind public ip success\n")
 
 使用以下代码可以为HAVIP解绑公网IP。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/havip"
+// import "github.com/wenyining/bce-sdk-go/services/havip"
 
 args := &havip.HaVipUnbindPublicIpArgs{
     HaVipId: "havip-swqx77k5f2cn",
@@ -463,14 +463,14 @@ if err != nil {
 
 ## SDK日志
 
-HAVIP GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+HAVIP GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 HAVIP GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

@@ -17,7 +17,7 @@ GO SDK可以在go1.3及以上环境下运行。
 使用`go get`工具从github进行下载：
 
 ```shell
-go get github.com/baidubce/bce-sdk-go
+go get github.com/wenyining/bce-sdk-go
 ```
 
 **SDK目录结构**
@@ -28,6 +28,7 @@ bce-sdk-go
 |--bce                    //BCE公用基础组件
 |--http                   //BCE的http通信模块
 |--services               //BCE相关服务目录
+|  |--aigcsec             //大模型内容安全平台
 |  |--aihc                //百舸异构计算平台
 |  |--appblb              //应用型负载均衡服务目录
 |  |--as                  //弹性伸缩
@@ -104,7 +105,7 @@ bce-sdk-go
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/bos"
+	"github.com/wenyining/bce-sdk-go/services/bos"
 )
 
 func main() {
@@ -227,7 +228,7 @@ fmt.Println("create bucket success, bucket location:", bucketLocation)
 
 ## SDK日志
 
-GO SDK自行实现了支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+GO SDK自行实现了支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 该日志模块无任何外部依赖，开发者使用GO SDK开发项目，可以直接引用该日志模块自行在项目中使用。可使用GO SDK使用的包级别的日志对象，也可创建新的日志对象，详见如下示例：
 
@@ -248,49 +249,49 @@ myLogger.Info("this is my own logger from the sdk")
 
 产品名称   | 产品缩写          | 导入路径                                                   | 说明文档
 -----------|---------------|--------------------------------------------------------|----------
-百舸自定义部署 | AihcInference | github.com/baidubce/bce-sdk-go/services/aihc/inference | [AIHC_INFERENCE.md](./doc/AIHC_INFERENCE.md)
-应用型负载均衡 | APPBLB        | github.com/baidubce/bce-sdk-go/services/appblb         | [APPBLB.md](./doc/APPBLB.md)
-物理服务器 | BBC           | github.com/baidubce/bce-sdk-go/services/bbc            | [BBC.md](./doc/BBC.md)
-云服务器 | BCC           | github.com/baidubce/bce-sdk-go/services/bcc            | [BCC.md](./doc/BCC.md)
-云服务器 | BCI           | github.com/baidubce/bce-sdk-go/services/bci            | [BCI.md](./doc/BCI.md)
-云监控 | BCM           | github.com/baidubce/bce-sdk-go/services/bcm            | [BCM.md](./doc/BCM.md)
-云审计 | BCT           | github.com/baidubce/bce-sdk-go/services/bct            | [BCT.md](./doc/BCT.md)
-边缘计算节点 | BEC           | github.com/baidubce/bce-sdk-go/services/bec            |[BEC.md](./doc/BEC.md)
-百度智能边缘 | BIE           | github.com/baidubce/bce-sdk-go/services/bie            |
-百度云财务 | BILLING       | github.com/baidubce/bce-sdk-go/services/billing        | [BILLING.md](./doc/BILLING.md)
-负载均衡 | BLB           | github.com/baidubce/bce-sdk-go/services/blb            | [BLB.md](./doc/BLB.md)
-日志服务 | BLS           | github.com/baidubce/bce-sdk-go/services/bls            | [BLS.md](./doc/BLS.md)
-百度对象存储 | BOS           | github.com/baidubce/bce-sdk-go/services/bos            | [BOS.md](./doc/BOS.md)
-百度视频创作分发平台 | BVW           | github.com/baidubce/bce-sdk-go/services/bvw            | [BVW.md](./doc/BVW.md)
-证书服务| CAS           | github.com/baidubce/bce-sdk-go/services/cas            |   [CAS.md](./doc/CAS.md)
-容器引擎 | CCE           | github.com/baidubce/bce-sdk-go/services/cce            | [CCE.md](./doc/CCE.md)
-内容分布网络 | CDN           | github.com/baidubce/bce-sdk-go/services/cdn            | [CDN.md](./doc/CDN.md)
-SSL证书服务 | CERT          | github.com/baidubce/bce-sdk-go/services/cert           | [CERT.md](./doc/CERT.md)
-函数计算 | CFC           | github.com/baidubce/bce-sdk-go/services/cfc            | [CFC.md](./doc/CFC.md)
-文件存储服务 | CFS           | github.com/baidubce/bce-sdk-go/services/cfs            | [CFS.md](./doc/CFS.md)
-云防火墙 | CFW           | github.com/baidubce/bce-sdk-go/services/cfw            | [CFW.md](./doc/CFW.md)
-云智能网 | CSN           | github.com/baidubce/bce-sdk-go/services/csn            | [CSN.md](./doc/CSN.md)
-文档服务 | DOC           | github.com/baidubce/bce-sdk-go/services/doc            | [DOC.md](./doc/DOC.md)
-数据传输服务 | DTS           | github.com/baidubce/bce-sdk-go/services/dts            | [DTS.md](./doc/DTS.md)
-容器镜像服务 企业版 | ECCR          | github.com/baidubce/bce-sdk-go/services/eccr           | [ECCR.md](./doc/ECCR.md)
-弹性公网IP | EIP           | github.com/baidubce/bce-sdk-go/services/eip            | [EIP.md](./doc/EIP.md)
-ENIC弹性网卡 | ENIC          | github.com/baidubce/bce-sdk-go/services/eni            | [ENIC.md](./doc/ENIC.md)
-企业安全组 | ESG           | github.com/baidubce/bce-sdk-go/services/esg            | [ESG.md](./doc/ESG.md)
-高可用虚拟IP | HAVIP         | github.com/baidubce/bce-sdk-go/services/havip          | [HAVIP.md](./doc/HAVIP.md)
-专线网关 | EtGateway     | github.com/baidubce/bce-sdk-go/services/etGateway      | [ETGateway.md](./doc/ETGateway.md)
-身份管理 | IAM           | github.com/baidubce/bce-sdk-go/services/iam            | [IAM.md](./doc/IAM.md)
-内网DNS | LOCALDNS      | github.com/baidubce/bce-sdk-go/services/localDns       | [LOCALDNS.md](./doc/LOCALDNS.md)
-音视频处理MCP | MCP           | github.com/baidubce/bce-sdk-go/services/media          | [MCP.md](./doc/MCP.md)
-云数据库 | RDS           | github.com/baidubce/bce-sdk-go/services/rds            | [RDS.md](./doc/RDS.md)
-分布式缓存服务 | SCS           | github.com/baidubce/bce-sdk-go/services/scs            | [SCS.md](./doc/SCS.md)
-SMS简单消息服务 | SMS           | github.com/baidubce/bce-sdk-go/services/sms            | [SMS.md](./doc/SMS.md)
-SNIC服务网卡 | SNIC          | github.com/baidubce/bce-sdk-go/services/endpoint       | [SNIC.md](./doc/SNIC.md)
-安全Token服务| STS           | github.com/baidubce/bce-sdk-go/services/sts            | [STS.md](./doc/STS.md)
-视频内容分析 | VCA           | github.com/baidubce/bce-sdk-go/services/vca            |
-视频内容审核 | VCR           | github.com/baidubce/bce-sdk-go/services/vcr            |
-私有网络 | VPC           | github.com/baidubce/bce-sdk-go/services/vpc            | [VPC.md](./doc/VPC.md)
-VPN网关 | VPN           | github.com/baidubce/bce-sdk-go/services/vpn            | [VPN.md](./doc/VPN.md)
-多模态媒资检索 | MMS           | github.com/baidubce/bce-sdk-go/services/mms            | [MMS.md](./doc/MMS.md)
-数据库专属集群 | DDC           | github.com/baidubce/bce-sdk-go/services/ddc            | [DDC.md](./doc/DDC.md)
-资源管理 | RES_MANAGER   | github.com/baidubce/bce-sdk-go/services/resmanager     | [RES_MANAGER.md](./doc/RES_MANAGER.md)
-标签 | TAG           | github.com/baidubce/bce-sdk-go/services/tag            | [TAG.md](./doc/TAG.md)
+百舸自定义部署 | AihcInference | github.com/wenyining/bce-sdk-go/services/aihc/inference | [AIHC_INFERENCE.md](./doc/AIHC_INFERENCE.md)
+应用型负载均衡 | APPBLB        | github.com/wenyining/bce-sdk-go/services/appblb         | [APPBLB.md](./doc/APPBLB.md)
+物理服务器 | BBC           | github.com/wenyining/bce-sdk-go/services/bbc            | [BBC.md](./doc/BBC.md)
+云服务器 | BCC           | github.com/wenyining/bce-sdk-go/services/bcc            | [BCC.md](./doc/BCC.md)
+云服务器 | BCI           | github.com/wenyining/bce-sdk-go/services/bci            | [BCI.md](./doc/BCI.md)
+云监控 | BCM           | github.com/wenyining/bce-sdk-go/services/bcm            | [BCM.md](./doc/BCM.md)
+云审计 | BCT           | github.com/wenyining/bce-sdk-go/services/bct            | [BCT.md](./doc/BCT.md)
+边缘计算节点 | BEC           | github.com/wenyining/bce-sdk-go/services/bec            |[BEC.md](./doc/BEC.md)
+百度智能边缘 | BIE           | github.com/wenyining/bce-sdk-go/services/bie            |
+百度云财务 | BILLING       | github.com/wenyining/bce-sdk-go/services/billing        | [BILLING.md](./doc/BILLING.md)
+负载均衡 | BLB           | github.com/wenyining/bce-sdk-go/services/blb            | [BLB.md](./doc/BLB.md)
+日志服务 | BLS           | github.com/wenyining/bce-sdk-go/services/bls            | [BLS.md](./doc/BLS.md)
+百度对象存储 | BOS           | github.com/wenyining/bce-sdk-go/services/bos            | [BOS.md](./doc/BOS.md)
+百度视频创作分发平台 | BVW           | github.com/wenyining/bce-sdk-go/services/bvw            | [BVW.md](./doc/BVW.md)
+证书服务| CAS           | github.com/wenyining/bce-sdk-go/services/cas            |   [CAS.md](./doc/CAS.md)
+容器引擎 | CCE           | github.com/wenyining/bce-sdk-go/services/cce            | [CCE.md](./doc/CCE.md)
+内容分布网络 | CDN           | github.com/wenyining/bce-sdk-go/services/cdn            | [CDN.md](./doc/CDN.md)
+SSL证书服务 | CERT          | github.com/wenyining/bce-sdk-go/services/cert           | [CERT.md](./doc/CERT.md)
+函数计算 | CFC           | github.com/wenyining/bce-sdk-go/services/cfc            | [CFC.md](./doc/CFC.md)
+文件存储服务 | CFS           | github.com/wenyining/bce-sdk-go/services/cfs            | [CFS.md](./doc/CFS.md)
+云防火墙 | CFW           | github.com/wenyining/bce-sdk-go/services/cfw            | [CFW.md](./doc/CFW.md)
+云智能网 | CSN           | github.com/wenyining/bce-sdk-go/services/csn            | [CSN.md](./doc/CSN.md)
+文档服务 | DOC           | github.com/wenyining/bce-sdk-go/services/doc            | [DOC.md](./doc/DOC.md)
+数据传输服务 | DTS           | github.com/wenyining/bce-sdk-go/services/dts            | [DTS.md](./doc/DTS.md)
+容器镜像服务 企业版 | ECCR          | github.com/wenyining/bce-sdk-go/services/eccr           | [ECCR.md](./doc/ECCR.md)
+弹性公网IP | EIP           | github.com/wenyining/bce-sdk-go/services/eip            | [EIP.md](./doc/EIP.md)
+ENIC弹性网卡 | ENIC          | github.com/wenyining/bce-sdk-go/services/eni            | [ENIC.md](./doc/ENIC.md)
+企业安全组 | ESG           | github.com/wenyining/bce-sdk-go/services/esg            | [ESG.md](./doc/ESG.md)
+高可用虚拟IP | HAVIP         | github.com/wenyining/bce-sdk-go/services/havip          | [HAVIP.md](./doc/HAVIP.md)
+专线网关 | EtGateway     | github.com/wenyining/bce-sdk-go/services/etGateway      | [ETGateway.md](./doc/ETGateway.md)
+身份管理 | IAM           | github.com/wenyining/bce-sdk-go/services/iam            | [IAM.md](./doc/IAM.md)
+内网DNS | LOCALDNS      | github.com/wenyining/bce-sdk-go/services/localDns       | [LOCALDNS.md](./doc/LOCALDNS.md)
+音视频处理MCP | MCP           | github.com/wenyining/bce-sdk-go/services/media          | [MCP.md](./doc/MCP.md)
+云数据库 | RDS           | github.com/wenyining/bce-sdk-go/services/rds            | [RDS.md](./doc/RDS.md)
+分布式缓存服务 | SCS           | github.com/wenyining/bce-sdk-go/services/scs            | [SCS.md](./doc/SCS.md)
+SMS简单消息服务 | SMS           | github.com/wenyining/bce-sdk-go/services/sms            | [SMS.md](./doc/SMS.md)
+SNIC服务网卡 | SNIC          | github.com/wenyining/bce-sdk-go/services/endpoint       | [SNIC.md](./doc/SNIC.md)
+安全Token服务| STS           | github.com/wenyining/bce-sdk-go/services/sts            | [STS.md](./doc/STS.md)
+视频内容分析 | VCA           | github.com/wenyining/bce-sdk-go/services/vca            |
+视频内容审核 | VCR           | github.com/wenyining/bce-sdk-go/services/vcr            |
+私有网络 | VPC           | github.com/wenyining/bce-sdk-go/services/vpc            | [VPC.md](./doc/VPC.md)
+VPN网关 | VPN           | github.com/wenyining/bce-sdk-go/services/vpn            | [VPN.md](./doc/VPN.md)
+多模态媒资检索 | MMS           | github.com/wenyining/bce-sdk-go/services/mms            | [MMS.md](./doc/MMS.md)
+数据库专属集群 | DDC           | github.com/wenyining/bce-sdk-go/services/ddc            | [DDC.md](./doc/DDC.md)
+资源管理 | RES_MANAGER   | github.com/wenyining/bce-sdk-go/services/resmanager     | [RES_MANAGER.md](./doc/RES_MANAGER.md)
+标签 | TAG           | github.com/wenyining/bce-sdk-go/services/tag            | [TAG.md](./doc/TAG.md)

@@ -1,10 +1,10 @@
 package tag
 
 import (
-	"github.com/baidubce/bce-sdk-go/model"
-	"github.com/baidubce/bce-sdk-go/services/bcc/api"
+	"github.com/wenyining/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/services/bcc/api"
 
-	"github.com/baidubce/bce-sdk-go/services/bcc"
+	"github.com/wenyining/bce-sdk-go/services/bcc"
 )
 
 func BindTagsByResourceTypeDemo() {

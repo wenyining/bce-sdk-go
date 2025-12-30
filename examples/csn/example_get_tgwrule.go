@@ -3,7 +3,7 @@ package csnexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/csn"
+	"github.com/wenyining/bce-sdk-go/services/csn"
 )
 
 // ListTgwRule - 查询指定TGW的路由条目。

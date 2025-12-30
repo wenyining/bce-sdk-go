@@ -17,8 +17,8 @@ package api
 import (
 	"encoding/json"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 func InsertVideo(cli bce.Client, lib string, args *BaseRequest) (*BaseResponse, error) {

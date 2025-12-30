@@ -3,8 +3,8 @@ package probeexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/vpc"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 func CreateProbe() {

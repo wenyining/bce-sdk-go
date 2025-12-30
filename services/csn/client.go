@@ -14,8 +14,8 @@
 package csn
 
 import (
-	"github.com/baidubce/bce-sdk-go/auth"
-	"github.com/baidubce/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/auth"
+	"github.com/wenyining/bce-sdk-go/bce"
 )
 
 const (

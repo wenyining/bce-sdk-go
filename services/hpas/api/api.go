@@ -16,8 +16,8 @@ package api
 import (
 	"encoding/json"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 // CreateHpas -
@@ -1279,7 +1279,7 @@ func RenewHpasInstances(cli bce.Client, body *RenewHpasReq) (*RenewHpasResp, err
 	return res, nil
 }
 
-func DescribeInstanceInventoryQuantity(cli bce.Client, body *DescribeInstanceInventoryQuantityReq) (*DescribeInstanceInventoryQuantityResp, error){
+func DescribeInstanceInventoryQuantity(cli bce.Client, body *DescribeInstanceInventoryQuantityReq) (*DescribeInstanceInventoryQuantityResp, error) {
 	req := &bce.BceRequest{}
 	req.SetMethod(http.POST)
 	path := "/"

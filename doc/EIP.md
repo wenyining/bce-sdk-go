@@ -41,7 +41,7 @@ EIP Client是EIP服务的客户端，为开发者与EIP服务进行交互提供�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/eip"
+	"github.com/wenyining/bce-sdk-go/services/eip"
 )
 
 func main() {
@@ -80,9 +80,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/eip" //导入EIP服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/eip" //导入EIP服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -134,7 +134,7 @@ func main() {
 EIP支持HTTPS传输协议，您可以通过在创建EIP Client对象时指定的Endpoint中指明HTTPS的方式，在EIP GO SDK中使用HTTPS访问EIP服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 ENDPOINT := "https://eip.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -150,7 +150,7 @@ eipClient, _ := eip.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问EIP服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 //创建EIP Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -166,7 +166,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "eip.bj.baidubce.com"
@@ -182,7 +182,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "eip.bj.baidubce.com"
@@ -244,7 +244,7 @@ EIP的主要用途包括：
 
 使用以下代码可以申请一个EIP。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 args := &eip.CreateEipArgs{
 	// 指定eip的名称
@@ -284,7 +284,7 @@ fmt.Println("create eip success, eip: ", result.Eip)
 
 使用以下代码可以对指定EIP的带宽进行扩缩容操作。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 args := &eip.ResizeEipArgs{
 	// 指定eip的最新公网带宽
@@ -307,7 +307,7 @@ fmt.Println("resize eip success.")
 
 使用以下代码可以实现EIP的绑定。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 args := &eip.BindEipArgs{
 	// 指定eip被绑定的实例类型
@@ -333,7 +333,7 @@ fmt.Printf("eip bind bcc success\n")
 
 使用以下代码可以实现EIP的解绑。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 if err := client.UnBindEip(eip, clientToken); err != nil {
     fmt.Printf("eip unbind error: %+v\n", err)
@@ -351,7 +351,7 @@ fmt.Printf("eip unbind success\n")
 
 使用以下代码可以释放指定的EIP。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 err = client.DeleteEip(eip, clientToken)
 if err != nil {
@@ -371,7 +371,7 @@ fmt.Printf("delete eip success\n")
 
 使用以下代码可以查询EIP列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 args := &eip.ListEipArgs{
 	// 指定要查询的eip
@@ -429,7 +429,7 @@ for _, e := range result.EipList {
 
 使用以下代码可以为指定的EIP进行续费操作，延长过期时间。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 args := &eip.PurchaseReservedEipArgs{
 	// 设置eip的续费信息
@@ -453,7 +453,7 @@ fmt.Printf("renew eip success.")
 ## EIP自动续费
 使用以下代码可以为指定的EIP开启自动续费操作
  ```go
-// import "github.com/baidubce/bce-sdk-go/services/eip"
+// import "github.com/wenyining/bce-sdk-go/services/eip"
 
 args := &eip.StartAutoRenewArgs{
 	// 预付费资源可以设置是否自动续费
@@ -476,7 +476,7 @@ fmt.Printf("start auto renew eip success.")
 ## EIP停止自动续费
 使用以下代码可以为指定的EIP停止自动续费操作
  ```go
- // import "github.com/baidubce/bce-sdk-go/services/eip"
+ // import "github.com/wenyining/bce-sdk-go/services/eip"
  if err := client.StopAutoRenew(eip, ""); err != nil {
      fmt.Printf("stop auto renew eip error: %+v\n", err)
      return
@@ -522,14 +522,14 @@ if err != nil {
 
 ## SDK日志
 
-EIP GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+EIP GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 EIP GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

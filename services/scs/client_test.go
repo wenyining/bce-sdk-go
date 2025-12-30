@@ -12,10 +12,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/model"
 
-	"github.com/baidubce/bce-sdk-go/util"
-	"github.com/baidubce/bce-sdk-go/util/log"
+	"github.com/wenyining/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/util/log"
 )
 
 var (
@@ -101,18 +101,18 @@ func TestClient_CreateInstance(t *testing.T) {
 		Port:          6379,
 		Engine:        3,
 		// EngineVersion:  "5.0",
-		NodeType:       "pega.g4s1.micro",
-		ClusterType:    "cluster",
-		ReplicationNum: 2,
-		ShardNum:       1,
-		ProxyNum:       2,
-		DiskFlavor:     60,
-		DiskType:       "essd",
-		BgwGroupId:     "",
+		NodeType:        "pega.g4s1.micro",
+		ClusterType:     "cluster",
+		ReplicationNum:  2,
+		ShardNum:        1,
+		ProxyNum:        2,
+		DiskFlavor:      60,
+		DiskType:        "essd",
+		BgwGroupId:      "",
 		ResourceGroupId: "",
-		StoreType:      3,
-		EnableReadOnly: 1,
-		ClientAuth:     "ABlockIs16Bytes!",
+		StoreType:       3,
+		EnableReadOnly:  1,
+		ClientAuth:      "ABlockIs16Bytes!",
 	}
 	result, err := SCS_CLIENT.CreateInstance(args)
 	ExpectEqual(t.Errorf, nil, err)

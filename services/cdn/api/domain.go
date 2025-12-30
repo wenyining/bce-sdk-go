@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/model"
 )
 
 // DomainStatus defined a struct for domain info,
@@ -51,12 +51,13 @@ type DomainCreatedInfo struct {
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/sjwvyewt1
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - marker: a marker is a start point of searching
+//   - cli: the client agent which can perform sending request
+//   - marker: a marker is a start point of searching
+//
 // RETURNS:
-//     - []string: domains belongs to the user
-//     - string: a marker for next searching, empty if is in the end
-//     - error: nil if success otherwise the specific error
+//   - []string: domains belongs to the user
+//   - string: a marker for next searching, empty if is in the end
+//   - error: nil if success otherwise the specific error
 func ListDomains(cli bce.Client, marker string) ([]string, string, error) {
 	type domainInfo struct {
 		Name string `json:"name"`
@@ -90,12 +91,13 @@ func ListDomains(cli bce.Client, marker string) ([]string, string, error) {
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/8jwvyewf1
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - status: the specified running status, the available values are "RUNNING", "STOPPED", OPERATING or "ALL"
-//     - rule: the regex matching rule
+//   - cli: the client agent which can perform sending request
+//   - status: the specified running status, the available values are "RUNNING", "STOPPED", OPERATING or "ALL"
+//   - rule: the regex matching rule
+//
 // RETURNS:
-//     - []DomainStatus: domain details list
-//     - error: nil if success otherwise the specific error
+//   - []DomainStatus: domain details list
+//   - error: nil if success otherwise the specific error
 func GetDomainStatus(cli bce.Client, status string, rule string) ([]DomainStatus, error) {
 	if status == "" {
 		return nil, errors.New("domain status parameter could not be empty")
@@ -125,11 +127,12 @@ func GetDomainStatus(cli bce.Client, status string, rule string) ([]DomainStatus
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/qjwvyexh6
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - domain: the specified domain
+//   - cli: the client agent which can perform sending request
+//   - domain: the specified domain
+//
 // RETURNS:
-//     - *DomainValidInfo: available information about the specified domain
-//     - error: nil if success otherwise the specific error
+//   - *DomainValidInfo: available information about the specified domain
+//   - error: nil if success otherwise the specific error
 func IsValidDomain(cli bce.Client, domain string) (*DomainValidInfo, error) {
 	urlPath := fmt.Sprintf("/v2/domain/%s/valid", domain)
 	respObj := &DomainValidInfo{}
@@ -147,16 +150,17 @@ func IsValidDomain(cli bce.Client, domain string) (*DomainValidInfo, error) {
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/gjwvyex4o
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - domain: the specified domain
-//     - originInit: initialized data for a CDN domain
-//     - tags: bind with the specified tags
-//     - dsa: DRCDN type domain config, the rules of speed up the dynamic asserts
-//     - configuredCacheTTL: true for enable cacheTTL
-//     - cacheTTL: tells CDN the caching rules of resources
+//   - cli: the client agent which can perform sending request
+//   - domain: the specified domain
+//   - originInit: initialized data for a CDN domain
+//   - tags: bind with the specified tags
+//   - dsa: DRCDN type domain config, the rules of speed up the dynamic asserts
+//   - configuredCacheTTL: true for enable cacheTTL
+//   - cacheTTL: tells CDN the caching rules of resources
+//
 // RETURNS:
-//     - *DomainCreatedInfo: the details about created a CDN domain
-//     - error: nil if success otherwise the specific error
+//   - *DomainCreatedInfo: the details about created a CDN domain
+//   - error: nil if success otherwise the specific error
 func CreateDomain(cli bce.Client, domain string,
 	originInit *OriginInit,
 	tags []model.TagModel,
@@ -204,10 +208,11 @@ func CreateDomain(cli bce.Client, domain string,
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/Jjwvyexv8
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - domain: the specified domain
+//   - cli: the client agent which can perform sending request
+//   - domain: the specified domain
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func EnableDomain(cli bce.Client, domain string) error {
 	if domain == "" {
 		return errors.New("domain parameter could not be empty")
@@ -230,10 +235,11 @@ func EnableDomain(cli bce.Client, domain string) error {
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/9jwvyew3e
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - domain: the specified domain
+//   - cli: the client agent which can perform sending request
+//   - domain: the specified domain
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func DisableDomain(cli bce.Client, domain string) error {
 	if domain == "" {
 		return errors.New("domain parameter could not be empty")
@@ -256,10 +262,11 @@ func DisableDomain(cli bce.Client, domain string) error {
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/Njwvyey7f
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - domain: the specified domain
+//   - cli: the client agent which can perform sending request
+//   - domain: the specified domain
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func DeleteDomain(cli bce.Client, domain string) error {
 	if domain == "" {
 		return errors.New("domain parameter could not be empty")

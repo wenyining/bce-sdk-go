@@ -19,8 +19,8 @@ package blb
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 // BindEnterpriseSecurityGroups - bind the blb enterprise security groups (normal/application/ipv6 LoadBalancer)

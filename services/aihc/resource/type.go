@@ -1,6 +1,6 @@
 package resource
 
-import v1 "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+import v1 "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 
 type Interface interface {
 	GetResourcePool(resourcePoolID string) (*v1.GetResourcePoolResponse, error)

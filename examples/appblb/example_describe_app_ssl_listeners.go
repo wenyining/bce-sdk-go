@@ -17,7 +17,7 @@ package appblbexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/appblb"
+	"github.com/wenyining/bce-sdk-go/services/appblb"
 )
 
 // DescribeAppSSLListeners 函数用于获取应用型SSL监听器的详细信息

@@ -24,7 +24,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 // Reauest stands for the general http request structure to make request to the BCE services.

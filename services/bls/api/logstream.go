@@ -19,8 +19,8 @@ package api
 import (
 	"strconv"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 // ListLogStream - get all pattern-match logStream in logStore

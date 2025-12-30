@@ -3,7 +3,7 @@ package esgexample
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/esg"
+	"github.com/wenyining/bce-sdk-go/services/esg"
 )
 
 // GetEsgList 函数用于查询企业安全组列表

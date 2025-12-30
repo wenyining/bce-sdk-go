@@ -9,8 +9,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/baidubce/bce-sdk-go/model"
-	"github.com/baidubce/bce-sdk-go/util/log"
+	"github.com/wenyining/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/util/log"
 )
 
 var (

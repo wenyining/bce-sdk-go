@@ -14,7 +14,7 @@
 
 package havip
 
-import "github.com/baidubce/bce-sdk-go/bce"
+import "github.com/wenyining/bce-sdk-go/bce"
 
 const (
 	URI_PREFIX = bce.URI_PREFIX + "v1"

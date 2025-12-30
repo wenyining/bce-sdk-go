@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/services/cfc/api"
-	"github.com/baidubce/bce-sdk-go/util/log"
+	"github.com/wenyining/bce-sdk-go/services/cfc/api"
+	"github.com/wenyining/bce-sdk-go/util/log"
 )
 
 var (

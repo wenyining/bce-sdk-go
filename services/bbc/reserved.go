@@ -18,8 +18,8 @@
 package bbc
 
 import (
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 func BindReservedInstanceToTags(cli bce.Client, reqBody *bce.Body) error {

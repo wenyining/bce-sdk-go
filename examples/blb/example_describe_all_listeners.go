@@ -17,7 +17,7 @@ package blbexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/blb"
+	"github.com/wenyining/bce-sdk-go/services/blb"
 )
 
 // DescribeAllListeners 函数用于获取指定BlbID下所有监听器的信息

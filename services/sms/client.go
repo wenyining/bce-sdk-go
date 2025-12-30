@@ -17,9 +17,9 @@
 package sms
 
 import (
-	"github.com/baidubce/bce-sdk-go/auth"
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/services/sms/api"
+	"github.com/wenyining/bce-sdk-go/auth"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/services/sms/api"
 )
 
 const (

@@ -9,8 +9,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/baidubce/bce-sdk-go/services/hpas/api"
-	"github.com/baidubce/bce-sdk-go/util/log"
+	"github.com/wenyining/bce-sdk-go/services/hpas/api"
+	"github.com/wenyining/bce-sdk-go/util/log"
 )
 
 var (
@@ -87,10 +87,10 @@ func TestCreateInstance(t *testing.T) {
 		Tags:                []api.TagModel{{TagKey: "test1", TagValue: "test1"}},
 		InternalIps:         []string{"192.168.48.12"},
 		UserData:            "userData",
-		ReservedInstance:    &api.CreateCombinedCouponReq{
-			Name: "test_reserved",
-			PurchaseNum:     1,
-			AutoRenewPeriod: 3,
+		ReservedInstance: &api.CreateCombinedCouponReq{
+			Name:                   "test_reserved",
+			PurchaseNum:            1,
+			AutoRenewPeriod:        3,
 			ReservedInstancePeriod: 6,
 		},
 	}
@@ -136,11 +136,11 @@ func TestRebootHpas(t *testing.T) {
 
 func TestResetHpas(t *testing.T) {
 	resetHpasArgs := &api.ResetHpasReq{
-		HpasIds:   []string{"hpas-YuZJjrZ1"},
-		ImageId:   "m-Xz6svNFM",
-		Password:  "71fa62c0059fa8624a4fbe110e236ab31ceede74cc7349df2f75f7ed2a279665",
-		KeypairId: "k-dadadad",
-		UserData:  "userData",
+		HpasIds:           []string{"hpas-YuZJjrZ1"},
+		ImageId:           "m-Xz6svNFM",
+		Password:          "71fa62c0059fa8624a4fbe110e236ab31ceede74cc7349df2f75f7ed2a279665",
+		KeypairId:         "k-dadadad",
+		UserData:          "userData",
 		CleanLastUserData: false,
 	}
 	err := HPAS_CLIENT.ResetHpas(resetHpasArgs)
@@ -293,8 +293,8 @@ func TestDescribeHPASInstancesByMaker(t *testing.T) {
 		ShowRdmaTopo: true,
 		Marker:       "marker123",
 		MaxKeys:      10,
-		VpcId: "vpc-c2fdxvjuvhiu",
-		PrivateIps: []string{"10.172.192.106", "172.16.0.11"},
+		VpcId:        "vpc-c2fdxvjuvhiu",
+		PrivateIps:   []string{"10.172.192.106", "172.16.0.11"},
 	}
 
 	resp, err := HPAS_CLIENT.DescribeHPASInstancesByMaker(listHpasByMakerReq)
@@ -501,7 +501,6 @@ func TestRenewHpasInstances(t *testing.T) {
 	fmt.Println(resp)
 }
 
-
 func TestReplaceSecurityGroups(t *testing.T) {
 	req := &api.SecurityGroupsReq{
 		HpasIds:           []string{"hpas-xxxxxxx"},
@@ -526,8 +525,8 @@ func TestDetachSecurityGroups(t *testing.T) {
 
 func TestDescribeHpasSpecs(t *testing.T) {
 	req := &api.DescribeHpasSpecsReq{
-		ZoneName: "cn-bj-a",
-		AppType:  "llama2_7B_train",
+		ZoneName:            "cn-bj-a",
+		AppType:             "llama2_7B_train",
 		AppPerformanceLevel: "10k",
 	}
 	resp, err := HPAS_CLIENT.DescribeHpasSpecs(req)

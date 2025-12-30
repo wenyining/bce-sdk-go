@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	v2 "github.com/baidubce/bce-sdk-go/services/cce/v2"
-	"github.com/baidubce/bce-sdk-go/services/cce/v2/model"
+	v2 "github.com/wenyining/bce-sdk-go/services/cce/v2"
+	"github.com/wenyining/bce-sdk-go/services/cce/v2/model"
 )
 
 // UnbindInstanceGroupRemedyRule 解绑节点组自愈规则

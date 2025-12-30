@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	api "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+	api "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 )
 
 func ReadJson(fileName string) (*api.CreateDevInstanceArgs, error) {

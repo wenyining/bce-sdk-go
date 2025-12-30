@@ -3,7 +3,7 @@ package model
 import (
 	"time"
 
-	backupv1 "github.com/baidubce/bce-sdk-go/services/cce/v2/model/backup/api/v1"
+	backupv1 "github.com/wenyining/bce-sdk-go/services/cce/v2/model/backup/api/v1"
 )
 
 type BackupRepositoryStatus string

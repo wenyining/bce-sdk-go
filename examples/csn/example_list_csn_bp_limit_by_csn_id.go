@@ -3,7 +3,7 @@ package csnexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/csn"
+	"github.com/wenyining/bce-sdk-go/services/csn"
 )
 
 func ListCsnBpLimitByCsnId() {

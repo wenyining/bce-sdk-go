@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/baidubce/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/bce"
 )
 
 // The time interval of statistics data merged by, we defined 3 valid values here.
@@ -123,15 +123,16 @@ type FlowDetail struct {
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/Bkbszintg
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - options: the querying conditions, valid options are:
-//                1. QueryStatByTimeRange
-//                2. QueryStatByPeriod
-//                3. QueryStatByDomains
-//                4. QueryStatByCountry
+//   - cli: the client agent which can perform sending request
+//   - options: the querying conditions, valid options are:
+//     1. QueryStatByTimeRange
+//     2. QueryStatByPeriod
+//     3. QueryStatByDomains
+//     4. QueryStatByCountry
+//
 // RETURNS:
-//     - []FlowDetail: the details about traffic
-//     - error: nil if success otherwise the specific error
+//   - []FlowDetail: the details about traffic
+//   - error: nil if success otherwise the specific error
 func GetFlow(cli bce.Client, options ...QueryStatOption) ([]FlowDetail, error) {
 	var queryOptions queryStatOption
 	for _, opt := range options {
@@ -164,15 +165,16 @@ type PvDetail struct {
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/dkbszg48s
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - options: the querying conditions, valid options are:
-//                1. QueryStatByTimeRange
-//                2. QueryStatByPeriod
-//                3. QueryStatByDomains
-//                4. QueryStatByCountry
+//   - cli: the client agent which can perform sending request
+//   - options: the querying conditions, valid options are:
+//     1. QueryStatByTimeRange
+//     2. QueryStatByPeriod
+//     3. QueryStatByDomains
+//     4. QueryStatByCountry
+//
 // RETURNS:
-//     - []PvDetail: the details about pv/qps
-//     - error: nil if success otherwise the specific error
+//   - []PvDetail: the details about pv/qps
+//   - error: nil if success otherwise the specific error
 func GetPv(cli bce.Client, options ...QueryStatOption) ([]PvDetail, error) {
 	var queryOptions queryStatOption
 	for _, opt := range options {
@@ -197,14 +199,15 @@ func GetPv(cli bce.Client, options ...QueryStatOption) ([]PvDetail, error) {
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/rkbsznt4v
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - options: the querying conditions, valid options are:
-//                1. QueryStatByTimeRange
-//                2. QueryStatByPeriod
-//                3. QueryStatByDomains
+//   - cli: the client agent which can perform sending request
+//   - options: the querying conditions, valid options are:
+//     1. QueryStatByTimeRange
+//     2. QueryStatByPeriod
+//     3. QueryStatByDomains
+//
 // RETURNS:
-//     - []FlowDetail: the details about traffic to your origin server.
-//     - error: nil if success otherwise the specific error
+//   - []FlowDetail: the details about traffic to your origin server.
+//   - error: nil if success otherwise the specific error
 func GetSrcFlow(cli bce.Client, options ...QueryStatOption) ([]FlowDetail, error) {
 	var queryOptions queryStatOption
 	for _, opt := range options {
@@ -242,14 +245,15 @@ type HttpCodeDetail struct {
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/ekbszvxv5
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - options: the querying conditions, valid options are:
-//                1. QueryStatByTimeRange
-//                2. QueryStatByPeriod
-//                3. QueryStatByDomains
+//   - cli: the client agent which can perform sending request
+//   - options: the querying conditions, valid options are:
+//     1. QueryStatByTimeRange
+//     2. QueryStatByPeriod
+//     3. QueryStatByDomains
+//
 // RETURNS:
-//     - []HttpCodeDetail: the details about accessing HTTP codes.
-//     - error: nil if success otherwise the specific error
+//   - []HttpCodeDetail: the details about accessing HTTP codes.
+//   - error: nil if success otherwise the specific error
 func GetHttpCode(cli bce.Client, options ...QueryStatOption) ([]HttpCodeDetail, error) {
 	var queryOptions queryStatOption
 	for _, opt := range options {
@@ -281,14 +285,15 @@ type HitDetail struct {
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/ckbszuehh
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - options: the querying conditions, valid options are:
-//                1. QueryStatByTimeRange
-//                2. QueryStatByPeriod
-//                3. QueryStatByDomains
+//   - cli: the client agent which can perform sending request
+//   - options: the querying conditions, valid options are:
+//     1. QueryStatByTimeRange
+//     2. QueryStatByPeriod
+//     3. QueryStatByDomains
+//
 // RETURNS:
-//     - []HitDetail: the details about traffic hit rate.
-//     - error: nil if success otherwise the specific error
+//   - []HitDetail: the details about traffic hit rate.
+//   - error: nil if success otherwise the specific error
 func GetRealHit(cli bce.Client, options ...QueryStatOption) ([]HitDetail, error) {
 	var queryOptions queryStatOption
 	for _, opt := range options {

@@ -39,7 +39,7 @@ BCI Client是BCI服务的客户端，为开发者与BCI服务进行交互提供�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/bci"
+	"github.com/wenyining/bce-sdk-go/services/bci"
 )
 
 func main() {
@@ -78,9 +78,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/bci" //导入BCI服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/bci" //导入BCI服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -132,7 +132,7 @@ func main() {
 BCI支持HTTPS传输协议，您可以通过在创建BCI Client对象时指定的Endpoint中指明HTTPS的方式，在BCI GO SDK中使用HTTPS访问BCI服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bci"
+// import "github.com/wenyining/bce-sdk-go/services/bci"
 
 ENDPOINT := "https://bci.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -148,7 +148,7 @@ bciClient, _ := bci.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问BCI服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bci"
+// import "github.com/wenyining/bce-sdk-go/services/bci"
 
 //创建BCI Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -164,7 +164,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bci"
+// import "github.com/wenyining/bce-sdk-go/services/bci"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bci.bj.baidubce.com"
@@ -180,7 +180,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bci"
+// import "github.com/wenyining/bce-sdk-go/services/bci"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bci.bj.baidubce.com"
@@ -236,7 +236,7 @@ ExpireSeconds | int   | 签名字符串的有效期
 
 使用以下代码可以创建一个BCI实例。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bci"
+// import "github.com/wenyining/bce-sdk-go/services/bci"
 
 args := &CreateInstanceArgs{
     // 保证请求幂等性
@@ -399,7 +399,7 @@ fmt.Printf("CreateInstance success, bci instance id: %+v \n", result.InstanceId)
 
 使用以下代码可以查询BCI实例列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bci"
+// import "github.com/wenyining/bce-sdk-go/services/bci"
 
 args := &ListInstanceArgs{
     // 查询关键字名称
@@ -424,7 +424,7 @@ fmt.Printf("ListInstances result: %+v, err: %+v \n", result, err)
 
 使用以下代码可以查询BCI实例详情。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bci"
+// import "github.com/wenyining/bce-sdk-go/services/bci"
 
 args := &GetInstanceArgs{
     // BCI实例ID
@@ -438,7 +438,7 @@ fmt.Printf("ListInstances result: %+v, err: %+v \n", result, err)
 
 使用以下代码可以删除BCI实例。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bci"
+// import "github.com/wenyining/bce-sdk-go/services/bci"
 
 args := &DeleteInstanceArgs{
     // 待删除的BCI实例ID
@@ -457,7 +457,7 @@ fmt.Printf("DeleteInstance err: %+v\n", err)
 
 使用以下代码可以批量删除BCI实例。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bci"
+// import "github.com/wenyining/bce-sdk-go/services/bci"
 
 args := &BatchDeleteInstanceArgs{
     // 待删除的BCI实例ID列表
@@ -509,14 +509,14 @@ if err != nil {
 
 ## SDK日志
 
-BCI GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+BCI GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 BCI GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)
@@ -543,7 +543,7 @@ log.SetLogFormat([]string{log.FMT_LEVEL, log.FMT_MSG})
 该日志模块无任何外部依赖，用户使用GO SDK开发项目，可以直接引用该日志模块自行在项目中使用，用户可以继续使用GO SDK使用的包级别的日志对象，也可创建新的日志对象，详见如下示例：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 直接使用包级别全局日志对象（会和GO SDK自身日志一并输出）
 log.SetLogHandler(log.STDERR)

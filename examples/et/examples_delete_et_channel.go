@@ -3,7 +3,7 @@ package etexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/et"
+	"github.com/wenyining/bce-sdk-go/services/et"
 )
 
 // DeleteEtChannel

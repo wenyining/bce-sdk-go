@@ -16,24 +16,24 @@
 package blbexamples
 
 import (
-    "github.com/baidubce/bce-sdk-go/services/blb"
+	"github.com/wenyining/bce-sdk-go/services/blb"
 )
 
 func UpdateLoadBalancer() {
-    ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
+	ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
 
-    BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
-    
-    BlbID := "blb id"                      // blb ID
-    updateBlbArgs := &blb.UpdateLoadBalancerArgs{
-        ClientToken:  "client token",      // token
-        Name:         "Test-BLB",          // blb名称 
-        Description:  "blb description",   // blb描述
-    }
+	BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
 
-    err := BlbClient.UpdateLoadBalancer(BlbID, updateBlbArgs) // 更新blb
+	BlbID := "blb id" // blb ID
+	updateBlbArgs := &blb.UpdateLoadBalancerArgs{
+		ClientToken: "client token",    // token
+		Name:        "Test-BLB",        // blb名称
+		Description: "blb description", // blb描述
+	}
 
-    if err != nil {
-        panic(err)
-    }
+	err := BlbClient.UpdateLoadBalancer(BlbID, updateBlbArgs) // 更新blb
+
+	if err != nil {
+		panic(err)
+	}
 }

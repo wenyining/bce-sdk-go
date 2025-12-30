@@ -17,9 +17,9 @@ package resmanager
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/auth"
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/util/log"
+	"github.com/wenyining/bce-sdk-go/auth"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/util/log"
 	"os"
 	"path/filepath"
 	"reflect"

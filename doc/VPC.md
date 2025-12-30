@@ -41,7 +41,7 @@ VPC Client是VPC服务的客户端，为开发者与VPC服务进行交互提供�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func main() {
@@ -80,9 +80,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/vpc" //导入VPC服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/vpc" //导入VPC服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -134,7 +134,7 @@ func main() {
 VPC支持HTTPS传输协议，您可以通过在创建VPC Client对象时指定的Endpoint中指明HTTPS的方式，在VPC GO SDK中使用HTTPS访问VPC服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/vpc"
+// import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 ENDPOINT := "https://bcc.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -150,7 +150,7 @@ vpcClient, _ := vpc.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问VPC服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/vpc"
+// import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 //创建VPC Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -166,7 +166,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/vpc"
+// import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bcc.bj.baidubce.com"
@@ -182,7 +182,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/vpc"
+// import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bcc.bj.baidubce.com"
@@ -234,7 +234,7 @@ ExpireSeconds | int   | 签名字符串的有效期
 
 通过以下代码可以创建VPC实例:
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.CreateVPCArgs{
 	// 设置创建vpc使用的名称
@@ -270,7 +270,7 @@ fmt.Println("create vpc success, vpc id: ", result.VPCID)
 
 使用以下代码查询VPC列表信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.ListVPCArgs{
 	// 设置每页包含的最大数量，最大数量通常不超过1000，缺省值为1000
@@ -310,7 +310,7 @@ for _, v := range result.VPCs {
 
 根据特定的VPC ID可以查看相关VPC的详情信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 result, err := client.GetVPCDetail(vpcId)
 if err != nil {
@@ -340,7 +340,7 @@ fmt.Println("VPC secondaryCidr: ", result.VPC.SecondaryCidr)
 
 使用以下代码可以删除特定的VPC。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 if err := client.DeleteVPC(vpcId, clientToken); err != nil {
     fmt.Println("delete vpc error: ", err)
@@ -356,7 +356,7 @@ fmt.Printf("delete vpc %s success.", vpcId)
 
 使用以下代码可以更新指定VPC的名称和描述信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.UpdateVPCArgs{
 	// 设置vpc的新名称
@@ -384,7 +384,7 @@ fmt.Printf("update vpc %s success.", vpcId)
  若PrivateIpAddresses和PrivateIpRange同时存在，PrivateIpRange优先。
 
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &GetVpcPrivateIpArgs{
 		VpcId:              "vpc-2pa2x0bjt26i",
@@ -410,7 +410,7 @@ fmt.Println("privateIpAddresses size is : ", len(result.VpcPrivateIpAddresses))
 
 通过以下代码可以在指定VPC中创建子网。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.CreateSubnetArgs{
 	// 设置子网的名称
@@ -452,7 +452,7 @@ fmt.Println("create subnet success, subnet id: ", result.SubnetId)
 
 使用以下代码可以查询符合条件的子网列表。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.ListSubnetArgs{
 	// 设置批量获取列表的查询的起始位置，是一个由系统生成的字符串
@@ -501,7 +501,7 @@ for _, sub := range result.Subnets {
 
 根据以下代码可以查询指定子网的详细信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 result, err := client.GetSubnetDetail(subnetId)
 if err != nil {
@@ -539,7 +539,7 @@ fmt.Println("subnet tags: ", result.Subnet.Tags)
 
 通过以下代码可以删除指定子网。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 if err := client.DeleteSubnet(subnetId, clientToken); err != nil {
     fmt.Println("delete subnet error: ", err)
@@ -555,7 +555,7 @@ fmt.Printf("delete subnet %s success.", subnetId)
 
 使用以下代码可以更新子网信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.UpdateSubnetArgs{
 	// 设置更新操作使用的幂等性token
@@ -581,7 +581,7 @@ fmt.Printf("update subnet %s success.", subnetId)
 
 使用以下代码可以创建预留网段。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 	ak, sk, endpoint := "Your Ak", "Your Sk", "Your endpoint" // Initialize ak, sk, and endpoint
 	VPC_CLIENT, _ := vpc.NewClient(ak, sk, endpoint)          // Initialize VPC client
 
@@ -607,7 +607,7 @@ fmt.Printf("update subnet %s success.", subnetId)
 
 使用以下代码可以查询符合条件的预留网段列表。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 	ak, sk, endpoint := "Your Ak", "Your Sk", "Your endpoint" // Initialize ak, sk, and endpoint
 	VPC_CLIENT, _ := vpc.NewClient(ak, sk, endpoint)          // Initialize VPC client
@@ -629,7 +629,7 @@ fmt.Printf("update subnet %s success.", subnetId)
 
 使用以下代码可以删除指定预留网段。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
     // 设置AK、SK和Endpoint
     ak, sk, endpoint := "Your Ak", "Your Sk", "Your endpoint" // Initialize ak, sk, and endpoint
@@ -665,7 +665,7 @@ fmt.Printf("update subnet %s success.", subnetId)
 
 使用以下代码可以完成对路由表的查询。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 // 方式1: 通过路由表id进行查询
 result, err := client.GetRouteTableDetail(routeTableId, "")
@@ -705,7 +705,7 @@ for _, route := range result.RouteRules {
 
 使用以下代码可以创建路由规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.CreateRouteRuleArgs{
 	// 设置路由表id，必选
@@ -754,7 +754,7 @@ fmt.Println("create route rule success, route rule id: ", result.RouteRuleId)
 
 使用以下代码可以删除特定的路由规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 if err := client.DeleteRouteRule(routeRuleId, clientToken); err != nil {
     fmt.Println("delete route rule error: ", err)
@@ -771,7 +771,7 @@ fmt.Printf("delete route rule %s success.", routeRuleId)
 
 使用以下代码可以更新路由规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
     ak, sk, endpoint := "Your Ak", "Your Sk", "Your endpoint"
     VPC_CLIENT, _ := vpc.NewClient(ak, sk, endpoint)
@@ -796,7 +796,7 @@ fmt.Printf("delete route rule %s success.", routeRuleId)
 
 使用以下代码可以查询路由规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 ak, sk, endpoint := "Your Ak", "Your Sk", "Your endpoint"
     VPC_CLIENT, _ := vpc.NewClient(ak, sk, endpoint)
@@ -833,7 +833,7 @@ ak, sk, endpoint := "Your Ak", "Your Sk", "Your endpoint"
 
 使用以下代码可以完成acl信息的查询。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 result, err := client.ListAclEntrys(vpcId)
 if err != nil {
@@ -862,7 +862,7 @@ for _, acl := range result.AclEntrys {
 
 根据以下代码可以创建acl规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 requests := []vpc.AclRuleRequest{
     {
@@ -912,7 +912,7 @@ fmt.Println("create acl rule success.")
 
 使用以下代码可以查询acl规则信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.ListAclRulesArgs{
 	// 设置acl所属子网的id
@@ -961,7 +961,7 @@ for _, acl := range result.AclRules {
 
 使用以下代码可以实现对特定acl规则的更新操作。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.UpdateAclRuleArgs{
 	// 设置acl的最新协议
@@ -996,7 +996,7 @@ fmt.Printf("update acl rule %s success.", aclRuleId)
 
 使用以下代码可以删除指定的acl规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 if err := client.DeleteAclRule(aclRuleId, clientToken); err != nil {
     fmt.Println("delete acl rule error: ", err)
@@ -1017,7 +1017,7 @@ NAT（Network Address Translation）网关为私有网络提供访问Internet服
 
 使用以下代码可以创建nat网关。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.CreateNatGatewayArgs{
 	// 设置nat网关的名称
@@ -1058,7 +1058,7 @@ fmt.Println("create nat gateway success, nat gateway id: ", result.NatId)
 
 使用以下代码可以查询符合条件的nat网关列表。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.ListNatGatewayArgs{
 	// 设置nat网关所属的vpc id，必选
@@ -1111,7 +1111,7 @@ for _, nat := range result.Nats {
 
 使用以下代码可以查询特定nat网关的详细信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 result, err := client.GetNatGatewayDetail(natId)
 if err != nil {
@@ -1141,7 +1141,7 @@ fmt.Println("nat expireTime: ", result.ExpiredTime)
 
 使用以下代码可以对nat网关的名称进行更改。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.UpdateNatGatewayArgs{
 	// 设置nat网关的最新名称
@@ -1162,7 +1162,7 @@ fmt.Printf("update nat gateway %s success.", natId)
 
 使用以下代码可以为nat网关绑定eip。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.BindEipsArgs{
 	// 设置绑定的EIP ID列表
@@ -1184,7 +1184,7 @@ fmt.Println("bind eips success.")
 
 使用以下代码可以为nat网关解绑eip。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.UnBindEipsArgs{
 	// 设置解绑的EIP ID列表
@@ -1202,7 +1202,7 @@ fmt.Println("unbind eips success.")
 
 使用以下代码可以为nat网关绑定DNAT EIP。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.BindDnatEipsArgs{
 	// 设置绑定的DNAT EIP ID列表
@@ -1224,7 +1224,7 @@ fmt.Println("bind DNAT Eips success.")
 
 使用以下代码可以为nat网关解绑DNAT EIP。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.UnBindDnatEipsArgs{
 	// 设置解绑的DNAT EIP ID列表
@@ -1242,7 +1242,7 @@ fmt.Println("unbind DNAT Eips success.")
 
 使用以下代码释放特定的nat网关。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 if err := client.DeleteNatGateway(natId, clientToken); err != nil {
     fmt.Println("delete nat gateway error: ", err)
@@ -1258,7 +1258,7 @@ fmt.Printf("delete nat gateway %s success.", natId)
 
 使用以下接口完成nat网关的续费操作，延长过期时间。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.RenewNatGatewayArgs{
 	// 设置nat网关续费的订单信息
@@ -1283,7 +1283,7 @@ fmt.Printf("renew nat gateway %s success.", natId)
 ## 创建SNAT规则
 使用以下代码可以创建nat网关的snat规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &CreateNatGatewaySnatRuleArgs{
 RuleName:         "sdk-test",
@@ -1299,7 +1299,7 @@ fmt.Println(string(r))
 ## 删除SNAT规则
 使用以下代码可以删除nat网关的snat规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 VPC_CLIENT.DeleteNatGatewaySnatRule("nat-b1jb3b5e34tc", "rule-hprz7sv9zvcx", getClientToken())
 ```
@@ -1307,7 +1307,7 @@ VPC_CLIENT.DeleteNatGatewaySnatRule("nat-b1jb3b5e34tc", "rule-hprz7sv9zvcx", get
 ## 修改SNAT规则
 使用以下代码可以修改nat网关的snat规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &UpdateNatGatewaySnatRuleArgs{
 RuleName:   "sdk-test-1",
@@ -1319,7 +1319,7 @@ VPC_CLIENT.UpdateNatGatewaySnatRule("nat-b1jb3b5e34tc", "rule-hprz7sv9zvcx", arg
 ## 查询SNAT规则
 使用以下代码可以查询nat网关的snat规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &ListNatGatewaySnatRuleArgs{
 NatId: "nat-b1jb3b5e34tc",
@@ -1333,7 +1333,7 @@ fmt.Println(string(r))
 ## 创建DNAT规则
 使用以下代码可以创建nat网关的dnat规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &CreateNatGatewayDnatRuleArgs{
     RuleName:         "dnat_go",
@@ -1352,7 +1352,7 @@ fmt.Println(string(r))
 ## 删除DNAT规则
 使用以下代码可以删除nat网关的dnat规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 VPC_CLIENT.DeleteNatGatewayDnatRule("nat-b1jb3b5e34tc", "rule-8gee5abqins0", getClientToken())
 ```
@@ -1360,7 +1360,7 @@ VPC_CLIENT.DeleteNatGatewayDnatRule("nat-b1jb3b5e34tc", "rule-8gee5abqins0", get
 ## 修改DNAT规则
 使用以下代码可以修改nat网关的dnat规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &UpdateNatGatewayDnatRuleArgs{
 RuleName:         "sdk-test-3",
@@ -1372,7 +1372,7 @@ VPC_CLIENT.UpdateNatGatewayDnatRule("nat-b1jb3b5e34tc", "rule-8gee5abqins0", arg
 ## 查询DNAT规则
 使用以下代码可以查询nat网关的dnat规则。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &ListNatGatewaDnatRuleArgs{}
 result, err := VPC_CLIENT.ListNatGatewayDnatRules("nat-b1jb3b5e34tc", args)
@@ -1389,7 +1389,7 @@ fmt.Println(string(r))
 
 使用以下代码创建对等连接。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.CreatePeerConnArgs{
 	// 设置对等连接的带宽
@@ -1440,7 +1440,7 @@ fmt.Println("create peerconn success, peerconn id: ", result.PeerConnId)
 
 使用以下代码可以查询对等连接的列表信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.ListPeerConnsArgs{
 	// 指定对等连接所属的vpc id
@@ -1491,7 +1491,7 @@ for _, pc := range result.PeerConns {
 
 通过以下代码可以查询特定对等连接的详细信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 result, err := client.GetPeerConnDetail(peerConnId, vpc.PEERCONN_ROLE_INITIATOR)
 if err != nil {
@@ -1541,7 +1541,7 @@ fmt.Println("peerconn tags: ", result.Tags)
 
 使用以下代码可以更新对等连接本端接口名称和备注。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.UpdatePeerConnArgs{
 	// 设置对等连接的接口ID 不可更改，必选
@@ -1563,7 +1563,7 @@ fmt.Printf("update peer conn %s success", peerConnId)
 
 使用以下代码可以接受对等连接的申请信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 if err := client.AcceptPeerConnApply(peerConnId, clientToken); err != nil {
     fmt.Println("accept peer conn error: ", err)
@@ -1581,7 +1581,7 @@ fmt.Printf("accept peer conn %s success.", peerConnId)
 
 使用以下代码可以接受对等连接的申请信息。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 if err := client.RejectPeerConnApply(peerConnId, clientToken); err != nil {
     fmt.Println("reject peer conn error: ", err)
@@ -1595,7 +1595,7 @@ fmt.Printf("reject peer conn %s success.", peerConnId)
 
 使用以下代码可以释放特定的对等连接。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 if err := client.DeletePeerConn(peerConnId, clientToken); err != nil {
     fmt.Println("delete peer conn error: ", err)
@@ -1614,7 +1614,7 @@ fmt.Printf("delete peer conn %s success", peerConnId)
 
 使用以下代码可以为指定的对等连接进行带宽升级操作。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.ResizePeerConnArgs{
 	// 指定对等连接升降级的带宽
@@ -1638,7 +1638,7 @@ fmt.Printf("resize peer conn %s success.", peerConnId)
 
 使用以下代码可以为对等连接进行续费操作，延长过期时间。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.RenewPeerConnArgs{
 	// 指定对等连接的续费信息
@@ -1666,7 +1666,7 @@ fmt.Printf("renew peer conn %s success.", peerConnId)
 
 使用以下代码可以开启对等连接同步DNS记录。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.PeerConnSyncDNSArgs{
 	// 指定对等连接的角色，发起端"initiator" 接收端"acceptor"
@@ -1689,7 +1689,7 @@ fmt.Printf("open peer conn %s sync dns success.", peerConnId)
 
 使用以下代码可以关闭对等连接同步DNS记录。
 ```go
-//import "github.com/baidubce/bce-sdk-go/services/vpc"
+//import "github.com/wenyining/bce-sdk-go/services/vpc"
 
 args := &vpc.PeerConnSyncDNSArgs{
 	// 指定对等连接的角色，发起端"initiator" 接收端"acceptor"
@@ -1746,14 +1746,14 @@ if err != nil {
 
 ## SDK日志
 
-VPC GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+VPC GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 VPC GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

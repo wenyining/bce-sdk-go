@@ -3,10 +3,10 @@ package v2
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 
-	backuoModel "github.com/baidubce/bce-sdk-go/services/cce/v2/model"
+	backuoModel "github.com/wenyining/bce-sdk-go/services/cce/v2/model"
 )
 
 // CreateBackupRepositorys 创建备份仓库

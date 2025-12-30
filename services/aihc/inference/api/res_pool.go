@@ -2,8 +2,8 @@ package api
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 func ListBriefResPool(cli bce.Client, region string, args *ListBriefResPoolArgs) (*ListBriefResPoolResult, error) {

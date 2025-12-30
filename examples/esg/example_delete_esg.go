@@ -3,7 +3,7 @@ package esgexample
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/esg"
+	"github.com/wenyining/bce-sdk-go/services/esg"
 )
 
 // DeleteEsg 函数用于删除企业安全组（ESG）。

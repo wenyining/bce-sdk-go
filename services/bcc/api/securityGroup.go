@@ -22,8 +22,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 // CreateSecurityGroup - create a security group and related rules
@@ -100,12 +100,12 @@ func ListSecurityGroup(cli bce.Client, queryArgs *ListSecurityGroupArgs) (*ListS
 		if queryArgs.MaxKeys != 0 {
 			req.SetParam("maxKeys", strconv.Itoa(queryArgs.MaxKeys))
 		}
-        if len(queryArgs.SecurityGroupId) != 0{
-            req.SetParam("securityGroupId", queryArgs.SecurityGroupId)
-        }
-        if len(queryArgs.SecurityGroupIds) != 0{
-            req.SetParam("securityGroupIds", queryArgs.SecurityGroupIds)
-        }
+		if len(queryArgs.SecurityGroupId) != 0 {
+			req.SetParam("securityGroupId", queryArgs.SecurityGroupId)
+		}
+		if len(queryArgs.SecurityGroupIds) != 0 {
+			req.SetParam("securityGroupIds", queryArgs.SecurityGroupIds)
+		}
 	}
 
 	if queryArgs == nil || queryArgs.MaxKeys == 0 {

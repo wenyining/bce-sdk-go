@@ -21,9 +21,9 @@ package inference
 import (
 	"encoding/json"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/services/aihc/client"
-	"github.com/baidubce/bce-sdk-go/services/aihc/inference/api"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/services/aihc/client"
+	"github.com/wenyining/bce-sdk-go/services/aihc/inference/api"
 )
 
 const DEFAULT_SERVICE_DOMAIN = "aihc.baidubce.com"

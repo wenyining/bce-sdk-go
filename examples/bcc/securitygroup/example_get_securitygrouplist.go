@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/bcc"
-	"github.com/baidubce/bce-sdk-go/services/bcc/api"
+	"github.com/wenyining/bce-sdk-go/services/bcc"
+	"github.com/wenyining/bce-sdk-go/services/bcc/api"
 )
 
 // ListSecurityGroup - list all security group

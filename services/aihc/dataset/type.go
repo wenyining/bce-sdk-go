@@ -1,7 +1,7 @@
 package dataset
 
 import (
-	v2 "github.com/baidubce/bce-sdk-go/services/aihc/api/v2"
+	v2 "github.com/wenyining/bce-sdk-go/services/aihc/api/v2"
 )
 
 // InterfaceV2 针对 v2 API 的数据集接口

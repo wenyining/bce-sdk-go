@@ -13,8 +13,8 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/services/cce/v2/types"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/services/cce/v2/types"
 )
 
 const (

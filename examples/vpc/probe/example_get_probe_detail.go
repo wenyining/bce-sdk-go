@@ -3,7 +3,7 @@ package probeexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func GetProbeDetail() {

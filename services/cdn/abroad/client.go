@@ -1,10 +1,10 @@
 package abroad
 
 import (
-	"github.com/baidubce/bce-sdk-go/auth"
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/model"
-	"github.com/baidubce/bce-sdk-go/services/cdn/abroad/api"
+	"github.com/wenyining/bce-sdk-go/auth"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/services/cdn/abroad/api"
 )
 
 const (

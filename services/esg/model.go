@@ -14,7 +14,7 @@
 
 package esg
 
-import "github.com/baidubce/bce-sdk-go/model"
+import "github.com/wenyining/bce-sdk-go/model"
 
 type CreateEsgArgs struct {
 	ClientToken string                        `json:"-"`

@@ -3,7 +3,7 @@ package vpcexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 // main 函数作为 Go 语言的主函数，用于创建保留 IP。

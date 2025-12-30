@@ -3,7 +3,7 @@ package routeexample
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 // main 函数是 Go 程序的入口函数

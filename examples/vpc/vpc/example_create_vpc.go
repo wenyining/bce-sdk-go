@@ -3,8 +3,8 @@ package vpcexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/model"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func CreateVpc() {

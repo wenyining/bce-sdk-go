@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	ccev2 "github.com/baidubce/bce-sdk-go/services/cce/v2"
-	"github.com/baidubce/bce-sdk-go/services/cce/v2/types"
+	ccev2 "github.com/wenyining/bce-sdk-go/services/cce/v2"
+	"github.com/wenyining/bce-sdk-go/services/cce/v2/types"
 )
 
 func RecommendContainerCIDR() {

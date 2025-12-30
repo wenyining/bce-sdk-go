@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/bce"
 )
 
 func TestBosRetryPolicyShouldRetry(t *testing.T) {

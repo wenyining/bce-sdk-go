@@ -17,8 +17,8 @@ package userserviceexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/userservice"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/services/userservice"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 // CreateUserService 用于创建用户服务

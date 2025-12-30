@@ -33,11 +33,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/auth"
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
-	"github.com/baidubce/bce-sdk-go/util"
-	"github.com/baidubce/bce-sdk-go/util/log"
+	"github.com/wenyining/bce-sdk-go/auth"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/util/log"
 )
 
 // PutObject - put the object from the string or the stream

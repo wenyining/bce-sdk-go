@@ -19,19 +19,20 @@ package api
 import (
 	"encoding/json"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 // SendSms - send an sms message
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - args: the arguments to send an sms message
+//   - cli: the client agent which can perform sending request
+//   - args: the arguments to send an sms message
+//
 // RETURNS:
-//     - *api.SendSmsResult: the result of sending an sms message
-//     - error: the return error if any occurs
+//   - *api.SendSmsResult: the result of sending an sms message
+//   - error: the return error if any occurs
 func SendSms(cli bce.Client, args *SendSmsArgs) (*SendSmsResult, error) {
 	if err := CheckError(len(args.Mobile) > 0, "mobile can not be blank"); err != nil {
 		return nil, err

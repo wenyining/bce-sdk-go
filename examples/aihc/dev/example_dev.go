@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	api "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+	api "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 )
 
 func CreateDevInstance() {

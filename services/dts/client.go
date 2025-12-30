@@ -17,7 +17,7 @@
 // Package dts defines the DTS services of BCE. The supported APIs are all defined in sub-package
 package dts
 
-import "github.com/baidubce/bce-sdk-go/bce"
+import "github.com/wenyining/bce-sdk-go/bce"
 
 const (
 	URI_PREFIX       = bce.URI_PREFIX + "v1"
@@ -48,4 +48,3 @@ func getDtsUri() string {
 func getDtsUriWithTaskId(taskId string) string {
 	return URI_PREFIX + REQUEST_DTS_URL + "/" + taskId
 }
-

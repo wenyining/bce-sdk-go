@@ -3,7 +3,7 @@ package etgatewayexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/etGateway"
+	"github.com/wenyining/bce-sdk-go/services/etGateway"
 )
 
 // updateEtGateway 更新etGateway的函数

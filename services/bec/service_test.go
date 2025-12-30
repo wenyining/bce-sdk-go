@@ -3,12 +3,12 @@ package bec
 import (
 	"testing"
 
-	"github.com/baidubce/bce-sdk-go/services/bec/api"
+	"github.com/wenyining/bce-sdk-go/services/bec/api"
 )
 
-//////////////////////////////////////////////
+// ////////////////////////////////////////////
 // service API
-//////////////////////////////////////////////
+// ////////////////////////////////////////////
 func TestListService(t *testing.T) {
 	res, err := CLIENT.ListService(1, 100,
 		"", "", "", "", "")

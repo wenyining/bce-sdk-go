@@ -3,8 +3,8 @@ package bcm
 import (
 	"errors"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 // 创建警报配置
@@ -39,7 +39,7 @@ func (c *Client) UpdateCustomAlarmPolicy(config *CustomAlarmConfig) error {
 	return err
 }
 
-//  删除警报配置
+// 删除警报配置
 func (c *Client) DeleteCustomAlarmPolicy(policys *AlarmPolicyBatchList) error {
 	if policys == nil {
 		return errors.New("AlarmPolicyBatchList and CustomEventAlarmList is must not empty")
@@ -56,7 +56,7 @@ func (c *Client) DeleteCustomAlarmPolicy(policys *AlarmPolicyBatchList) error {
 	return err
 }
 
-//  列出警报配置
+// 列出警报配置
 func (c *Client) ListCustomAlarmPolicy(params *ListCustomAlarmPolicyParams) (*ListCustomPolicyPageResultResponse, error) {
 	if params == nil {
 		return nil, errors.New("ListCustomAlarmPolicyParams is must not empty")
@@ -106,7 +106,7 @@ func (c *Client) BlockCustomAlarmConfig(params *BlockCustomAlarmPolicyParams) er
 	return err
 }
 
-//打开策略
+// 打开策略
 func (c *Client) UnblockCustomAlarmConfig(params *UnblockCustomAlarmPolicyParams) error {
 	if params == nil {
 		return errors.New("UnblockCustomAlarmConfigParams is must not empty")

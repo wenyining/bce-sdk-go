@@ -2,7 +2,7 @@ package peerconnexamples
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func RenewPeerConn() {
@@ -26,8 +26,8 @@ func RenewPeerConn() {
 	peerConnId := "peer-conn-id"
 	if err := client.RenewPeerConn(peerConnId, args); err != nil {
 		fmt.Println("renew peer conn error: ", err)
-		return 
+		return
 	}
-	
+
 	fmt.Printf("renew peer conn %s success.", peerConnId)
 }

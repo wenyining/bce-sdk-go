@@ -19,17 +19,18 @@ package api
 import (
 	"encoding/json"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 // CreateMobileBlack - create an sms MobileBlack
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - args: the arguments to create an sms mobileBlack
+//   - cli: the client agent which can perform sending request
+//   - args: the arguments to create an sms mobileBlack
+//
 // RETURNS:
-//     - error: the return error if any occurs
+//   - error: the return error if any occurs
 func CreateMobileBlack(cli bce.Client, args *CreateMobileBlackArgs) error {
 	if err := CheckError(args != nil, "CreateMobileBlackArgs can not be nil"); err != nil {
 		return err
@@ -81,10 +82,11 @@ func CreateMobileBlack(cli bce.Client, args *CreateMobileBlackArgs) error {
 // DeleteMobileBlack - delete sms mobileBlack by phones
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - args: the arguments to delete sms mobileBlack
+//   - cli: the client agent which can perform sending request
+//   - args: the arguments to delete sms mobileBlack
+//
 // RETURNS:
-//     - error: the return error if any occurs
+//   - error: the return error if any occurs
 func DeleteMobileBlack(cli bce.Client, args *DeleteMobileBlackArgs) error {
 	if err := CheckError(args != nil, "DeleteMobileBlackArgs can not be nil"); err != nil {
 		return err
@@ -102,11 +104,12 @@ func DeleteMobileBlack(cli bce.Client, args *DeleteMobileBlackArgs) error {
 // GetMobileBlack - get sms mobileBlackList
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - args: the arguments to get sms mobileBlackList
+//   - cli: the client agent which can perform sending request
+//   - args: the arguments to get sms mobileBlackList
+//
 // RETURNS:
-//     - error: the return error if any occurs
-//     - *api.GetMobileBlackResult: the result of get sms MobileBlackList
+//   - error: the return error if any occurs
+//   - *api.GetMobileBlackResult: the result of get sms MobileBlackList
 func GetMobileBlack(cli bce.Client, args *GetMobileBlackArgs) (*GetMobileBlackResult, error) {
 	if err := CheckError(args != nil, "GetMobileBlackArgs can not be nil"); err != nil {
 		return nil, err

@@ -17,7 +17,7 @@
 // Package cfs defines the Normal CFS services of BCE. The supported APIs are all defined in sub-package
 package cfs
 
-import "github.com/baidubce/bce-sdk-go/bce"
+import "github.com/wenyining/bce-sdk-go/bce"
 
 const (
 	DEFAULT_SERVICE_DOMAIN = "cfs." + bce.DEFAULT_REGION + ".baidubce.com"

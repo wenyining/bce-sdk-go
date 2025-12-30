@@ -20,17 +20,18 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 // CreateEni - create an eni with the specific parameters
 //
 // PARAMS:
-//     - args: the arguments to create an eni
+//   - args: the arguments to create an eni
+//
 // RETURNS:
-//     - *CreateEniResult: the result of create eni
-//     - error: nil if success otherwise the specific error
+//   - *CreateEniResult: the result of create eni
+//   - error: nil if success otherwise the specific error
 func (c *Client) CreateEni(args *CreateEniArgs) (*CreateEniResult, error) {
 	if args == nil {
 		return nil, fmt.Errorf("The createEniArgs cannot be nil.")
@@ -51,9 +52,10 @@ func (c *Client) CreateEni(args *CreateEniArgs) (*CreateEniResult, error) {
 // UpdateEni - update an eni
 //
 // PARAMS:
-//     - UpdateEniArgs: the arguments to update an eni
+//   - UpdateEniArgs: the arguments to update an eni
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) UpdateEni(args *UpdateEniArgs) error {
 	if args == nil {
 		return fmt.Errorf("The updateEniArgs cannot be nil.")
@@ -71,9 +73,10 @@ func (c *Client) UpdateEni(args *UpdateEniArgs) error {
 // DeleteEni - delete an eni
 //
 // PARAMS:
-//     - DeleteEniArgs: the arguments to delete an eni
+//   - DeleteEniArgs: the arguments to delete an eni
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) DeleteEni(args *DeleteEniArgs) error {
 	return bce.NewRequestBuilder(c).
 		WithURL(getURLForEniId(args.EniId)).
@@ -85,10 +88,11 @@ func (c *Client) DeleteEni(args *DeleteEniArgs) error {
 // ListEnis - list all eni with the specific parameters
 //
 // PARAMS:
-//     - args: the arguments to list all eni
+//   - args: the arguments to list all eni
+//
 // RETURNS:
-//     - *ListEniResult: the result of list all eni
-//     - error: nil if success otherwise the specific error
+//   - *ListEniResult: the result of list all eni
+//   - error: nil if success otherwise the specific error
 func (c *Client) ListEni(args *ListEniArgs) (*ListEniResult, error) {
 	if args == nil {
 		return nil, fmt.Errorf("The ListEniArgs cannot be nil.")
@@ -120,10 +124,11 @@ func (c *Client) ListEni(args *ListEniArgs) (*ListEniResult, error) {
 // GetEniDetail - get the eni detail
 //
 // PARAMS:
-//     - eniId: the specific eniId
+//   - eniId: the specific eniId
+//
 // RETURNS:
-//     - *Eni: the eni
-//     - error: nil if success otherwise the specific error
+//   - *Eni: the eni
+//   - error: nil if success otherwise the specific error
 func (c *Client) GetEniDetail(eniId string) (*Eni, error) {
 	if eniId == "" {
 		return nil, fmt.Errorf("The eniId cannot be empty.")
@@ -141,10 +146,11 @@ func (c *Client) GetEniDetail(eniId string) (*Eni, error) {
 // AddPrivateIp - add private ip
 //
 // PARAMS:
-//     - args: the arguments to add private ip
+//   - args: the arguments to add private ip
+//
 // RETURNS:
-//     - *AddPrivateIpResult: the private ip
-//     - error: nil if success otherwise the specific error
+//   - *AddPrivateIpResult: the private ip
+//   - error: nil if success otherwise the specific error
 func (c *Client) AddPrivateIp(args *EniPrivateIpArgs) (*AddPrivateIpResult, error) {
 	if args == nil {
 		return nil, fmt.Errorf("The EniPrivateIpArgs cannot be nil.")
@@ -165,12 +171,13 @@ func (c *Client) AddPrivateIp(args *EniPrivateIpArgs) (*AddPrivateIpResult, erro
 // BatchAddPrivateIp - batch add private ips
 //
 // PARAMS:
-//     - args: the arguments to batch add private ips, property PrivateIpAddresses or PrivateIpAddressCount is required;
-//             when PrivateIpAddressCount is set, private ips will be auto allocated,
-//             and if you want assign private ips, please just set PrivateIpAddresses;
+//   - args: the arguments to batch add private ips, property PrivateIpAddresses or PrivateIpAddressCount is required;
+//     when PrivateIpAddressCount is set, private ips will be auto allocated,
+//     and if you want assign private ips, please just set PrivateIpAddresses;
+//
 // RETURNS:
-//     - *BatchAddPrivateIpResult: the private ips
-//     - error: nil if success otherwise the specific error
+//   - *BatchAddPrivateIpResult: the private ips
+//   - error: nil if success otherwise the specific error
 func (c *Client) BatchAddPrivateIp(args *EniBatchPrivateIpArgs) (*BatchAddPrivateIpResult, error) {
 	if args == nil {
 		return nil, fmt.Errorf("The EniBatchPrivateIpArgs cannot be nil.")
@@ -191,12 +198,13 @@ func (c *Client) BatchAddPrivateIp(args *EniBatchPrivateIpArgs) (*BatchAddPrivat
 // BatchAddPrivateIpCrossSubnet - batch add private ips that support cross subnet, white list function
 //
 // PARAMS:
-//     - args: the arguments to batch add private ips, property PrivateIps or PrivateIpAddressCount is required;
-//             when PrivateIpAddressCount is set, private ips in subnet assigned by 'SubnetId' property will be auto allocated;
-//             if you want assign private ips, please just set PrivateIps, and you can also assgin subnet with property 'PrivateIpArgs.SubnetId';
+//   - args: the arguments to batch add private ips, property PrivateIps or PrivateIpAddressCount is required;
+//     when PrivateIpAddressCount is set, private ips in subnet assigned by 'SubnetId' property will be auto allocated;
+//     if you want assign private ips, please just set PrivateIps, and you can also assgin subnet with property 'PrivateIpArgs.SubnetId';
+//
 // RETURNS:
-//     - *BatchAddPrivateIpResult: the private ips
-//     - error: nil if success otherwise the specific error
+//   - *BatchAddPrivateIpResult: the private ips
+//   - error: nil if success otherwise the specific error
 func (c *Client) BatchAddPrivateIpCrossSubnet(args *EniBatchAddPrivateIpCrossSubnetArgs) (*BatchAddPrivateIpResult, error) {
 	if args == nil {
 		return nil, fmt.Errorf("The EniBatchAddPrivateIpCrossSubnetArgs cannot be nil.")
@@ -217,9 +225,10 @@ func (c *Client) BatchAddPrivateIpCrossSubnet(args *EniBatchAddPrivateIpCrossSub
 // DeletePrivateIp - delete private ip
 //
 // PARAMS:
-//     - args: the arguments to delete private ip
+//   - args: the arguments to delete private ip
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) DeletePrivateIp(args *EniPrivateIpArgs) error {
 	if args == nil {
 		return fmt.Errorf("The EniPrivateIpArgs cannot be nil.")
@@ -237,9 +246,10 @@ func (c *Client) DeletePrivateIp(args *EniPrivateIpArgs) error {
 // BatchDeletePrivateIp - batch delete private ip
 //
 // PARAMS:
-//     - args: the arguments to batch delete private ipa
+//   - args: the arguments to batch delete private ipa
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) BatchDeletePrivateIp(args *EniBatchPrivateIpArgs) error {
 	if args == nil {
 		return fmt.Errorf("The EniBatchPrivateIpArgs cannot be nil.")
@@ -258,9 +268,10 @@ func (c *Client) BatchDeletePrivateIp(args *EniBatchPrivateIpArgs) error {
 // AttachEniInstance - eni attach instance
 //
 // PARAMS:
-//     - args: the arguments to attach instance
+//   - args: the arguments to attach instance
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) AttachEniInstance(args *EniInstance) error {
 	if args == nil {
 		return fmt.Errorf("The EniInstance cannot be nil.")
@@ -280,9 +291,10 @@ func (c *Client) AttachEniInstance(args *EniInstance) error {
 // DetachEniInstance - eni detach instance
 //
 // PARAMS:
-//     - args: the arguments to detach instance
+//   - args: the arguments to detach instance
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) DetachEniInstance(args *EniInstance) error {
 	if args == nil {
 		return fmt.Errorf("The EniInstance cannot be nil.")
@@ -302,9 +314,10 @@ func (c *Client) DetachEniInstance(args *EniInstance) error {
 // BindEniPublicIp - eni bind public ip
 //
 // PARAMS:
-//     - args: the arguments to bind public ip
+//   - args: the arguments to bind public ip
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) BindEniPublicIp(args *BindEniPublicIpArgs) error {
 	if args == nil {
 		return fmt.Errorf("The BindEniPublicIpArgs cannot be nil.")
@@ -324,9 +337,10 @@ func (c *Client) BindEniPublicIp(args *BindEniPublicIpArgs) error {
 // UnBindEniPublicIp - eni unbind public ip
 //
 // PARAMS:
-//     - args: the arguments to unbind public ip
+//   - args: the arguments to unbind public ip
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) UnBindEniPublicIp(args *UnBindEniPublicIpArgs) error {
 	if args == nil {
 		return fmt.Errorf("The UnBindEniPublicIpArgs cannot be nil.")
@@ -346,9 +360,10 @@ func (c *Client) UnBindEniPublicIp(args *UnBindEniPublicIpArgs) error {
 // UpdateEniSecurityGroup - update eni sg
 //
 // PARAMS:
-//     - args: the arguments to update eni sg
+//   - args: the arguments to update eni sg
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) UpdateEniSecurityGroup(args *UpdateEniSecurityGroupArgs) error {
 	if args == nil {
 		return fmt.Errorf("The UpdateEniSecurityGroupArgs cannot be nil.")
@@ -368,9 +383,10 @@ func (c *Client) UpdateEniSecurityGroup(args *UpdateEniSecurityGroupArgs) error 
 // UpdateEniEnterpriseSecurityGroup - update eni enterprise security group
 //
 // PARAMS:
-//     - args: the arguments to update eni enterprise security group
+//   - args: the arguments to update eni enterprise security group
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) UpdateEniEnterpriseSecurityGroup(args *UpdateEniEnterpriseSecurityGroupArgs) error {
 	if args == nil {
 		return fmt.Errorf("The UpdateEniEnterpriseSecurityGroupArgs cannot be nil.")
@@ -407,10 +423,11 @@ func (c *Client) GetEniQuota(args *EniQuoteArgs) (*EniQuoteInfo, error) {
 // GetEniStatus - get an eni status
 //
 // PARAMS:
-//     - eniId: the arguments to get an eni status
+//   - eniId: the arguments to get an eni status
+//
 // RETURNS:
-//     - *EniStatusInfo: the result of get an eni status
-//     - error: nil if success otherwise the specific error
+//   - *EniStatusInfo: the result of get an eni status
+//   - error: nil if success otherwise the specific error
 func (c *Client) GetEniStatus(eniId string) (*EniStatusInfo, error) {
 	result := &EniStatusInfo{}
 	request := bce.NewRequestBuilder(c).

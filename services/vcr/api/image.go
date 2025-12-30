@@ -19,8 +19,8 @@ package api
 
 import (
 	"encoding/json"
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 func PutImageSync(cli bce.Client, args *PutImageSyncArgs) (*PutImageSyncResult, error) {
@@ -51,4 +51,3 @@ func PutImageSync(cli bce.Client, args *PutImageSyncArgs) (*PutImageSyncResult, 
 	}
 	return jsonBody, nil
 }
-

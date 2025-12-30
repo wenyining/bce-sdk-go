@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	v2 "github.com/baidubce/bce-sdk-go/services/cce/v2"
+	v2 "github.com/wenyining/bce-sdk-go/services/cce/v2"
 )
 
 func GetCluster() {

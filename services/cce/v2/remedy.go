@@ -3,9 +3,9 @@ package v2
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
-	"github.com/baidubce/bce-sdk-go/services/cce/v2/model"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/services/cce/v2/model"
 )
 
 // CreateRemedyRule 创建自愈规则

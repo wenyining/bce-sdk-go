@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	bccapi "github.com/baidubce/bce-sdk-go/services/bcc/api"
-	ccev2 "github.com/baidubce/bce-sdk-go/services/cce/v2"
-	"github.com/baidubce/bce-sdk-go/services/cce/v2/types"
+	bccapi "github.com/wenyining/bce-sdk-go/services/bcc/api"
+	ccev2 "github.com/wenyining/bce-sdk-go/services/cce/v2"
+	"github.com/wenyining/bce-sdk-go/services/cce/v2/types"
 )
 
 func AttachHPASInstance() {

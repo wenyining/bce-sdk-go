@@ -1,13 +1,13 @@
 package aihc
 
 import (
-	resourcepoolv1 "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
-	v2 "github.com/baidubce/bce-sdk-go/services/aihc/api/v2"
-	"github.com/baidubce/bce-sdk-go/services/aihc/client"
-	"github.com/baidubce/bce-sdk-go/services/aihc/dataset"
-	"github.com/baidubce/bce-sdk-go/services/aihc/dev"
-	inference "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
-	"github.com/baidubce/bce-sdk-go/services/aihc/resource"
+	resourcepoolv1 "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
+	v2 "github.com/wenyining/bce-sdk-go/services/aihc/api/v2"
+	"github.com/wenyining/bce-sdk-go/services/aihc/client"
+	"github.com/wenyining/bce-sdk-go/services/aihc/dataset"
+	"github.com/wenyining/bce-sdk-go/services/aihc/dev"
+	inference "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
+	"github.com/wenyining/bce-sdk-go/services/aihc/resource"
 )
 
 type Interface interface {

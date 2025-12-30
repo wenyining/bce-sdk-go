@@ -17,7 +17,7 @@ package userserviceexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/userservice"
+	"github.com/wenyining/bce-sdk-go/services/userservice"
 )
 
 // DescribeUserServiceDetail 函数用于获取用户服务的详细信息

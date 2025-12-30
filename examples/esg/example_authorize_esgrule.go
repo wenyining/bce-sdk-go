@@ -3,7 +3,7 @@ package esgexample
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/esg"
+	"github.com/wenyining/bce-sdk-go/services/esg"
 )
 
 // AuthorizeEsgRule 函数用于授权企业安全组规则。

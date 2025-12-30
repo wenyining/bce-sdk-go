@@ -3,7 +3,7 @@ package csnexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/csn"
+	"github.com/wenyining/bce-sdk-go/services/csn"
 )
 
 // DeleteRouteRule - 删除云智能网路由表的指定路由条目。

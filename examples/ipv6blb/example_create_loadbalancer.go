@@ -16,29 +16,29 @@
 package ipv6blbexamples
 
 import (
-    "fmt"
-    
-    "github.com/baidubce/bce-sdk-go/services/blb"
+	"fmt"
+
+	"github.com/wenyining/bce-sdk-go/services/blb"
 )
 
 func CreateLoadBalancer() {
-    ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
+	ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
 
-    BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
-    
-    createBlbArgs := &blb.CreateLoadBalancerArgs{
-        ClientToken:  "client token",  // token
-        Name:         "TestSDK-BLB",   // blb名称 
-        VpcId:        "vpc id",        // VPC ID
-        SubnetId:     "subnet id",     // 子网ID 
-        Type:         "ipv6",          // Ipv6类型
-    }
+	BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
 
-    response, err := BlbClient.CreateLoadBalancer(createBlbArgs) // 创建blb
+	createBlbArgs := &blb.CreateLoadBalancerArgs{
+		ClientToken: "client token", // token
+		Name:        "TestSDK-BLB",  // blb名称
+		VpcId:       "vpc id",       // VPC ID
+		SubnetId:    "subnet id",    // 子网ID
+		Type:        "ipv6",         // Ipv6类型
+	}
 
-    if err != nil {
-        panic(err)
-    }
-                    
-    fmt.Println(response)
+	response, err := BlbClient.CreateLoadBalancer(createBlbArgs) // 创建blb
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(response)
 }

@@ -3,9 +3,9 @@ package vpnexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/model"
 
-	"github.com/baidubce/bce-sdk-go/services/vpn"
+	"github.com/wenyining/bce-sdk-go/services/vpn"
 )
 
 func CreateVpnGateway() {

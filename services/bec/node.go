@@ -21,16 +21,17 @@ package bec
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/bec/api"
+	"github.com/wenyining/bce-sdk-go/services/bec/api"
 )
 
 // GetBecAvailableNodeInfoVo -  get available node
 //
 // PARAMS:
-//     - args: the type
+//   - args: the type
+//
 // RETURNS:
-//     - *api.GetBecAvailableNodeInfoVoResult: get available node
-//     - error: nil if ok otherwise the specific error
+//   - *api.GetBecAvailableNodeInfoVoResult: get available node
+//   - error: nil if ok otherwise the specific error
 func (c *Client) GetBecAvailableNodeInfoVo(getType string) (*api.GetBecAvailableNodeInfoVoResult, error) {
 	if getType == "" {
 		return nil, fmt.Errorf("please set argments")

@@ -16,19 +16,19 @@
 package blbexamples
 
 import (
-    "github.com/baidubce/bce-sdk-go/services/blb"
+	"github.com/wenyining/bce-sdk-go/services/blb"
 )
 
 func DeleteLoadBalancer() {
-    ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
+	ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
 
-    BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
+	BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
 
-    BlbID := "blb id" // blb实例ID
+	BlbID := "blb id" // blb实例ID
 
-    err := BlbClient.DeleteLoadBalancer(BlbID)  // 释放BLB实例
+	err := BlbClient.DeleteLoadBalancer(BlbID) // 释放BLB实例
 
-    if err != nil {
-        panic(err)
-    }
+	if err != nil {
+		panic(err)
+	}
 }

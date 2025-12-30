@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/model"
 )
 
 // DomainStatus defined a struct for domain info,

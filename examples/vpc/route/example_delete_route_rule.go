@@ -3,8 +3,8 @@ package routeexample
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/vpc"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 // main函数，删除路由规则

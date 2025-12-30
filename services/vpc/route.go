@@ -20,8 +20,8 @@ import (
 	"errors"
 	"strconv"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 // GetRouteTableDetail - get details of the given routeTableId or vpcId
@@ -144,10 +144,11 @@ func (c *Client) GetRouteRuleDetail(args *GetRouteRuleArgs) (*GetRouteRuleResult
 // UpdateRouteRule - update the given route rule
 //
 // PARAMS:
-//     - routeRuleId: the id of the specific route rule
-//     - args: the arguments to update route rule
+//   - routeRuleId: the id of the specific route rule
+//   - args: the arguments to update route rule
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func (c *Client) UpdateRouteRule(args *UpdateRouteRuleArgs) error {
 	if args.RouteRuleId == "" {
 		return errors.New("The RouteRuleId cannot be blank.")

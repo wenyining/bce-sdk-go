@@ -2,7 +2,7 @@ package etgatewayexamples
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/etGateway"
+	"github.com/wenyining/bce-sdk-go/services/etGateway"
 )
 
 // ListEtGatewayDetail 函数用于获取指定VPC下的ET网关列表

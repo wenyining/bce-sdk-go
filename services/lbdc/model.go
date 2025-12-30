@@ -16,7 +16,7 @@
 
 package lbdc
 
-import "github.com/baidubce/bce-sdk-go/model"
+import "github.com/wenyining/bce-sdk-go/model"
 
 type Reservation struct {
 	ReservationLength int `json:"reservationLength"`

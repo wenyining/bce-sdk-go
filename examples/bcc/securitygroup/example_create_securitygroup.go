@@ -3,9 +3,9 @@ package bccsgexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/model"
-	"github.com/baidubce/bce-sdk-go/services/bcc"
-	"github.com/baidubce/bce-sdk-go/services/bcc/api"
+	"github.com/wenyining/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/services/bcc"
+	"github.com/wenyining/bce-sdk-go/services/bcc/api"
 )
 
 // securityGroup sdk

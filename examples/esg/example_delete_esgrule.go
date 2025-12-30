@@ -1,6 +1,6 @@
 package esgexample
 
-import "github.com/baidubce/bce-sdk-go/services/esg"
+import "github.com/wenyining/bce-sdk-go/services/esg"
 
 // DeleteESGRule 删除指定企业安全组规则
 func DeleteESGRule() {

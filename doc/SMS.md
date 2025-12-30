@@ -28,7 +28,7 @@ SMS Client是SMS服务的客户端，为开发者与SMS服务进行交互提供�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/sms"
+	"github.com/wenyining/bce-sdk-go/services/sms"
 )
 
 func main() {
@@ -67,9 +67,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/sms" //导入SMS服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/sms" //导入SMS服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -121,7 +121,7 @@ func main() {
 SMS支持HTTPS传输协议，您可以通过在创建SMS Client对象时指定的Endpoint中指明HTTPS的方式，在SMS GO SDK中使用HTTPS访问SMS服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/sms"
+// import "github.com/wenyining/bce-sdk-go/services/sms"
 
 ENDPOINT := "https://smsv3.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -133,7 +133,7 @@ smsClient, _ := sms.NewClient(AK, SK, ENDPOINT)
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/sms"
+// import "github.com/wenyining/bce-sdk-go/services/sms"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "smsv3.bj.baidubce.com"
@@ -149,7 +149,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/sms"
+// import "github.com/wenyining/bce-sdk-go/services/sms"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "smsv3.bj.baidubce.com"

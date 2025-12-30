@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 type PurgedId string
@@ -89,11 +89,12 @@ type QuotaDetail struct {
 // For more details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/Zkbsy0k8j
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - tasks: the tasks about purging the files from the CDN nodes
+//   - cli: the client agent which can perform sending request
+//   - tasks: the tasks about purging the files from the CDN nodes
+//
 // RETURNS:
-//     - PurgedId: an ID representing a purged task, using it to search the task progress
-//     - error: nil if success otherwise the specific error
+//   - PurgedId: an ID representing a purged task, using it to search the task progress
+//   - error: nil if success otherwise the specific error
 func Purge(cli bce.Client, tasks []PurgeTask) (PurgedId, error) {
 	respObj := &struct {
 		Id string `json:"id"`
@@ -115,11 +116,12 @@ func Purge(cli bce.Client, tasks []PurgeTask) (PurgedId, error) {
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/ikbsy9cvb
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - queryData: querying conditions, it contains the time interval, the task ID and the specified url
+//   - cli: the client agent which can perform sending request
+//   - queryData: querying conditions, it contains the time interval, the task ID and the specified url
+//
 // RETURNS:
-//     - *PurgedStatus: the details about the purged
-//     - error: nil if success otherwise the specific error
+//   - *PurgedStatus: the details about the purged
+//   - error: nil if success otherwise the specific error
 func GetPurgedStatus(cli bce.Client, queryData *CStatusQueryData) (*PurgedStatus, error) {
 	if queryData == nil {
 		queryData = &CStatusQueryData{}
@@ -153,9 +155,9 @@ func GetPurgedStatus(cli bce.Client, queryData *CStatusQueryData) (*PurgedStatus
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/Dlj5ch09q
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - tasks: the tasks about prefetch the files from the CDN nodes
-//     - error: nil if success otherwise the specific error
+//   - cli: the client agent which can perform sending request
+//   - tasks: the tasks about prefetch the files from the CDN nodes
+//   - error: nil if success otherwise the specific error
 func Prefetch(cli bce.Client, tasks []PrefetchTask) (PrefetchId, error) {
 	respObj := &struct {
 		Id string `json:"id"`
@@ -177,11 +179,12 @@ func Prefetch(cli bce.Client, tasks []PrefetchTask) (PrefetchId, error) {
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/Mlj5e9y0i
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - queryData: querying conditions, it contains the time interval, the task ID and the specified url
+//   - cli: the client agent which can perform sending request
+//   - queryData: querying conditions, it contains the time interval, the task ID and the specified url
+//
 // RETURNS:
-//     - *PrefetchStatus: the details about the prefetch
-//     - error: nil if success otherwise the specific error
+//   - *PrefetchStatus: the details about the prefetch
+//   - error: nil if success otherwise the specific error
 func GetPrefetchStatus(cli bce.Client, queryData *CStatusQueryData) (*PrefetchStatus, error) {
 	if queryData == nil {
 		queryData = &CStatusQueryData{}
@@ -215,9 +218,9 @@ func GetPrefetchStatus(cli bce.Client, queryData *CStatusQueryData) (*PrefetchSt
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/flnoakciq
 //
 // RETURNS:
-//     - cli: the client agent which can perform sending request
-//     - QuotaDetail: the quota details about a specified user
-//     - error: nil if success otherwise the specific error
+//   - cli: the client agent which can perform sending request
+//   - QuotaDetail: the quota details about a specified user
+//   - error: nil if success otherwise the specific error
 func GetQuota(cli bce.Client) (*QuotaDetail, error) {
 	respObj := &QuotaDetail{}
 	err := httpRequest(cli, "GET", "/v2/abroad/cache/quota", nil, nil, respObj)

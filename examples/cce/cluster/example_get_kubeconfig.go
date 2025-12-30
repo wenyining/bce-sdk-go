@@ -4,13 +4,13 @@ import (
 	"encoding/json"
 	"fmt"
 
-	v2 "github.com/baidubce/bce-sdk-go/services/cce/v2"
+	v2 "github.com/wenyining/bce-sdk-go/services/cce/v2"
 )
 
 func GetKubeConfig() {
 	// 用户的Access Key ID和Secret Access Key
 	AK, SK := "", ""
-			
+
 	// 用户指定的endpoint
 	ENDPOINT := ""
 
@@ -20,7 +20,7 @@ func GetKubeConfig() {
 		panic(err)
 	}
 	args := &v2.GetKubeConfigArgs{
-		ClusterID: "your-cluster-id",
+		ClusterID:      "your-cluster-id",
 		KubeConfigType: v2.KubeConfigTypeVPC, // kubeconfig-type you need
 	}
 	resp, err := ccev2Client.GetKubeConfig(args)

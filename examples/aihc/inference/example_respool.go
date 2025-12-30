@@ -3,8 +3,8 @@ package inference
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/aihc/inference"
-	"github.com/baidubce/bce-sdk-go/services/aihc/inference/api"
+	"github.com/wenyining/bce-sdk-go/services/aihc/inference"
+	"github.com/wenyining/bce-sdk-go/services/aihc/inference/api"
 )
 
 func ListBriefResPool() {

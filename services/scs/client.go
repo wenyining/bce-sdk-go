@@ -17,7 +17,7 @@
 // Package scs defines the SCS services of BCE. The supported APIs are all defined in sub-package
 package scs
 
-import "github.com/baidubce/bce-sdk-go/bce"
+import "github.com/wenyining/bce-sdk-go/bce"
 
 const (
 	DEFAULT_ENDPOINT = "redis." + bce.DEFAULT_REGION + ".baidubce.com"

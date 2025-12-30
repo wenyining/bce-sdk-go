@@ -16,26 +16,26 @@
 package blbexamples
 
 import (
-    "github.com/baidubce/bce-sdk-go/services/blb"
+	"github.com/wenyining/bce-sdk-go/services/blb"
 )
 
 func UpdateLoadBalancerAcl() {
-    ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
+	ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
 
-    BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
-    
-    BlbID := "blb id"          // blb实例ID
-    supportAcl := new(bool)    // 是否支持ACL
+	BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
+
+	BlbID := "blb id"       // blb实例ID
+	supportAcl := new(bool) // 是否支持ACL
 	*supportAcl = true
-	
-    updateBlbAclArgs := &blb.UpdateLoadBalancerAclArgs{
-        ClientToken:  "client token",   // token
-        SupportAcl:   supportAcl,       // 是否支持ACL
-    }
 
-    err := BlbClient.UpdateLoadBalancerAcl(BlbID, updateBlbAclArgs) // 修改blb Acl开关
+	updateBlbAclArgs := &blb.UpdateLoadBalancerAclArgs{
+		ClientToken: "client token", // token
+		SupportAcl:  supportAcl,     // 是否支持ACL
+	}
 
-    if err != nil {
-        panic(err)
-    }
+	err := BlbClient.UpdateLoadBalancerAcl(BlbID, updateBlbAclArgs) // 修改blb Acl开关
+
+	if err != nil {
+		panic(err)
+	}
 }

@@ -1,7 +1,7 @@
 package havipexample
 
 import (
-	"github.com/baidubce/bce-sdk-go/services/havip"
+	"github.com/wenyining/bce-sdk-go/services/havip"
 )
 
 func HaVipBindPublicIp() {

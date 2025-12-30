@@ -32,7 +32,7 @@ GAIADB Client是GAIADB服务的客户端，为开发者与GAIADB服务进行交�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/gaiadb"
+	"github.com/wenyining/bce-sdk-go/services/gaiadb"
 )
 
 func main() {
@@ -71,9 +71,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/gaiadb" //导入GAIADB服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/gaiadb" //导入GAIADB服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -125,7 +125,7 @@ func main() {
 GAIADB支持HTTPS传输协议，您可以通过在创建GAIADB Client对象时指定的Endpoint中指明HTTPS的方式，在GAIADB GO SDK中使用HTTPS访问SCS服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/gaiadb"
+// import "github.com/wenyining/bce-sdk-go/services/gaiadb"
 
 ENDPOINT := "https://gaiadb.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -141,7 +141,7 @@ gaiadbClient, _ := gaiadb.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问GAIADB服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/gaiadb"
+// import "github.com/wenyining/bce-sdk-go/services/gaiadb"
 
 //创建GAIADB Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -157,7 +157,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/gaiadb"
+// import "github.com/wenyining/bce-sdk-go/services/gaiadb"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "gaiadb.bj.baidubce.com"
@@ -173,7 +173,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/gaiadb"
+// import "github.com/wenyining/bce-sdk-go/services/gaiadb"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "gaiadb.bj.baidubce.com"

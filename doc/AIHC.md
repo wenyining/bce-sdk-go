@@ -35,7 +35,7 @@ AihcClient是百舸服务的客户端，为开发者访问接口提供了一系�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/aihc"
+	"github.com/wenyining/bce-sdk-go/services/aihc"
 )
 
 func main() {
@@ -72,9 +72,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"                    //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/aihc"           //导入百舸服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts"            //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"                    //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/aihc"           //导入百舸服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts"            //导入STS服务模块
 )
 
 func main() {
@@ -114,7 +114,7 @@ func main() {
 百舸服务支持HTTPS传输协议，您可以通过在创建 Aihc Client对象时指定的Endpoint中指明HTTPS的方式，在Aihc GO SDK中使用HTTPS访问百舸服务：
 
 ```go
-import "github.com/baidubce/bce-sdk-go/aihc"
+import "github.com/wenyining/bce-sdk-go/aihc"
 
 ENDPOINT := "https://aihc.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -130,7 +130,7 @@ AihcClient, _ := aihc.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问百舸服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
 
 //创建Aihc Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -146,7 +146,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "aihc.bj.baidubce.com"
@@ -162,7 +162,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "aihc.bj.baidubce.com"
@@ -213,8 +213,8 @@ ExpireSeconds | int   | 签名字符串的有效期
 
 使用以下代码可以列出资源池
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := aihc.NewClient(ak, sk, endpoint)
@@ -235,8 +235,8 @@ if err != nil {
 
 使用以下代码可以获取资源池详情
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 resourcePoolID := "xxxxx"
 
@@ -255,8 +255,8 @@ if err != nil {
 
 使用以下代码可以获取资源池节点列表
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 resourcePoolID := "xxxxx"
 
@@ -277,8 +277,8 @@ if err != nil {
 
 使用以下代码可以获取资源池队列列表
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 resourcePoolID := "xxxxx"
 
@@ -299,8 +299,8 @@ if err != nil {
 
 使用以下代码可以获取资源池节点列表
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 resourcePoolID, queueName := "xxxxx", "xxxxx"
 
@@ -318,8 +318,8 @@ if err != nil {
 ### 查询训练任务列表
 使用以下代码可以查询训练任务列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 client, _ := aihc.NewClient(ak, sk, endpoint)
 req := &v1.OpenAPIJobListRequest{
@@ -342,8 +342,8 @@ fmt.Println(string(jsonBytes))
 ### 创建训练任务
 使用以下代码可以创建训练任务。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 resourcePoolID := RESOURCE_POOL_ID
 
@@ -381,8 +381,8 @@ fmt.Println(string(jsonBytes))
 ### 查询训练任务详情
 使用以下代码可以查询训练任务详情。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 resourcePoolID, JobID := RESOURCE_POOL_ID, AIJobID
 
@@ -404,8 +404,8 @@ fmt.Println(string(jsonBytes))
 ### 更新训练任务
 使用以下代码可以更新训练任务。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 resourcePoolID := RESOURCE_POOL_ID
 jobID := AIJobID
@@ -429,8 +429,8 @@ fmt.Println(string(jsonBytes))
 ### 停止训练任务
 使用以下代码可以停止训练任务。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 resourcePoolID := RESOURCE_POOL_ID
 jobID := AIJobID
@@ -453,8 +453,8 @@ fmt.Println(string(jsonBytes))
 ### 删除训练任务
 使用以下代码可以删除训练任务。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 resourcePoolID, JobID := RESOURCE_POOL_ID, AIJobID
 
@@ -477,8 +477,8 @@ fmt.Println(string(jsonBytes))
 ### 查询训练任务事件
 使用以下代码可以查询训练任务事件。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 
 req := &v1.GetJobEventsRequest{
@@ -507,8 +507,8 @@ fmt.Println(string(jsonBytes))
 ### 查询训练任务日志
 使用以下代码可以查询训练任务日志。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 
 req := &v1.GetPodLogsRequest{
@@ -540,8 +540,8 @@ fmt.Println(string(jsonBytes))
 ### 查询训练任务Pod事件
 使用以下代码可以查询训练任务Pod事件。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 req := &v1.GetPodEventsRequest{
 JobID:          AIJobID,
@@ -571,8 +571,8 @@ fmt.Println(string(jsonBytes))
 ### 查询训练任务监控
 使用以下代码可以查询训练任务监控。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 req := &v1.GetTaskMetricsRequest{
 StartTime:      "",
@@ -602,8 +602,8 @@ fmt.Println(string(jsonBytes))
 ### 查询训练任务所在节点列表
 使用以下代码可以查询训练任务所在节点列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 resourcePoolID := RESOURCE_POOL_ID
 jobID := AIJobID
@@ -627,8 +627,8 @@ fmt.Println(string(jsonBytes))
 ### 获取训练任务WebTerminal地址
 使用以下代码可以获取训练任务WebTerminal地址。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc"
-// import "github.com/baidubce/bce-sdk-go/services/aihc/api/v1"
+// import "github.com/wenyining/bce-sdk-go/services/aihc"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/api/v1"
 ak, sk, endpoint := ak_test, sk_test, endpoint_test
 
 req := &v1.GetWebShellURLRequest{
@@ -658,7 +658,7 @@ fmt.Println(string(jsonBytes))
 ### 创建服务
 使用以下代码可以创建服务。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -678,7 +678,7 @@ if err != nil {
 ### 查询服务列表
 使用以下代码可以查询服务列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -699,7 +699,7 @@ if err != nil {
 使用以下代码可以查询服务状态。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -719,7 +719,7 @@ if err != nil {
 使用以下代码可以查询服务详情。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -739,7 +739,7 @@ if err != nil {
 使用以下代码可以更新服务。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -757,7 +757,7 @@ if err != nil {
 使用以下代码可以扩缩容实例。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -778,7 +778,7 @@ if err != nil {
 使用以下代码可以配置公网访问。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -799,7 +799,7 @@ if err != nil {
 使用以下代码可以查询服务变更记录。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -819,7 +819,7 @@ if err != nil {
 使用以下代码可以查询服务变更记录详情。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -839,7 +839,7 @@ if err != nil {
 使用以下代码可以删除服务。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -859,7 +859,7 @@ if err != nil {
 使用以下代码可以查询实例列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -879,7 +879,7 @@ if err != nil {
 使用以下代码可以实例摘流。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -901,7 +901,7 @@ if err != nil {
 使用以下代码可以删除实例重建。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -919,7 +919,7 @@ if err != nil {
 使用以下代码可以查询实例组列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.baidubce.com"
 region := "bj"
 
@@ -972,14 +972,14 @@ if err != nil {
 
 ## SDK日志
 
-百舸服务 GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+百舸服务 GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 百舸服务 GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

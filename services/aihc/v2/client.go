@@ -1,9 +1,9 @@
 package v2
 
 import (
-	v2 "github.com/baidubce/bce-sdk-go/services/aihc/v2/api"
-	resourceQueue "github.com/baidubce/bce-sdk-go/services/aihc/v2/queue"
-	resourcePool "github.com/baidubce/bce-sdk-go/services/aihc/v2/resourcepool"
+	v2 "github.com/wenyining/bce-sdk-go/services/aihc/v2/api"
+	resourceQueue "github.com/wenyining/bce-sdk-go/services/aihc/v2/queue"
+	resourcePool "github.com/wenyining/bce-sdk-go/services/aihc/v2/resourcepool"
 )
 
 type Interface interface {

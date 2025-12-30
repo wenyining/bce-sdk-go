@@ -9,7 +9,7 @@ modification history
 
 package types
 
-import bccapi "github.com/baidubce/bce-sdk-go/services/bcc/api"
+import bccapi "github.com/wenyining/bce-sdk-go/services/bcc/api"
 
 const (
 	ImageTypeService bccapi.ImageType = "service"
@@ -40,4 +40,3 @@ const (
 	// OSNameOpensuse opensuse
 	OSNameOpensuse OSName = "opensuse"
 )
-

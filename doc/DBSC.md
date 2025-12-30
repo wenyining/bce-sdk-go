@@ -30,7 +30,7 @@ DBSC Client是BCC服务的客户端，为开发者与DBSC服务进行交互提�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/dbsc"
+	"github.com/wenyining/bce-sdk-go/services/dbsc"
 )
 
 func main() {

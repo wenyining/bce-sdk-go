@@ -16,7 +16,7 @@ package eipexamples
 
 import (
 	"fmt"
-	eipPackage "github.com/baidubce/bce-sdk-go/services/eip"
+	eipPackage "github.com/wenyining/bce-sdk-go/services/eip"
 )
 
 func ModifyDdosThreshold() {

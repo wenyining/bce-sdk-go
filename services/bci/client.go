@@ -15,7 +15,7 @@
 package bci
 
 import (
-	"github.com/baidubce/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/bce"
 )
 
 const (

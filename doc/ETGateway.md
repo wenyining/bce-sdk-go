@@ -41,7 +41,7 @@ EtGateway Client是专线网关服务的客户端，为开发者与专线网关�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/etGateway"
+	"github.com/wenyining/bce-sdk-go/services/etGateway"
 )
 
 func main() {
@@ -80,9 +80,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/etGateway" //导入专线网关服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/etGateway" //导入专线网关服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -134,7 +134,7 @@ func main() {
 专线网关支持HTTPS传输协议，您可以通过在创建EtGateway Client对象时指定的Endpoint中指明HTTPS的方式，在EtGateway GO SDK中使用HTTPS访问专线网关服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 
 ENDPOINT := "https://bcc.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -150,7 +150,7 @@ etGatewayClient, _ := etGateway.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问专线网关服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 
 //创建EtGateway Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -166,7 +166,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bcc.bj.baidubce.com"
@@ -182,7 +182,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bcc.bj.baidubce.com"
@@ -231,7 +231,7 @@ ExpireSeconds | int   | 签名字符串的有效期
 
 使用以下代码可以申请一个专线网关。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 args := &etGateway.CreateEtGatewayArgs{
 		Name:        "TestSDK",
 		Description: " test",
@@ -253,7 +253,7 @@ fmt.Println("create etGateway success, etGateway: ", result.EtGatewayId)
 
 使用以下代码可以查询专线网关列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 
 args := &etGateway.ListEtGatewayArgs{
 		VpcId: "vpc-xsd65rcsp5ue",
@@ -278,7 +278,7 @@ args := &etGateway.ListEtGatewayArgs{
 
 使用以下代码可以实现查询专线网关的详情信息。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
     res := &etGateway.EtGatewayDetail{}
 	res, err := client.GetEtGatewayDetail("dcgw-vs1rvp9qy79f")
         if  err != nil {
@@ -293,7 +293,7 @@ args := &etGateway.ListEtGatewayArgs{
 
 使用以下代码可以实现专线网关的更新。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 args := &etGateway.UpdateEtGatewayArgs{
 		ClientToken: getClientToken(),
 		EtGatewayId: "dcgw-mx3annmentbu",
@@ -312,7 +312,7 @@ fmt.Printf("update etgateway success\n")
 
 使用以下代码可以将专线网关绑定到专线上。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 
 args := &etGateway.BindEtArgs{
 		ClientToken: clientToken,
@@ -333,7 +333,7 @@ if err != nil {
 
 使用以下代码可以将专线与专线网关进行解绑。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 if err := client.UnBindEt("dcgw-iiyc0ers2qx4", clientToken); err != nil {
     fmt.Printf("unbind dc error: %+v\n", err)
     return
@@ -345,7 +345,7 @@ fmt.Printf("unbind dc success.")
 
 ## 删除专线网关
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
 err := client.DeleteEtGateway("dcgw-iiyc0ers2qx4", getClientToken())
 	ExpectEqual(t.Errorf, nil, err)
 if err != nil {
@@ -357,7 +357,7 @@ fmt.Printf("delete etGateway success\n")
 ```
 ## 创建专线网关健康检查
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/etGateway"
+// import "github.com/wenyining/bce-sdk-go/services/etGateway"
     auto := true
 	args := &CreateHealthCheckArgs{
 		ClientToken:           getClientToken(),
@@ -416,14 +416,14 @@ if err != nil {
 
 ## SDK日志
 
-EtGateway GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+EtGateway GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 EtGateway GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

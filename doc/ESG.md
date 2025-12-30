@@ -41,7 +41,7 @@ ESG Client是ESG服务的客户端，为开发者与ESG服务进行交互提供�
 
 ```go
 import (
-"github.com/baidubce/bce-sdk-go/services/esg"
+"github.com/wenyining/bce-sdk-go/services/esg"
 )
 
 func main() {
@@ -80,9 +80,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
   "fmt"
 
-  "github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-  "github.com/baidubce/bce-sdk-go/services/esg" //导入ESG服务模块
-  "github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+  "github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+  "github.com/wenyining/bce-sdk-go/services/esg" //导入ESG服务模块
+  "github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -134,7 +134,7 @@ func main() {
 ESG支持HTTPS传输协议，您可以通过在创建ESG Client对象时指定的Endpoint中指明HTTPS的方式，在ESG GO SDK中使用HTTPS访问ESG服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 ENDPOINT := "https://bcc.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -150,7 +150,7 @@ esgClient, _ := esg.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问ESG服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 //创建ESG Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -166,7 +166,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bcc.bj.baidubce.com"
@@ -182,7 +182,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bcc.bj.baidubce.com"
@@ -229,7 +229,7 @@ ExpireSeconds | int   | 签名字符串的有效期
 
 使用以下代码获取公共服务
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 result, err := client.GetServices()
     if err != nil {
@@ -244,7 +244,7 @@ fmt.Println(string(r))
 
 使用以下代码可以申请一个ESG。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 args := &esg.CreateEsgArgs{
     Name: "esgGoSdkTest",
@@ -292,7 +292,7 @@ fmt.Println("create esg success, esg: ", result.EnterpriseSecurityGroupId)
 
 使用以下代码可以查询ESG列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 args := &esg.ListEsgArgs{
         InstanceId:    "instanceId",
@@ -324,7 +324,7 @@ res, err := client.ListEsg(args)
 
 使用以下代码可以释放指定的ESG。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 args := &esg.DeleteEsgArgs{
     EnterpriseSecurityGroupId: "esgId",
@@ -345,7 +345,7 @@ fmt.Printf("delete esg success\n")
 
 使用以下代码可以为ESG创建规则。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 args := &esg.CreateEsgRuleArgs{
     Rules: []EnterpriseSecurityGroupRule{
@@ -375,7 +375,7 @@ fmt.Printf("create esg rules success\n")
 
 使用以下代码可以释放指定的ESG规则。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 args := &esg.DeleteEsgRuleArgs{
     EnterpriseSecurityGroupRuleId: "esgRuleId",
@@ -396,7 +396,7 @@ fmt.Printf("delete esg rule success\n")
 
 使用以下代码可以为ESG更新规则。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/esg"
+// import "github.com/wenyining/bce-sdk-go/services/esg"
 
 args := &esg.UpdateEsgRuleArgs{
     Priority:                      900,
@@ -450,14 +450,14 @@ if err != nil {
 
 ## SDK日志
 
-ESG GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+ESG GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 ESG GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

@@ -17,9 +17,9 @@ package eipexamples
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/model"
 
-	EIP "github.com/baidubce/bce-sdk-go/services/eip"
+	EIP "github.com/wenyining/bce-sdk-go/services/eip"
 )
 
 func CreateEipGroup() {

@@ -3,7 +3,7 @@ package vpnexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/vpn"
+	"github.com/wenyining/bce-sdk-go/services/vpn"
 )
 
 func BatchCreateSslVpnUser() {

@@ -1,8 +1,8 @@
 package api
 
 import (
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 func GetMediaInfoOfFile(cli bce.Client, bucket, key string) (*GetMediaInfoOfFileResponse, error) {

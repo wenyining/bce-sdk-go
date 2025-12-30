@@ -2,7 +2,7 @@ package peerconnexamples
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func ListPeerConn() {
@@ -23,9 +23,9 @@ func ListPeerConn() {
 	result, err := client.ListPeerConn(args)
 	if err != nil {
 		fmt.Println("list peer conns error: ", err)
-		return 
+		return
 	}
-	
+
 	// 返回标记查询的起始位置
 	fmt.Println("peerconn list marker: ", result.Marker)
 	// true表示后面还有数据，false表示已经是最后一页

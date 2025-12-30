@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 type LogBase struct {
@@ -32,12 +32,13 @@ type LogEntry struct {
 // For details, please refer https://cloud.baidu.com/doc/CDN-ABROAD/s/mjwvxj0ec
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - domain: the specified domain
-//     - timeInterval: the specified time interval
+//   - cli: the client agent which can perform sending request
+//   - domain: the specified domain
+//   - timeInterval: the specified time interval
+//
 // RETURNS:
-//     - []LogEntry: the log detail list
-//     - error: nil if success otherwise the specific error
+//   - []LogEntry: the log detail list
+//   - error: nil if success otherwise the specific error
 func GetDomainLog(cli bce.Client, domain string, timeInterval TimeInterval) ([]LogEntry, error) {
 	if err := checkTimeInterval(timeInterval, 14*24*60*60); err != nil {
 		return nil, err

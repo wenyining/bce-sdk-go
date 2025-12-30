@@ -19,8 +19,8 @@
 package bec
 
 import (
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/services/bec/api"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/services/bec/api"
 )
 
 // Client of BEC service is a kind of BceClient, so derived from BceClient

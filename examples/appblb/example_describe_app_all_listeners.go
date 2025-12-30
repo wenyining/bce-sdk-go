@@ -17,7 +17,7 @@ package appblbexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/appblb"
+	"github.com/wenyining/bce-sdk-go/services/appblb"
 )
 
 // DescribeAppAllListeners 函数用于获取应用型监听器的列表

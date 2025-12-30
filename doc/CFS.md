@@ -30,7 +30,7 @@ CFS Client是CFS控制面服务的客户端，为开发者与CFS控制面服务�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/cfs"
+	"github.com/wenyining/bce-sdk-go/services/cfs"
 )
 
 func main() {
@@ -69,9 +69,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"            //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/cfs" //导入CFS服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts"    //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"            //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/cfs" //导入CFS服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts"    //导入STS服务模块
 )
 
 func main() {
@@ -123,7 +123,7 @@ func main() {
 CFS支持HTTPS传输协议，您可以通过在创建CFS Client对象时指定的Endpoint中指明HTTPS的方式，在CFS GO SDK中使用HTTPS访问CFS服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cfs"
+// import "github.com/wenyining/bce-sdk-go/services/cfs"
 
 ENDPOINT := "https://cfs.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -139,7 +139,7 @@ cfsClient, _ := cfs.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问CFS服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cfs"
+// import "github.com/wenyining/bce-sdk-go/services/cfs"
 
 //创建CFS Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -155,7 +155,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cfs"
+// import "github.com/wenyining/bce-sdk-go/services/cfs"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "cfs.bj.baidubce.com"
@@ -171,7 +171,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cfs"
+// import "github.com/wenyining/bce-sdk-go/services/cfs"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "cfs.bj.baidubce.com"

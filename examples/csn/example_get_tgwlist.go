@@ -3,7 +3,7 @@ package csnexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/csn"
+	"github.com/wenyining/bce-sdk-go/services/csn"
 )
 
 // ListTgw - 查询云智能网TGW列表。

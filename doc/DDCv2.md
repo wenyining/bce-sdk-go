@@ -35,7 +35,7 @@ DDC-RDS Client是同时支持DDC和RDS服务的客户端，为开发者与DDC和
 
 ```go
 import (
-	ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+	ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 )
 
 func main() {
@@ -75,9 +75,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
-    ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2" //导入DDC-RDS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
+    ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2" //导入DDC-RDS服务模块
 )
 
 func main() {
@@ -129,7 +129,7 @@ func main() {
 DDC-RDS支持HTTPS传输协议，您可以通过在创建DDC-RDS Client对象时指定的Endpoint中指明HTTPS的方式，在DDC-RDS GO SDK中使用HTTPS访问DDC-RDS服务：
 
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 ENDPOINT := "https://ddc.su.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -143,7 +143,7 @@ client, _ := ddcrds.NewClient(AK, SK, ENDPOINT)
 
 下面一段代码可以让客户端使用切换地域:
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 //创建DDC-RDS Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -160,7 +160,7 @@ client.ConfigRegion("BJ")
 下面一段代码可以让客户端使用代理访问DDC-RDS服务：
 
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 //创建DDC-RDS Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -176,7 +176,7 @@ client.ConfigProxyUrl("127.0.0.1:8080")
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "ddc.su.baidubce.com"
@@ -192,7 +192,7 @@ client.ConfigConnectionTimeoutInMillis(30 * 1000)
 ### 配置生成签名字符串选项
 
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "ddc.su.baidubce.com"
@@ -247,7 +247,7 @@ DDC-RDS服务可以管理以下两种服务
 ## 查询资源池列表
 使用以下代码可以查询当前用户的资源池列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 result, err := client.ListPool(nil, "ddc")
 if err != nil {
@@ -268,7 +268,7 @@ for i := range result.Result {
 ## 查询资源池余量
 使用以下代码可以查询当前指定资源池的资源余量(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 residual, err := client.GetResidual(poolId)
 if err != nil {
@@ -294,7 +294,7 @@ for zoneName, residualByZone := range residual.Residual {
 ## 查询资源池套餐余量
 使用以下代码可以查询当前指定资源池的套餐余量(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // 指定套餐
 args := &ddcrds.GetFlavorCapacityArgs{
     CpuInCore:  2,
@@ -328,7 +328,7 @@ for zoneName, residualByZone := range capacityResult.Capacity {
 ## 创建部署集
 使用以下代码可以在指定资源池下创建一个新的部署集(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 args := &ddcrds.CreateDeployRequest{
     // 幂等 Token
     ClientToken: "xxxyyyzzz",
@@ -350,7 +350,7 @@ fmt.Println("returned deploy id: ", deploy.DeployID)
 ## 查询部署集列表
 使用以下代码可以查询指定资源池下的部署集列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 result, err := client.ListDeploySets(poolId, nil)
 if err != nil {
@@ -372,7 +372,7 @@ for i := range result.Result {
 ## 查询特定部署集信息
 使用以下代码可以查询特定部署集的详细信息(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 deploy, err := client.GetDeploySet(poolId, deployId)
 if err != nil {
     fmt.Printf("get deploy set error: %+v\n", err)
@@ -390,7 +390,7 @@ fmt.Println("ddc instance ids: ", deploy.Instances)
 ## 更新部署集
 使用以下代码更新部署集的部署策略和亲和度(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 args := &ddcrds.UpdateDeployRequest{
     // 幂等 Token
     ClientToken: "xxxyyyzzz",
@@ -411,7 +411,7 @@ fmt.Println("update deploy set success.")
 ## 删除部署集
 使用以下代码可以删除某个资源池下特定的部署集(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 err := DDC_CLIENT.DeleteDeploySet(poolId, deployId)
 if err != nil {
@@ -426,7 +426,7 @@ fmt.Printf("delete deploy set success\n")
 ## 创建实例&克隆实例
 使用以下代码可以创建主实例及克隆主实例。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 args := &ddcrds.CreateRdsArgs{
@@ -534,7 +534,7 @@ for _, e := range result.InstanceIds {
 ## 创建只读实例
 使用以下代码可以创建只读实例。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // DDC
 args := &ddcrds.CreateReadReplicaArgs{
     //主实例ID，必选
@@ -621,7 +621,7 @@ for _, e := range result.InstanceIds {
 ## 创建热备实例
 使用以下代码可以创建只读实例。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // DDC
 args := &ddcrds.CreateHotBackupArgs{
     //主实例ID，必选
@@ -684,7 +684,7 @@ for _, e := range result.InstanceIds {
 使用以下代码可以查询指定实例的详情。
 ```go
 package main
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 result, err := client.GetDetail(instanceId)
 if err != nil {
@@ -775,7 +775,7 @@ if result.AutoRenewRule != nil {
 ## 实例列表
 使用以下代码可以查询实例列表信息,优先获取DDC实例列表,获取完成后再获取RDS实例列表。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC&RDS
 args := &ddcrds.ListRdsArgs{
@@ -837,7 +837,7 @@ for _, e := range resp.Instances {
 ## 实例分页列表
 使用以下代码可以分页查询实例列表信息,支持添加筛选条件。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 args := &ddcrds.ListPageArgs{
@@ -906,7 +906,7 @@ for _, e := range resp.Page.Result {
 ## 获取磁盘信息
 使用以下代码可以获取指定实例下磁盘的详细信息。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 disk, err := client.GetDisk(instanceId)
 if err != nil {
@@ -927,7 +927,7 @@ for _, diskItem := range disk.Response.Items {
 ## 获取物理机资源信息
 使用以下代码可以获取指定实例所在物理机资源信息。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 machine, err := client.GetMachineInfo(instanceId)
 if err != nil {
@@ -950,7 +950,7 @@ for _, machine := range machine.Response.Items {
 ## 删除实例
 使用以下代码可以批量删除实例,RDS产品将删除实例,DDC产品会将实例放入回收站。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // 多个实例间用英文半角逗号","隔开，最多可输入10个
 // DDC
@@ -974,7 +974,7 @@ fmt.Printf("delete instance success\n")
 ## 修改实例名称
 使用以下代码可以修改实例名称。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.UpdateInstanceNameArgs{
 	// DDC实例名称，允许小写字母、数字，中文，长度限制为1~64
@@ -1000,7 +1000,7 @@ fmt.Printf("update instance name success\n")
 ## 主备切换
 使用以下代码可以进行主备切换,支持立即切换或者下一个操作窗口内切换(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.SwitchArgs{
 	// 该字段已废弃，请使用waitSwitch。立即切换
@@ -1023,7 +1023,7 @@ if result != nil {
 ## 只读组列表
 使用以下代码可以查询只读组列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 resp, err := client.ListRoGroup(instanceId)
 if err != nil {
@@ -1043,7 +1043,7 @@ for _, e := range resp.RoGroups {
 ## 更新只读组并分配权重
 用于更新只读组的信息，包括设置实例延迟剔除，设置只读实例权重等(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // DDC
 replicaWeight := ddcrds.ReplicaWeight{
     // 只读实例ID
@@ -1078,7 +1078,7 @@ fmt.Println("update ddc roGroup replica weight success")
 ## 只读组发起重新负载均衡
 使用以下代码可以对只读组发起一次重新负载均衡(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // DDC
 err := client.ReBalanceRoGroup(roGroupId, "ddc")
 if err != nil {
@@ -1092,7 +1092,7 @@ fmt.Println("reBalance ddc roGroup success")
 
 使用以下代码可以创建一个RDS代理实例(仅支持RDS)
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.CreateRdsProxyArgs{
     //主实例ID，必选
@@ -1150,7 +1150,7 @@ for _, e := range result.InstanceIds {
 
 使用以下代码可以对RDS实例扩缩容操作。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.ResizeRdsArgs{
 	// cpu核数
@@ -1192,7 +1192,7 @@ fmt.Println("resize ddc success, orderId: ", orderIdResponse.OrderId)
 DDC实例支持用户决定是否延迟重启(下一个操作窗口重启)
 
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // 立即重启:实例ID为RDS实例ID或DDC实例ID
 err := client.RebootInstance(instanceId)
@@ -1220,7 +1220,7 @@ if result != nil {
 使用以下代码可以修改实例同步模式。
 
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.ModifySyncModeArgs{
     //"Async"异步复制
@@ -1241,7 +1241,7 @@ fmt.Printf("modify syncMode success\n")
 使用以下代码可以修改RDS域名前缀(仅支持RDS)。
 
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.ModifyEndpointArgs{
     Address: "newAddress",
@@ -1261,7 +1261,7 @@ fmt.Printf("modify endpoint success\n")
 ## 开关公网访问
 使用以下代码可以修改RDS公网访问状态(仅支持RDS)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.ModifyPublicAccessArgs{
     // true or false
@@ -1283,7 +1283,7 @@ fmt.Printf("modify public access success\n")
 
 使用以下代码可以为已创建的预付费实例创建自动续费
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.AutoRenewArgs{
     // 自动续费时长（续费单位为year 不大于3，续费单位为month 不大于9）必选
@@ -1310,7 +1310,7 @@ if err != nil {
 ## 查询实例的维护时间窗口
 使用以下代码可以查询实例的维护时间窗口(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 maintainTime,err := client.GetMaintainTime(instanceId)
 if err != nil {
@@ -1330,7 +1330,7 @@ fmt.Printf("get maintain time success\n")
 ## 修改实例的维护时间窗口
 使用以下代码可以修改实例的维护时间窗口(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.MaintainTime{
     // 时长间隔,单位为小时
@@ -1354,7 +1354,7 @@ if err != nil {
 ## 查询任务列表
 通过此接口可以获取到任务列表，管理已经执行过的任务，或者时间窗口内即将执行的任务(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.GetMaintainTaskListArgs{
 		Marker: ddcrds.Marker{
@@ -1399,7 +1399,7 @@ for _, task := range result.Result {
 ## 查询任务详情
 通过此接口可以查询任务详情，可查询已经执行过的任务，或者时间窗口内即将执行的任务(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 result, err := client.GetMaintainTaskDetail(taskId)
 if err != nil {
@@ -1421,7 +1421,7 @@ for _, task := range result.Tasks {
 ## 立即执行任务
 通过此接口对维护时间窗口内的任务发起立即执行的命令(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 err := client.ExecuteMaintainTaskImmediately(taskId)
 if err != nil {
@@ -1441,7 +1441,7 @@ fmt.Println("execute task invoke  success.")
 ## 撤销任务
 通过此接口对维护时间窗口内的任务发起撤销命令(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 err := client.CancelMaintainTask(taskId)
 if err != nil {
@@ -1461,7 +1461,7 @@ fmt.Println("cancel task invoke  success.")
 ## 获取回收站中的实例列表
 使用以下代码可以获取回收站中的实例列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // marker分页参数
 marker := &ddcrds.Marker{MaxKeys: 10}
@@ -1491,7 +1491,7 @@ for _, instance := range instances.Result {
 ## 从回收站中批量恢复实例
 使用以下代码可以从回收站中批量恢复实例(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // 要恢复的实例Id列表
 instanceIds := []string{
@@ -1509,7 +1509,7 @@ fmt.Println("recover recycler instances success, orderId: ", orderIdResponse.Ord
 ## 从回收站中批量删除实例
 使用以下代码可以从回收站中批量删除实例,实例将被彻底删除(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // 要删除的实例Id列表
 instanceIds := []string{
@@ -1531,7 +1531,7 @@ fmt.Println("delete recycler instances success.")
 
 使用以下代码可以在某个主实例下创建一个新的数据库(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 args := &ddcrds.CreateDatabaseArgs{
@@ -1560,7 +1560,7 @@ fmt.Println("create database success.")
 
 使用以下代码可以更新数据库的备注(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 args := &ddcrds.UpdateDatabaseRemarkArgs{
@@ -1580,7 +1580,7 @@ fmt.Println("update database remark success.")
 
 使用以下代码可以查询特定数据库信息。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 result, err := client.GetDatabase(instanceId,dbName)
@@ -1602,7 +1602,7 @@ fmt.Println("ddc accountPrivileges: ", result.AccountPrivileges)
 
 使用以下代码可以查询指定实例的数据库列表。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 result, err := client.ListDatabase(instanceId)
@@ -1626,7 +1626,7 @@ for _, database := range result.Databases {
 
 使用以下代码可以获取指定库下满足条件的数据表的大小。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.GetTableAmountArgs{
     // 实例ID
@@ -1653,7 +1653,7 @@ for k, v := range result.Tables {
 
 使用以下代码可以获取指定实例下的数据库占用的磁盘空间大小以及剩余磁盘空间。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // dbName可选，不指定数据库时传入空字符串即可
 result, err := DDCRDS_CLIENT.GetDatabaseDiskUsage(instanceId, dbName)
 if err != nil {
@@ -1672,7 +1672,7 @@ for k, v := range result.Databases {
 
 使用以下代码可以获取实例数据所有的可恢复时间段。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 result, err := DDCRDS_CLIENT.GetRecoverableDateTime(instanceId)
 if err != nil {
     fmt.Printf("get recoverable datetimes error: %+v\n", err)
@@ -1688,7 +1688,7 @@ for _, e := range result.RecoverableDateTimes {
 
 使用以下代码可以按时间点恢复指定数据库或数据表到原有实例。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.RecoverInstanceArgs{
     // 可恢复时间点，从GetRecoverableDateTime()获取
@@ -1730,7 +1730,7 @@ fmt.Printf("recover instance database success. taskId:%s\n", taskResult.TaskID)
 
 使用以下代码可以删除特定数据库信息。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 err := client.DeleteDatabase(instanceId,dbName)
@@ -1745,7 +1745,7 @@ fmt.Printf("delete database success\n")
 
 使用以下代码可以为数据库下的指定数据表创建硬链接(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 err := client.LazyDropCreateHardLink(instanceId, dbName, tableName)
@@ -1761,7 +1761,7 @@ fmt.Println("[lazy drop] create hard link success.")
 
 使用以下代码可以删除数据库下特定数据表创建的硬链接(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 result, err := client.LazyDropDeleteHardLink(instanceId, dbName, tableName)
@@ -1777,7 +1777,7 @@ fmt.Println("[lazy drop] delete hard link success.taskId:", result.TaskID)
 
 使用以下代码可以对指定数据库执行KillSession任务。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.KillSessionArgs{
     // 实例角色
@@ -1798,7 +1798,7 @@ fmt.Println("start kill session task success. TaskID:", result.TaskID)
 
 使用以下代码可以查看指定数据库下已执行的KillSession任务的进度。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // taskId 为执行KillSession任务时返回的任务Id
 result, err := client.GetKillSessionTask(instanceId, taskId)
@@ -1819,7 +1819,7 @@ for _, task := range result.Tasks {
 
 使用以下代码可以在某个主实例下创建一个新的账号。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.CreateAccountArgs{
     // 幂等性Token，使用 uuid 生成一个长度不超过64位的ASCII字符串，可选参数
@@ -1861,7 +1861,7 @@ fmt.Println("create account success.")
 
 使用以下代码可以更新账号的密码(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.UpdateAccountPasswordArgs{
     // 密码，由字母、数字和特殊字符（!@#%^_）中的至少两种组成，长度8-32位，必选
@@ -1881,7 +1881,7 @@ fmt.Println("update account password success.")
 
 使用以下代码可以更新账号的备注(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.UpdateAccountDescArgs{
     // 帐号备注，最多256个字符（一个汉字等于三个字符），可选
@@ -1900,7 +1900,7 @@ fmt.Println("update account desc success.")
 
 使用以下代码可以更新账号的权限(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 databasePrivileges := []ddcrds.DatabasePrivilege{
     {
@@ -1927,7 +1927,7 @@ fmt.Println("update account privileges success.")
 
 使用以下代码可以查询特定账号信息。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // DDC产品
 result, err := client.GetAccount(instanceId,accountName)
 if err != nil {
@@ -1965,7 +1965,7 @@ fmt.Println("ddc databasePrivileges: ", result.DatabasePrivileges)
 
 使用以下代码可以查询指定实例的账号列表。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 result, err := client.ListAccount(instanceId)
@@ -2008,7 +2008,7 @@ for _, account := range result.Accounts {
 
 使用以下代码可以删除特定账号信息。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 err := client.DeleteAccount(instanceId,accountName)
@@ -2032,7 +2032,7 @@ fmt.Printf("delete account success\n")
 ## 实例参数列表
 使用以下代码可以查询实例参数列表。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 resp, err := client.ListParameters(instanceId)
 if err != nil {
@@ -2075,7 +2075,7 @@ for _, e := range resp.Parameters {
 ## 修改实例参数
 使用以下代码可以修改云数据库 DDC 的参数配置。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.UpdateParameterArgs{
 	Parameters:  []ddcrds.KVParameter{
@@ -2115,7 +2115,7 @@ fmt.Println("update parameter success.")
 ## 多实例批量修改参数
 使用以下代码可以修改云数据库 DDC 的参数配置。不支持跨地域实例同时修改参数。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.BatchUpdateParameterForMultipleInstanceArgs{
     InstanceIds: []string{"ddc-mrsdu813", "ddc-mb8wfjax"},
@@ -2147,7 +2147,7 @@ for _, e := range result.Result {
 ```go
 import (
     "encoding/json"
-    ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+    ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 )
 
 // DDC
@@ -2174,7 +2174,7 @@ fmt.Printf("get securityIp list success\n")
 ## 更新白名单
 使用以下代码可以更新一个实例下的白名单列表。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.UpdateSecurityIpsArgs{
 SecurityIps:  []string{
@@ -2205,7 +2205,7 @@ fmt.Printf("update securityIp list success\n")
 ## 获取VPC下的安全组
 使用以下代码可以获取指定VPC下的安全组列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // vpcId := "vpc-j1vaxw1cx2mw"
 securityGroups, err := client.ListSecurityGroupByVpcId(vpcId)
 if err != nil {
@@ -2230,7 +2230,7 @@ fmt.Println("list security group by vpcId success.")
 ## 获取实例已绑定安全组
 使用以下代码可以获取指定实例已绑定的安全组列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // instanceId := "ddc-m1h4mma5"
 result, err := client.ListSecurityGroupByInstanceId(instanceId)
 if err != nil {
@@ -2253,7 +2253,7 @@ fmt.Println("list security group by instanceId success.")
 ## 绑定安全组
 使用以下代码可以批量将指定的安全组绑定到实例上(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // instanceIds := []string{
 //     "ddc-mjafcdu0",
 // }
@@ -2281,7 +2281,7 @@ fmt.Println("bind security groups to instances success.")
 ## 解绑安全组
 使用以下代码可以从实例上批量解绑指定的安全组(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // instanceIds := []string{
 //     "ddc-mjafcdu0",
 // }
@@ -2309,7 +2309,7 @@ fmt.Println("unbind security groups to instances success.")
 ## 	获取备份列表
 使用以下代码可以获取一个实例下的备份列表。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // DDC
 args := &ddcrds.GetBackupListArgs{}
 resp, err := client.GetBackupList(instanceId, args)
@@ -2367,7 +2367,7 @@ for _, e := range resp.Backups {
 ## 创建备份
 使用以下代码创建实例备份(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 err := client.CreateBackup(instanceId)
@@ -2381,7 +2381,7 @@ fmt.Printf("create backup success\n")
 ## 查询实例备份状态
 使用以下代码可以查询当前实例是否正在备份以及备份开始的时间(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 backupStatusResult, err := client.GetInstanceBackupStatus(instanceId)
 if err != nil {
@@ -2398,7 +2398,7 @@ if backupStatusResult.IsBackuping {
 ## 备份详情
 使用以下代码可以查询一个备份的详情(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 resp, err := client.GetBackupDetail(instanceId, snapshotId)
@@ -2425,7 +2425,7 @@ fmt.Println("ddc encryptKey: ", resp.Snapshot.EncryptKey)
 ## 设置备份策略
 使用以下代码设置实例的备份策略(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // DDC
 args := &ddcrds.BackupPolicy{
 	// 以英文半角逗号分隔的备份时日间，周日为第一天，取值0
@@ -2448,7 +2448,7 @@ fmt.Printf("modify instance's backupPolicy success\n")
 ## binlog列表
 使用以下代码可以获取一个实例下的binlog列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // DDC
 // datetime UTC时间
 // 获取了两天前的日志备份
@@ -2478,7 +2478,7 @@ for _, e := range resp.Binlogs {
 ## binlog 详情
 使用以下代码可以查询一个binlog详情(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 resp, err := client.GetBinlogDetail(instanceId, binlogId)
@@ -2506,7 +2506,7 @@ fmt.Println("ddc encryptKey: ", resp.Binlog.EncryptKey)
 ## 日志列表
 使用以下代码可以获取一个实例下的错误日志或者慢日志列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // import "time"
 
 // datetime UTC时间
@@ -2536,7 +2536,7 @@ for _, log := range *logs {
 ## 日志详情
 使用以下代码可以查询日志的详细信息，包括该日志文件有效的下载链接(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 args := &ddcrds.GetLogArgs{
@@ -2563,7 +2563,7 @@ fmt.Println("download url expires: ", log.DownloadExpires)
 ## 访问日志
 通过此接口可以获取访问日志的下载链接，应获取昨天或者更早的⽇期的访问日志，当⽇的⽇志在第⼆天凌晨打包(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // import "time"
 
 downloadInfo, err := client.GetAccessLog(date)
@@ -2579,7 +2579,7 @@ fmt.Println("bos access logs link: ", downloadInfo.Downloadurl.Bos)
 ## 访问快照日志详情
 通过此接口可以获取访问快照日志的详情列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // import "time"
 
 args := &AccessDetailArgs{
@@ -2599,7 +2599,7 @@ fmt.Printf("get snapshot access detail success\n %+v", result)
 ## 访问binlog日志详情
 通过此接口可以获取访问binlog日志的详情列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 // import "time"
 
 args := &AccessDetailArgs{
@@ -2619,7 +2619,7 @@ fmt.Printf("get binlog access detail success\n %+v", result)
 ## 错误日志
 通过此接口可以获取错误日志(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.GetErrorLogsArgs{
 	// 实例ID，必填参数
@@ -2659,7 +2659,7 @@ for _, errorLog := range errorLogsResponse.ErrorLogs {
 ## 慢日志
 通过此接口可以获取慢日志(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.GetSlowLogsArgs{
     // 实例ID，必填参数
@@ -2715,7 +2715,7 @@ for _, slowLog := range slowLogsResponse.SlowLogs {
 ## VPC列表
 使用以下代码可以查询vpc列表(仅支持DDC)。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 resp, err := client.ListVpc("ddc")
@@ -2742,7 +2742,7 @@ for _, e := range* resp {
 ## 可用区列表
 使用以下代码可以获取可用区列表。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 resp, err := client.GetZoneList("ddc")
 if err != nil {
 	fmt.Printf("get zone list error: %+v\n", err)
@@ -2772,7 +2772,7 @@ for _, e := range resp.Zones {
 ## 子网列表
 使用以下代码可以获取一个实例下的子网列表。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 args := &ddcrds.ListSubnetsArgs{}
@@ -2818,7 +2818,7 @@ for _, e := range resp.Subnets {
 ## 实例版本回滚
 使用以下代码可以回滚实例版本。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.InstanceVersionRollBackArg{
 	// 是否维护时间窗口执行
@@ -2837,7 +2837,7 @@ fmt.Printf("rollback instance version success. taskId:%s\n", result.TaskID)
 ## 实例版本升级
 使用以下代码可以升级实例版本。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.InstanceVersionUpgradeArg{
 	// 是否立即升级
@@ -2855,7 +2855,7 @@ fmt.Printf("upgrade instance version success. taskId:%s\n", result.TaskID)
 ## 获取只读实例的主从同步延迟
 使用以下代码可以获取只读实例的主从同步延迟。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 // DDC
 result, err := client.GetInstanceSyncDelay(instanceId)
@@ -2873,7 +2873,7 @@ fmt.Println("instance is SyncStatus: ", result.Result.SyncStatus)
 ## 开关只读实例主从同步延迟
 使用以下代码可以开关只读实例主从同步延迟。
 ```go
-// import ddcrds "github.com/baidubce/bce-sdk-go/services/ddc/v2"
+// import ddcrds "github.com/wenyining/bce-sdk-go/services/ddc/v2"
 
 args := &ddcrds.InstanceSyncDelayReplicationArg{
 	// 开启只读实例主从同步延迟,开启start,关闭stop
@@ -2925,14 +2925,14 @@ if err != nil {
 
 ## SDK日志
 
-DDC GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+DDC GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 DDC GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

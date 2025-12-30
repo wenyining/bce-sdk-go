@@ -29,7 +29,7 @@ LBDC Client是负载均衡专属集群LBDC服务的客户端，为开发者与LB
 通过AK/SK方式访问LBDC，用户可以参考如下代码新建一个LBDC Client：
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/lbdc"
+	"github.com/wenyining/bce-sdk-go/services/lbdc"
 )
 
 func main() {
@@ -68,9 +68,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"            //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/lbdc"   //导入LBDC服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts"    //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"            //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/lbdc"   //导入LBDC服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts"    //导入STS服务模块
 )
 
 func main() {
@@ -122,7 +122,7 @@ func main() {
 LBDC支持HTTPS传输协议，您可以通过在创建LBDC Client对象时指定的Endpoint中指明HTTPS的方式，在LBDC GO SDK中使用HTTPS访问LBDC服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 ENDPOINT := "https://lbdc.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -138,7 +138,7 @@ lbdcClient, _ := lbdc.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问LBDC服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 //创建LBDC Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -154,7 +154,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "blb.bj.baidubce.com"
@@ -170,7 +170,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "blb.bj.baidubce.com"
@@ -224,7 +224,7 @@ ExpireSeconds | int   | 签名字符串的有效期
 
 通过以下代码，可以创建LBDC
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 args := &CreateLbdcArgs{
     ClientToken: ClientToken(),
@@ -258,7 +258,7 @@ fmt.Printf("create lbdc success,lbdcId is: %+v",res.Id)
 
 通过以下代码，可以升级LBDC
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 args := &UpgradeLbdcArgs{
     ClientToken: ClientToken(),
@@ -279,7 +279,7 @@ fmt.Printf("upgrade lbdc success")
 
 通过以下代码，可以续费LBDC
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 args := &RenewLbdcArgs{
     ClientToken: ClientToken(),
@@ -304,7 +304,7 @@ fmt.Printf("renew lbdc success")
 
 通过以下代码，可以查询LBDC列表
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 args := &ListLbdcArgs{
     Id:          Id,
@@ -351,7 +351,7 @@ for _, v := range result.ClusterList {
 
 通过以下代码，可以查询LBDC详情
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 res, err := client.GetLbdcDetail(lbdcId)
 if  err != nil {
@@ -403,7 +403,7 @@ fmt.Println("lbdc sslNewConnectCps: ", res.SslNewConnectCps)
 
 通过以下代码，可以更新LBDC名称或者描述
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 args := &UpdateLbdcArgs{
     ClientToken: ClientToken(),
@@ -429,7 +429,7 @@ fmt.Printf("update lbdc success")
 
 通过以下代码，可以查询LBDC关联的BLB列表
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/lbdc"
+// import "github.com/wenyining/bce-sdk-go/services/lbdc"
 
 res, err := client.GetBoundBlBListOfLbdc(lbdcId)
 if  err != nil {

@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/rate"
+	"github.com/wenyining/bce-sdk-go/rate"
 )
 
 const (

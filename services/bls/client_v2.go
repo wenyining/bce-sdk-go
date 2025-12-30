@@ -3,8 +3,8 @@ package bls
 import (
 	"encoding/json"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/services/bls/api"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/services/bls/api"
 )
 
 func (c *Client) CreateProject(request CreateProjectRequest) error {

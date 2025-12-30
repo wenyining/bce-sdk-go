@@ -19,9 +19,9 @@ package bbc
 
 import (
 	"encoding/json"
-	"github.com/baidubce/bce-sdk-go/auth"
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/services/bcc/api"
+	"github.com/wenyining/bce-sdk-go/auth"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/services/bcc/api"
 )
 
 const DEFAULT_SERVICE_DOMAIN = "bbc." + bce.DEFAULT_REGION + ".baidubce.com"
@@ -463,7 +463,8 @@ func (c *Client) DeleteInstance(instanceId string) error {
 }
 
 // DescribeRegions - list all region's endpoint information with the specific parameters.
-// 					 use global endpoint bbc.baidubce.com to get BBC's endpoint.
+//
+//	use global endpoint bbc.baidubce.com to get BBC's endpoint.
 //
 // PARAMS:
 //   - args: the arguments to list all region's endpoint information

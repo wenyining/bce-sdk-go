@@ -37,7 +37,7 @@ AihcDevClient是百舸开发机的客户端，为开发者访问接口提供了�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/aihc/dev"
+	"github.com/wenyining/bce-sdk-go/services/aihc/dev"
 )
 
 func main() {
@@ -74,9 +74,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"                    //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/aihc/dev" //导入自定义部署服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts"            //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"                    //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/aihc/dev" //导入自定义部署服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts"            //导入STS服务模块
 )
 
 func main() {
@@ -119,7 +119,7 @@ func main() {
 开发机服务支持HTTPS传输协议，您可以通过在创建 AihcDev Client对象时指定的Endpoint中指明HTTPS的方式，在AihcDev GO SDK中使用HTTPS访问开发机服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/aihc/dev"
 
 ENDPOINT := "https://aihc.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -135,7 +135,7 @@ AihcDevClient, _ := dev.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问开发机服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 
 //创建AihcDev Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -151,7 +151,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "aihc.baidubce.com"
@@ -167,7 +167,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "aihc.baidubce.com"
@@ -214,7 +214,7 @@ ExpireSeconds | int   | 签名字符串的有效期
 ### 创建开发机
 使用以下代码可以创建服务。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 client, _ := dev.NewClient(ak, sk, endpoint)
 result, err := client.CreateDevInstance(&dev.CreateDevInstanceArgs{
@@ -270,7 +270,7 @@ if err != nil {
 ### 查询开发机列表
 使用以下代码可以查询开发机列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := dev.NewClient(ak, sk, endpoint)
@@ -291,7 +291,7 @@ if err != nil {
 使用以下代码可以查询开发机状态。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := dev.NewClient(ak, sk, endpoint)
@@ -312,7 +312,7 @@ if err != nil {
 使用以下代码可以更新开发机配置。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 client, _ := dev.NewClient(ak, sk, endpoint)
 result, err := client.UpdateDevInstance(&dev.CreateDevInstanceArgs{
@@ -368,7 +368,7 @@ if err != nil {
 使用以下代码可以开启开发机实例。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := dev.NewClient(ak, sk, endpoint)
@@ -387,7 +387,7 @@ if err != nil {
 使用以下代码可以停止开发机实例。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := dev.NewClient(ak, sk, endpoint)
@@ -407,7 +407,7 @@ if err != nil {
 使用以下代码可以删除开发机。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := dev.NewClient(ak, sk, endpoint)
@@ -427,7 +427,7 @@ if err != nil {
 使用以下代码可以定时停止开发机实例。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := dev.NewClient(ak, sk, endpoint)
@@ -449,7 +449,7 @@ if err != nil {
 使用以下代码可以制作开发机镜像。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := dev.NewClient(ak, sk, endpoint)
@@ -476,7 +476,7 @@ if err != nil {
 使用以下代码可以查询制作镜像任务详情。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := dev.NewClient(ak, sk, endpoint)
@@ -497,7 +497,7 @@ if err != nil {
 使用以下代码可以查询开发机事件。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/aihc/dev"
+// import "github.com/wenyining/bce-sdk-go/services/aihc/dev"
 ak, sk, endpoint := "Your ak", "Your sk", "aihc.bj.baidubce.com"
 
 client, _ := dev.NewClient(ak, sk, endpoint)
@@ -554,14 +554,14 @@ if err != nil {
 
 ## SDK日志
 
-百舸自定义部署服务 GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+百舸自定义部署服务 GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 百舸自定义部署服务 GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

@@ -2,7 +2,7 @@ package peerconnexamples
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func ResizePeerConn() {
@@ -21,8 +21,8 @@ func ResizePeerConn() {
 	peerConnId := "peer-conn-id"
 	if err := client.ResizePeerConn(peerConnId, args); err != nil {
 		fmt.Println("resize peer conn error: ", err)
-		return 
+		return
 	}
-	
+
 	fmt.Printf("resize peer conn %s success.", peerConnId)
 }

@@ -16,8 +16,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/services/cce/v2/types"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/cce/v2/types"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 // Interface 定义 CCE V2 SDK

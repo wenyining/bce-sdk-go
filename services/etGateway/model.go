@@ -1,6 +1,6 @@
 package etGateway
 
-import "github.com/baidubce/bce-sdk-go/model"
+import "github.com/wenyining/bce-sdk-go/model"
 
 type (
 	HealthCheckType string
@@ -75,7 +75,7 @@ type EtGatewayDetail struct {
 	Tags                []model.TagModel `json:"tags,omitempty"`
 }
 
-//  参数localCidrs只有在专线网关处于running状态时允许更新。
+// 参数localCidrs只有在专线网关处于running状态时允许更新。
 type UpdateEtGatewayArgs struct {
 	ClientToken string   `json:"clientToken,omitempty"`
 	EtGatewayId string   `json:"etGatewayId"`

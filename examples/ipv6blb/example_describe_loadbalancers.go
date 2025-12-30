@@ -16,25 +16,25 @@
 package ipv6blbexamples
 
 import (
-    "fmt"
-    
-    "github.com/baidubce/bce-sdk-go/services/blb"
+	"fmt"
+
+	"github.com/wenyining/bce-sdk-go/services/blb"
 )
 
 func DescribeLoadBalancers() {
-    ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
+	ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
 
-    BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
-    
-    describeBlbsArgs := &blb.DescribeLoadBalancersArgs{
-        Type:         "ipv6",          // Ipv6类型
-    }
+	BlbClient, _ := blb.NewClient(ak, sk, endpoint) // 初始化client
 
-    response, err := BlbClient.DescribeLoadBalancers(describeBlbsArgs) //查询blb实例列表
+	describeBlbsArgs := &blb.DescribeLoadBalancersArgs{
+		Type: "ipv6", // Ipv6类型
+	}
 
-    if err != nil {
-        panic(err)
-    }
-                    
-    fmt.Println(response)
+	response, err := BlbClient.DescribeLoadBalancers(describeBlbsArgs) //查询blb实例列表
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(response)
 }

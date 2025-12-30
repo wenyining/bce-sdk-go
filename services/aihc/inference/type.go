@@ -1,7 +1,7 @@
 package inference
 
 import (
-	"github.com/baidubce/bce-sdk-go/services/aihc/inference/api"
+	"github.com/wenyining/bce-sdk-go/services/aihc/inference/api"
 )
 
 type Interface interface {

@@ -15,7 +15,7 @@
 package userserviceexamples
 
 import (
-	"github.com/baidubce/bce-sdk-go/services/userservice"
+	"github.com/wenyining/bce-sdk-go/services/userservice"
 )
 
 // DeleteUserService 函数用于删除用户服务

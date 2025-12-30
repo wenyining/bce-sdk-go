@@ -30,7 +30,7 @@ Billing Client是Billing服务的客户端，为开发者与Billing服务进行�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/billing"
+	"github.com/wenyining/bce-sdk-go/services/billing"
 )
 
 func main() {
@@ -64,9 +64,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"            //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/billing"    //导入billing服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts"    //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"            //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/billing"    //导入billing服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts"    //导入STS服务模块
 )
 
 func main() {
@@ -119,7 +119,7 @@ func main() {
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/billing"
+// import "github.com/wenyining/bce-sdk-go/services/billing"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 client, _ := billing.NewClient(AK, SK)
@@ -134,7 +134,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/billing"
+// import "github.com/wenyining/bce-sdk-go/services/billing"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 client, _ := billing.NewClient(AK, SK)
@@ -195,7 +195,7 @@ pageSize|int|Query参数| 每页包含的最大数量，最大数量不超过100
 
 ### 请求示例
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/billing"
+// import "github.com/wenyining/bce-sdk-go/services/billing"
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 	client, err := billing.NewClient(AK, SK)
 	if err != nil {

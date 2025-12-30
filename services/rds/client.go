@@ -17,12 +17,12 @@
 // Package rds defines the RDS services of BCE. The supported APIs are all defined in sub-package
 package rds
 
-import "github.com/baidubce/bce-sdk-go/bce"
+import "github.com/wenyining/bce-sdk-go/bce"
 
 const (
 	URI_PREFIX       = bce.URI_PREFIX + "v1"
 	DEFAULT_ENDPOINT = "rds.bj.baidubce.com"
-	REQUEST_RDS_URL = "/instance"
+	REQUEST_RDS_URL  = "/instance"
 )
 
 // Client of RDS service is a kind of BceClient, so derived from BceClient

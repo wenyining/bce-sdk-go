@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/eni"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/services/eni"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 func getClientToken() string {

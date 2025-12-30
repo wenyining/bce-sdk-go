@@ -16,23 +16,23 @@
 package appblbexamples
 
 import (
-    "fmt"
-    
-    "github.com/baidubce/bce-sdk-go/services/appblb"
+	"fmt"
+
+	"github.com/wenyining/bce-sdk-go/services/appblb"
 )
 
 func DescribeLoadBalancerDetail() {
-    ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
+	ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
 
-    BlbClient, _ := appblb.NewClient(ak, sk, endpoint) // 初始化client
+	BlbClient, _ := appblb.NewClient(ak, sk, endpoint) // 初始化client
 
-    BlbID := "blb id" // blb实例ID
+	BlbID := "blb id" // blb实例ID
 
-    response, err := BlbClient.DescribeLoadBalancerDetail(BlbID)  //查询单个blb实例详情
+	response, err := BlbClient.DescribeLoadBalancerDetail(BlbID) //查询单个blb实例详情
 
-    if err != nil {
-        panic(err)
-    }
-                    
-    fmt.Println(response)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(response)
 }

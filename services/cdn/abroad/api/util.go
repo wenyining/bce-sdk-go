@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/baidubce/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/bce"
 )
 
 // SendCustomRequest - send a HTTP request, and response data or error, it use the default times for retrying

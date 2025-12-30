@@ -43,7 +43,7 @@ CCE Client是CCE服务的客户端，为开发者与CCE服务进行交互提供�
 通过AK/SK方式访问CCE，用户可以参考如下代码新建一个CCE Client：
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/ccev2"
+	"github.com/wenyining/bce-sdk-go/services/ccev2"
 )
 
 func main() {
@@ -81,9 +81,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/cce" //导入CCE服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/cce" //导入CCE服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -134,7 +134,7 @@ func main() {
 
 CCE支持HTTPS传输协议，您可以通过在创建CCE Client对象时指定的Endpoint中指明HTTPS的方式，在CCE GO SDK中使用HTTPS访问CCE服务：
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cce"
+// import "github.com/wenyining/bce-sdk-go/services/cce"
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "https://cce.bj.baidubce.com" //指明使用HTTPS协议
 
@@ -150,7 +150,7 @@ ccev2Client, _ := ccev2.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问CCE服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cce"
+// import "github.com/wenyining/bce-sdk-go/services/cce"
 
 //创建CCE Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -167,7 +167,7 @@ ccev2Client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cce"
+// import "github.com/wenyining/bce-sdk-go/services/cce"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "cce.bj.baidubce.com"
@@ -184,7 +184,7 @@ ccev2Client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cce"
+// import "github.com/wenyining/bce-sdk-go/services/cce"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "ccev2.bj.baidubce.com"
@@ -969,14 +969,14 @@ if err != nil {
 
 ## SDK日志
 
-CCE GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+CCE GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 CCE GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

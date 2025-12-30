@@ -15,7 +15,7 @@
 
 package blbexamples
 
-import "github.com/baidubce/bce-sdk-go/services/blb"
+import "github.com/wenyining/bce-sdk-go/services/blb"
 
 func RemoveBackendServers() {
 	//设置您的ak、sk和要访问的地域

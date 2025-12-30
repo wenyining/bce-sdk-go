@@ -16,28 +16,28 @@
 package appblbexamples
 
 import (
-    "fmt"
+	"fmt"
 
-    "github.com/baidubce/bce-sdk-go/services/appblb"
+	"github.com/wenyining/bce-sdk-go/services/appblb"
 )
 
 func CreateLoadBalancer() {
-    ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
+	ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
 
-    BlbClient, _ := appblb.NewClient(ak, sk, endpoint) // 初始化client
-    
-    createBlbArgs := &appblb.CreateLoadBalancerArgs{
-        ClientToken:  "client token",  // token
-        Name:         "TestSDK-BLB",   // blb名称 
-        VpcId:        "vpc id",        // VPC ID
-        SubnetId:     "subnet id",     // 子网ID 
-    }
+	BlbClient, _ := appblb.NewClient(ak, sk, endpoint) // 初始化client
 
-    response, err := BlbClient.CreateLoadBalancer(createBlbArgs) // 创建blb
+	createBlbArgs := &appblb.CreateLoadBalancerArgs{
+		ClientToken: "client token", // token
+		Name:        "TestSDK-BLB",  // blb名称
+		VpcId:       "vpc id",       // VPC ID
+		SubnetId:    "subnet id",    // 子网ID
+	}
 
-    if err != nil {
-        panic(err)
-    }
-                    
-    fmt.Println(response)
+	response, err := BlbClient.CreateLoadBalancer(createBlbArgs) // 创建blb
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(response)
 }

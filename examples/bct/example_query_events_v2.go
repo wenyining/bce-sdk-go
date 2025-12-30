@@ -3,8 +3,8 @@ package bct
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/bct"
-	"github.com/baidubce/bce-sdk-go/services/bct/api"
+	"github.com/wenyining/bce-sdk-go/services/bct"
+	"github.com/wenyining/bce-sdk-go/services/bct/api"
 	"time"
 )
 

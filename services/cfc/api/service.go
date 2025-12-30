@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	bcehttp "github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	bcehttp "github.com/wenyining/bce-sdk-go/http"
 )
 
 // serviceRequest handles common service API request logic

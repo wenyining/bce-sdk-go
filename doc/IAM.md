@@ -30,7 +30,7 @@
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/iam"
+	"github.com/wenyining/bce-sdk-go/services/iam"
 )
 
 func main() {
@@ -64,9 +64,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"            //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/iam"    //导入IAM服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts"    //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"            //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/iam"    //导入IAM服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts"    //导入STS服务模块
 )
 
 func main() {
@@ -118,7 +118,7 @@ func main() {
 IAM支持HTTPS传输协议，您可以通过在创建IAM Client对象时指定的Endpoint中指明HTTPS的方式，在IAM GO SDK中使用HTTPS访问IAM服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/iam"
+// import "github.com/wenyining/bce-sdk-go/services/iam"
 
 ENDPOINT := "https://iam.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -134,7 +134,7 @@ iamClient, _ := iam.NewClientWithEndpoint(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问IAM服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/iam"
+// import "github.com/wenyining/bce-sdk-go/services/iam"
 
 //创建IAM Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -150,7 +150,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/iam"
+// import "github.com/wenyining/bce-sdk-go/services/iam"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 client, _ := iam.NewClient(AK, SK)
@@ -165,7 +165,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/iam"
+// import "github.com/wenyining/bce-sdk-go/services/iam"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 client, _ := iam.NewClient(AK, SK)

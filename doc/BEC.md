@@ -30,7 +30,7 @@ BEC Client是BEC服务的客户端，为开发者与BEC服务进行交互提供�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/bec"
+	"github.com/wenyining/bce-sdk-go/services/bec"
 )
 
 func main() {
@@ -55,7 +55,7 @@ func main() {
 BEC支持HTTPS传输协议，您可以通过在创建BEC Client对象时指定的Endpoint中指明HTTPS的方式，在BEC GO SDK中使用HTTPS访问BEC服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bec"
+// import "github.com/wenyining/bce-sdk-go/services/bec"
 
 ENDPOINT := "https://bec.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>

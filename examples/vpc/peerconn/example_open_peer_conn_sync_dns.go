@@ -2,7 +2,7 @@ package peerconnexamples
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func OpenPeerConnSyncDns() {
@@ -21,8 +21,8 @@ func OpenPeerConnSyncDns() {
 	peerConnId := "peer-conn-id"
 	if err := client.OpenPeerConnSyncDNS(peerConnId, args); err != nil {
 		fmt.Println("open peer conn sync dns error: ", err)
-		return 
+		return
 	}
-	
+
 	fmt.Printf("open peer conn %s sync dns success.", peerConnId)
 }

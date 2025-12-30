@@ -15,8 +15,8 @@
 package api
 
 import (
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 func QueryEventsV2(cli bce.Client, body *bce.Body) (*QueryEventsV2Response, error) {

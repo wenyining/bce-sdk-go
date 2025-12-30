@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	v2 "github.com/baidubce/bce-sdk-go/services/cce/v2"
-	"github.com/baidubce/bce-sdk-go/services/cce/v2/model"
-	nrv1 "github.com/baidubce/bce-sdk-go/services/cce/v2/model/remedy/api/v1"
+	v2 "github.com/wenyining/bce-sdk-go/services/cce/v2"
+	"github.com/wenyining/bce-sdk-go/services/cce/v2/model"
+	nrv1 "github.com/wenyining/bce-sdk-go/services/cce/v2/model/remedy/api/v1"
 )
 
 // CreateRemedyRule 创建自愈规则

@@ -30,7 +30,7 @@ CERT Client是CERT服务的客户端，为开发者与CERT服务进行交互提�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/cert"
+	"github.com/wenyining/bce-sdk-go/services/cert"
 )
 
 func main() {
@@ -67,9 +67,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/cert" //导入CERT服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/cert" //导入CERT服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -121,7 +121,7 @@ func main() {
 CERT支持HTTPS传输协议，您可以通过在创建CERT Client对象时指定的Endpoint中指明HTTPS的方式，在CERT GO SDK中使用HTTPS访问CERT服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 ENDPOINT := "https://certificate.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -137,7 +137,7 @@ certClient, _ := cert.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问CERT服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 //创建CERT Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -153,7 +153,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "certificate.baidubce.com"
@@ -169,7 +169,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "certificate.baidubce.com"
@@ -221,7 +221,7 @@ ExpireSeconds | int   | 签名字符串的有效期
 
 使用以下代码可以创建证书。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 args := &cert.CreateCertArgs{
 	// 指定证书名称, 必选
@@ -260,7 +260,7 @@ UnmatchedPairParameterInvalid (400) | 公钥私钥不匹配
 
 使用以下代码可以修改证书名称。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 args := &cert.UpdateCertNameArgs{
     CertName: "test-sdk-cert",
@@ -284,7 +284,7 @@ ResourceNotFoundException |	证书不存在
 
 使用以下代码可以查看用户的证书列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 result, err := client.ListCerts()
 if err != nil {
@@ -309,7 +309,7 @@ for _, c := range listResult.Certs {
 
 使用以下代码可以获取指定的证书信息。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 result, err := client.GetCertMeta(certId)
 if err != nil {
@@ -348,7 +348,7 @@ ResourceNotFoundException |	证书不存在
 
 使用以下代码可以删除指定的证书。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 if err := client.DeleteCert(certId); err != nil {
     fmt.Printf("delete certs error: %+v\n", err)
@@ -369,7 +369,7 @@ ResourceNotFoundException |	证书不存在
 
 使用以下代码可以替换过期且不再使用中的证书。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/cert"
+// import "github.com/wenyining/bce-sdk-go/services/cert"
 
 args := &cert.UpdateCertDataArgs{
 	// 指定要替换的证书名称
@@ -441,14 +441,14 @@ if err != nil {
 
 ## SDK日志
 
-CERT GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+CERT GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 CERT GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

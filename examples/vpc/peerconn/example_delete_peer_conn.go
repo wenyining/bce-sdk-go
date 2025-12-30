@@ -2,7 +2,7 @@ package peerconnexamples
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func DeletePeerConn() {
@@ -16,8 +16,8 @@ func DeletePeerConn() {
 	clientToken := getClientToken()
 	if err := client.DeletePeerConn(peerConnId, clientToken); err != nil {
 		fmt.Println("delete peer conn error: ", err)
-		return 
+		return
 	}
-	
+
 	fmt.Printf("delete peer conn %s success", peerConnId)
 }

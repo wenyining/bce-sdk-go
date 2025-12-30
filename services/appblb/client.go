@@ -17,7 +17,7 @@
 // Package appblb defines the Application BLB services of BCE. The supported APIs are all defined in sub-package
 package appblb
 
-import "github.com/baidubce/bce-sdk-go/bce"
+import "github.com/wenyining/bce-sdk-go/bce"
 
 const (
 	DEFAULT_SERVICE_DOMAIN = "blb." + bce.DEFAULT_REGION + ".baidubce.com"
@@ -39,12 +39,12 @@ const (
 
 	POLICYS_URL = "/policys"
 
-	APP_IP_GROUP_URL      = "/ipgroup"
+	APP_IP_GROUP_URL                = "/ipgroup"
 	APP_IP_GROUP_BACKEND_POLICY_URL = "/ipgroup/backendpolicy"
-	APP_IP_GROUP_MEMBER_URL = "/ipgroup/member"
+	APP_IP_GROUP_MEMBER_URL         = "/ipgroup/member"
 
-	SECURITY_GROUP_URL   = "/securitygroup"
-	ENTERPRISE_SECURITY_GROUP_URL   = "/enterprise/securitygroup"
+	SECURITY_GROUP_URL            = "/securitygroup"
+	ENTERPRISE_SECURITY_GROUP_URL = "/enterprise/securitygroup"
 )
 
 // Client of APPBLB service is a kind of BceClient, so derived from BceClient

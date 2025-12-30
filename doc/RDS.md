@@ -44,7 +44,7 @@ RDS Client是RDS服务的客户端，为开发者与RDS服务进行交互提供�
 
 ```go
 import (
-	"github.com/baidubce/bce-sdk-go/services/rds"
+	"github.com/wenyining/bce-sdk-go/services/rds"
 )
 
 func main() {
@@ -83,9 +83,9 @@ GO SDK实现了STS服务的接口，用户可以参考如下完整代码，实�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/auth"         //导入认证模块
-	"github.com/baidubce/bce-sdk-go/services/rds" //导入RDS服务模块
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/auth"         //导入认证模块
+	"github.com/wenyining/bce-sdk-go/services/rds" //导入RDS服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -137,7 +137,7 @@ func main() {
 RDS支持HTTPS传输协议，您可以通过在创建RDS Client对象时指定的Endpoint中指明HTTPS的方式，在RDS GO SDK中使用HTTPS访问RDS服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 ENDPOINT := "https://rds.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -153,7 +153,7 @@ rdsClient, _ := rds.NewClient(AK, SK, ENDPOINT)
 下面一段代码可以让客户端使用代理访问RDS服务：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 //创建RDS Client对象
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -169,7 +169,7 @@ client.Config.ProxyUrl = "127.0.0.1:8080"
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "rds.bj.baidubce.com"
@@ -185,7 +185,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "rds.bj.baidubce.com"
@@ -237,7 +237,7 @@ ExpireSeconds | int   | 签名字符串的有效期
 
 使用以下代码可以创建一个RDS主实例
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.CreateRdsArgs{
 	// 指定rds的数据库引擎，取值mysql，sqlserver，postgresql，必选
@@ -313,7 +313,7 @@ for _, e := range result.InstanceIds {
 
 使用以下代码可以创建一个RDS只读实例
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.CreateReadReplicaArgs{
     //主实例ID，必选
@@ -373,7 +373,7 @@ for _, e := range result.InstanceIds {
 
 使用以下代码可以创建一个RDS代理实例
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.CreateRdsProxyArgs{
     //主实例ID，必选
@@ -426,7 +426,7 @@ for _, e := range result.InstanceIds {
 
 使用以下代码可以查询RDS列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.ListRdsArgs{
     // 批量获取列表的查询的起始位置，是一个由系统生成的字符串，可选
@@ -477,7 +477,7 @@ for _, e := range result.Instances {
 
 使用以下代码可以查询指定RDS实例信息。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 result, err := client.GetDetail(instanceId)
 if err != nil {
@@ -507,7 +507,7 @@ fmt.Println("rds vpcId: ", result.VpcId)
 
 使用以下代码可以删除RDS实例。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 //多个实例间用英文半角逗号","隔开，最多可输入10个
 if err := client.DeleteRds(instanceIds); err != nil {
@@ -525,7 +525,7 @@ fmt.Printf("delete rds success\n")
 
 使用以下代码可以对RDS实例扩缩容操作。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.ResizeRdsArgs{
 	// cpu核数
@@ -561,7 +561,7 @@ fmt.Println("resize rds success.")
 使用以下代码可以重启实例。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 err := client.RebootInstance(instanceId)
 if err != nil {
@@ -575,7 +575,7 @@ if err != nil {
 使用以下代码可以修改RDS实例名称。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.UpdateInstanceNameArgs{
     InstanceName: "instanceName",
@@ -595,7 +595,7 @@ fmt.Printf("update instance name success\n")
 
 使用以下代码可以为已创建的预付费实例创建自动续费
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.AutoRenewArgs{
     // 自动续费时长（续费单位为year 不大于3，续费单位为month 不大于9）必选
@@ -625,7 +625,7 @@ if err != nil {
 使用以下代码可以修改RDS实例同步模式。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.ModifySyncModeArgs{
     //"Async"异步复制，"Semi_sync"半同步复制。
@@ -644,7 +644,7 @@ fmt.Printf("modify syncMode success\n")
 使用以下代码可以修改RDS域名前缀。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.ModifyEndpointArgs{
     Address: "newAddress",
@@ -666,7 +666,7 @@ fmt.Printf("modify endpoint success\n")
 使用以下代码可以修改RDS域名前缀。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.ModifyPublicAccessArgs{
     // true or false
@@ -689,7 +689,7 @@ fmt.Printf("modify public access success\n")
 使用以下代码可以修改操作时间窗口
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.MaintainTimeArgs{
     MaintainStartTime: "14:00:00",
@@ -707,7 +707,7 @@ fmt.Printf("update maintain time success\n")
 使用以下代码可以开启关闭修改存储自动扩容配置
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.DiskAutoResizeArgs{
     FreeSpaceThreshold: 10,
@@ -726,7 +726,7 @@ fmt.Printf("config disk auto resize success\n")
 使用以下代码可以获取指定实例的自动扩容配置信息
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 result, err = client.GetAutoResizeConfig(instanceId)
 if err != nil {
@@ -741,7 +741,7 @@ fmt.Printf("get config success\n")
 使用以下代码可以实例是否支持启用自动扩容
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 result, err = client.EnableAutoExpansion(instanceId)
 if err != nil {
@@ -756,7 +756,7 @@ fmt.Printf("get enable auto expansion success\n")
 使用以下代码可以操作实例可用区迁移
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.AzoneMigration{
     MasterAzone: "cn-bj-d",
     BackupAzone: "cn-bj-e",
@@ -786,7 +786,7 @@ fmt.Printf("azone migration success\n")
 
 使用以下代码可以在某个主实例下创建一个新的账号。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 args := &rds.CreateAccountArgs{
 	// 账号名称，不能为保留关键字，必选
@@ -829,7 +829,7 @@ fmt.Println("create account success.")
 
 使用以下代码可以查询指定实例的账号列表。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 result, err := client.ListAccount(instanceId)
 if err != nil {
@@ -851,7 +851,7 @@ for _, e := range result.Accounts {
 
 使用以下代码可以查询特定账号信息。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 result, err := client.GetAccount(instanceId,accountName)
 if err != nil {
@@ -870,7 +870,7 @@ fmt.Println("rds accountType: ", result.AccountType)
 
 使用以下代码可以更新账号描述信息
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &ModifyAccountDesc{
     Remark: "test",
 }
@@ -886,7 +886,7 @@ fmt.Printf("modify account desc success\n")
 
 使用以下代码可以删除特定账号信息。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 result, err := client.DeleteAccount(instanceId,accountName)
 if err != nil {
@@ -899,7 +899,7 @@ fmt.Printf("delete account success\n")
 
 使用以下代码可以更新账号密码
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &UpdatePasswordArgs{
     Password: "test",
 }
@@ -913,7 +913,7 @@ fmt.Printf("update account password success\n")
 ## 更新账号权限
 使用以下代码可以更新账号权限
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &UpdateAccountPrivileges{
     DatabasePrivileges: []DatabasePrivilege{{
         DbName:   "test_db",
@@ -934,7 +934,7 @@ fmt.Printf("update account privilege success\n")
 使用以下代码可以获取一个实例下的数据库参数列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.ListParameters(instanceId)
 if err != nil {
     fmt.Printf("get parameter list error: %+v\n", err)
@@ -955,7 +955,7 @@ fmt.Println(result.Etag)
 使用以下代码可以修改云数据库 RDS for MySQL 的参数配置。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.ListParameters(instanceId)
 if err != nil {
     fmt.Printf("get parameter list error: %+v\n", err)
@@ -989,7 +989,7 @@ fmt.Printf("update parameter success\n")
 使用以下代码可以查看参数修改历史。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.ParameterHistory(instanceId)
 if err != nil {
     fmt.Printf("get parameter history error: %+v\n", err)
@@ -1006,7 +1006,7 @@ fmt.Println(string(jsonData))
 
 使用以下代码可以修改数据库端口
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.UpdateDatabasePortArgs{
     EntryPort: 3309,
 }
@@ -1023,7 +1023,7 @@ fmt.Printf("update database port success\n")
 
 使用以下代码可以获取数据库列表
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.ListDatabases(instanceId)
 if err != nil {
     fmt.Printf("get database list error: %+v\n", err)
@@ -1039,7 +1039,7 @@ fmt.Println(string(jsonData))
 
 使用以下代码可以修改数据库描述
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.ModifyDatabaseDesc{
     Remark: "test",
 }
@@ -1056,7 +1056,7 @@ fmt.Printf("modify database discriptio success\n")
 
 使用以下代码可以删除数据库
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 err := client.DeleteDatabase(instanceId, "test_db")
 if err != nil {
@@ -1070,7 +1070,7 @@ fmt.Printf("delete database success\n")
 
 使用以下代码可以创建数据库
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.CreateDatabaseArgs{
     CharacterSetName: "utf8",
     DbName:           "test_db",
@@ -1098,7 +1098,7 @@ fmt.Printf("create database success\n")
 使用以下代码可以获取任务列表
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.TaskListArgs{
     InstanceId: instanceId,
 }
@@ -1119,7 +1119,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取回收站实例列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.ListRdsArgs{}
 result, err := client.ListRecyclerInstance(args)
 if err != nil {
@@ -1135,7 +1135,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以开机。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.RecyclerRecoverArgs{
     InstanceIds: []string{instanceId},
 }
@@ -1151,7 +1151,7 @@ fmt.Printf("recycler recover success\n")
 使用以下代码可以删除单个回收站实例
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 err := client.DeleteRecyclerInstance(instanceId)
 if err != nil {
@@ -1167,7 +1167,7 @@ fmt.Printf("delete success\n")
 使用以下代码可以创建实例组。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.InstanceGroupArgs{
     Name:     "test_group",
     LeaderId: instanceId,
@@ -1184,7 +1184,7 @@ fmt.Printf("create instance group success\n")
 使用以下代码可以获取实例组列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.ListInstanceGroupArgs{
     Manner: "page",
 }
@@ -1202,7 +1202,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取实例组详情
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.InstanceGroupDetail(groupId)
 if err != nil {
     fmt.Printf("get instance group detail error: %+v\n", err)
@@ -1216,7 +1216,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以进行GTID检查
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.CheckGtidArgs{
     InstanceId: instanceId,
 }
@@ -1234,7 +1234,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以进行连通性检查
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.CheckPingArgs{
     SourceId: instanceId,
     TargetId: instanceId,
@@ -1253,7 +1253,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以进行数据检查
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.CheckDataArgs{
     InstanceId: instanceId,
 }
@@ -1271,7 +1271,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以进行小版本前置检查
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.CheckVersionArgs{
     LeaderId:   instanceId,
     FollowerId: instanceId,
@@ -1290,7 +1290,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以修改热活实例组的名称
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.InstanceGroupNameArgs{
     Name: "test_group_name",
 }
@@ -1306,7 +1306,7 @@ fmt.Printf("update instance group name success\n")
 使用以下代码可以加入热活实例组
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.InstanceGroupAddArgs{
     FollowerId: instanceId,
 }
@@ -1322,7 +1322,7 @@ fmt.Printf("add instance group success\n")
 使用以下代码可以批量加入热活实例组
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.InstanceGroupBatchAddArgs{
     FollowerIds: []string{instanceId},
     Name:        "test_group_name",
@@ -1339,7 +1339,7 @@ fmt.Printf("batch add instance group success\n")
 使用以下代码可以强制切换热活实例组
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.ForceChangeArgs{
     LeaderId: instanceId,
     Force:    0,
@@ -1355,7 +1355,7 @@ fmt.Printf("instance group force change success\n")
 使用以下代码可以主角色变更
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.GroupLeaderChangeArgs{
     LeaderId: instanceId,
 }
@@ -1371,7 +1371,7 @@ fmt.Printf("instance group leader change success\n")
 使用以下代码可以退出热活实例组
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 err := client.InstanceGroupRemove(groupId, instanceId)
 if err != nil {
     fmt.Printf("instance group remove error: %+v\n", err)
@@ -1384,7 +1384,7 @@ fmt.Printf("instance group remove success\n")
 使用以下代码可以删除热活实例组
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 err := client.DeleteInstanceGroup(groupId)
 if err != nil {
     fmt.Printf("delete instance group error: %+v\n", err)
@@ -1399,7 +1399,7 @@ fmt.Printf("delete instance group success\n")
 使用以下代码可以查看实例允许升级的小版本列表
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.InstanceMinorVersionList(instanceId)
 if err != nil {
     fmt.Printf("get instance minor version list error: %+v\n", err)
@@ -1415,7 +1415,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以升级小版本
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.UpgradeMinorVersionArgs{
     TargetMinorVersion: "5.7.38",
     EffectiveTime:      "immediate",
@@ -1433,7 +1433,7 @@ fmt.Printf("update instance minor version list success\n")
 使用以下代码可以查询慢SQL诊断开通状态
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 result, err := client.SlowSqlFlowStatus(instanceId)
 if err != nil {
@@ -1449,7 +1449,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以开通慢SQL诊断
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 err := client.EnableSlowSqlFlow(instanceId)
 if err != nil {
     fmt.Printf("enable slow sql flow error: %+v\n", err)
@@ -1463,7 +1463,7 @@ fmt.Printf("enable slow sql flow success\n")
 使用以下代码可以关闭慢SQL诊断
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 err := client.DisableSlowSqlFlow(instanceId)
 if err != nil {
     fmt.Printf("disable slow sql flow error: %+v\n", err)
@@ -1478,7 +1478,7 @@ fmt.Printf("disable slow sql flow success\n")
 使用以下代码可以获取慢SQL诊断列表
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &GetSlowSqlArgs{}
 result, err := client.GetSlowSqlList(instanceId, args)
 if err != nil {
@@ -1495,7 +1495,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以根据SQLID获取慢SQL
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSlowSqlBySqlId(instanceId, sqlId)
 if err != nil {
     fmt.Printf("get slow sql detail by sqlid error: %+v\n", err)
@@ -1510,7 +1510,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取慢SQL说明
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSlowSqlExplain(instanceId, sqlId, db)
 if err != nil {
     fmt.Printf("get slow sql explain error: %+v\n", err)
@@ -1526,7 +1526,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取SQL模板维度的统计信息
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.GetSlowSqlArgs{}
 result, err := client.GetSlowSqlStatsDigest(instanceId, args)
 if err != nil {
@@ -1543,7 +1543,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取慢SQL耗时分布
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.GetSlowSqlDurationArgs{}
 result, err := client.GetSlowSqlDuration(instanceId, args)
 if err != nil {
@@ -1559,7 +1559,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取慢SQL来源IP分布
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.GetSlowSqlSourceArgs{}
 result, err := client.GetSlowSqlSource(instanceId, args)
 if err != nil {
@@ -1575,7 +1575,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取慢SQL中的表
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSlowSqlSchema(instanceId, sqlId, db)
 if err != nil {
     fmt.Printf("get slow sql schema error: %+v\n", err)
@@ -1590,7 +1590,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取慢SQL中的列
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSlowSqlTable(instanceId, sqlId, db, table)
 if err != nil {
     fmt.Printf("get slow sql table error: %+v\n", err)
@@ -1606,7 +1606,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取慢SQL表中的索引
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.GetSlowSqlIndexArgs{
     SqlId:  "e9fa9802-0d0e-41b4-b3ba-6496466b6cad",
     Schema: "db1",
@@ -1626,7 +1626,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取慢SQL趋势
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.GetSlowSqlTrendArgs{
     Start: "2023-05-05T05:30:13.000Z",
     End:   "2023-05-06T05:30:13.000Z",
@@ -1645,7 +1645,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取慢SQL调优建议
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSlowSqlAdvice(instanceId, sqlId, db)
 if err != nil {
     fmt.Printf("get slow sql advice error: %+v\n", err)
@@ -1660,7 +1660,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取库表空间概况
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetDiskInfo(instanceId)
 if err != nil {
     fmt.Printf("get disk info error: %+v\n", err)
@@ -1675,7 +1675,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取数据空间的数据库列表
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetDbListSize(instanceId)
 if err != nil {
     fmt.Printf("get db list size info error: %+v\n", err)
@@ -1690,7 +1690,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取数据空间表的详情
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.GetTableListArgs{
     DbName: "db1",
 }
@@ -1708,7 +1708,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取指定会话kill类型的相关参数
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetKillSessionTypes(instanceId)
 if err != nil {
     fmt.Printf("get kill session types error: %+v\n", err)
@@ -1723,7 +1723,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取指定实例的会话概览
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSessionSummary(instanceId)
 if err != nil {
     fmt.Printf("get kill session summary error: %+v\n", err)
@@ -1738,7 +1738,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取指定实例的实时会话
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.SessionDetailArgs{}
 result, err := client.GetSessionDetail(instanceId, args)
 if err != nil {
@@ -1754,7 +1754,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以校验执行kill操作的数据库用户及密码是否正确
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.KillSessionAuthArgs{}
 result, err := client.CheckKillSessionAuth(instanceId, args)
 if err != nil {
@@ -1770,7 +1770,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取指定实例的会话kill记录
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.KillSessionHistory{}
 result, err := client.GetKillSessionHistory(instanceId, args)
 if err != nil {
@@ -1786,7 +1786,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以根据传入的kill类型及类型所对应的值执行kill会话的操作
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.KillSessionArgs{}
 result, err := client.KillSession(instanceId, args)
 if err != nil {
@@ -1802,7 +1802,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取指定实例的会话统计
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSessionStatistics(instanceId)
 if err != nil {
     fmt.Printf("get session statistics error: %+v\n", err)
@@ -1817,7 +1817,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以查询错误日志服务是否开启
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetErrorLogStatus(instanceId)
 if err != nil {
     fmt.Printf("get error log status error: %+v\n", err)
@@ -1832,7 +1832,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以开启错误日志服务
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.EnableErrorLog(instanceId)
 if err != nil {
     fmt.Printf("enable error log status error: %+v\n", err)
@@ -1847,7 +1847,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以关闭错误日志服务
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.DisableErrorLog(instanceId)
 if err != nil {
     fmt.Printf("disable error log status error: %+v\n", err)
@@ -1862,7 +1862,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取错误日志列表
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.ErrorLogListArgs{}
 result, err := client.GetErrorLogList(instanceId, args)
 if err != nil {
@@ -1879,7 +1879,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取实例限流规则列表
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSqlFilterList(instanceId)
 if err != nil {
     fmt.Printf("get sql filter list error: %+v\n", err)
@@ -1894,7 +1894,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取某个限流规则详情
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSqlFilterDetail(instanceId, filterId)
 if err != nil {
     fmt.Printf("get sql filter detail error: %+v\n", err)
@@ -1909,7 +1909,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以添加一条限流规则
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.SqlFilterArgs{
     FilterType:  "SELECT",
     FilterKey:   "123",
@@ -1930,7 +1930,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以更新一条限流规则
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.SqlFilterArgs{
     FilterType:  "SELECT",
     FilterKey:   "123",
@@ -1950,7 +1950,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以开启关闭某个限流规则
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.StartOrStopSqlFilterArgs{
     Action: "OFF",
 }
@@ -1968,7 +1968,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以删除某个限流规则
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 result, err := client.DeleteSqlFilter(instanceId, filterId)
 if err != nil {
@@ -1984,7 +1984,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以实例是否支持限流
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 
 result, err := client.IsAllowedSqlFilter(instanceId)
 if err != nil {
@@ -2002,7 +2002,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以Kill会话
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &ProcessArgs{
     Ids: []int64{123},
 }
@@ -2019,7 +2019,7 @@ fmt.Printf("process kill success\n")
 使用以下代码可以查询innodbstatus快照数据
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.InnodbStatus(instanceId)
 if err != nil {
     fmt.Printf("get innodb status error: %+v\n", err)
@@ -2035,7 +2035,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以查询processlist快照数据
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.ProcessList(instanceId)
 if err != nil {
     fmt.Printf("get process list error: %+v\n", err)
@@ -2050,7 +2050,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以查询事务列表
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.TransactionList(instanceId)
 if err != nil {
     fmt.Printf("get transaction list error: %+v\n", err)
@@ -2065,7 +2065,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以查询连接列表
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.ConnectionList(instanceId)
 if err != nil {
     fmt.Printf("get ConnectionList list error: %+v\n", err)
@@ -2082,7 +2082,7 @@ fmt.Println(string(jsonData))
 使用以下代码可以获取一个实例下的备份列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.GetBackupListArgs{}
 _, err := client.GetBackupList(instanceId, args)
 if err != nil {
@@ -2100,7 +2100,7 @@ fmt.Printf("get backup list success\n")
 
 使用以下代码可以获取一个实例备份的详情信息。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetBackupDetail(instanceId, backupId)
 if err != nil {
     fmt.Printf("get backup detail error: %+v\n", err)
@@ -2113,7 +2113,7 @@ fmt.Printf("get backup detail success\n")
 
 使用以下代码可以删除手动备份
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 _, err := client.DeleteBackup(instanceId, backupId)
 if err != nil {
     fmt.Printf("delete backup detail error: %+v\n", err)
@@ -2125,7 +2125,7 @@ fmt.Printf("delete backup detail success\n")
 
 使用以下代码可以更新一个实例的备份策略。
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.ModifyBackupPolicyArgs{
     BackupDays: "1,3",
     BackupTime: "10:00:00Z",
@@ -2143,7 +2143,7 @@ fmt.Printf("modify backup policy success\n")
 
 使用以下代码可以获取binlog列表
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetBinlogList(instanceId, detaTime)
 if err != nil {
     fmt.Printf("get binlog list error: %+v\n", err)
@@ -2156,7 +2156,7 @@ fmt.Printf("get binlog list success\n")
 
 使用以下代码可以获取binlog信息
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetBinlogInfo(instanceId, binlogId, downloadValidTimeInSec)
 if err != nil {
     fmt.Printf("get binlog detail error: %+v\n", err)
@@ -2169,7 +2169,7 @@ fmt.Printf("get binlog detail success\n")
 
 使用以下代码可以按时间点进行库表恢复
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 recoveryByDatetimeArgs := &RecoveryByDatetimeArgs{
     Datetime: "2022-01-11T16:05:52Z",
     Data: []RecoveryData{
@@ -2197,7 +2197,7 @@ fmt.Printf("recovery by datetime success\n")
 
 使用以下代码可以按备份集进行库表恢复
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 recoveryBySnapshotArgs := &RecoveryBySnapshotArgs{
     SnapshotId: "1691734023130272802",
     Data: []RecoveryData{
@@ -2225,7 +2225,7 @@ fmt.Printf("recovery by snapshot success\n")
 
 ## 慢日志下载任务列表
 ``` go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSlowLogDownloadTaskList(instanceId, datetime)
 if err != nil {
     fmt.Printf("get slowlog download task list error: %+v\n", err)
@@ -2236,7 +2236,7 @@ fmt.Printf(result)
 ```
 ## 慢日志下载详情 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSlowLogDownloadDetail(instanceId, logId, downloadValidTimeInSec)
 if err != nil {
     fmt.Printf("get slowlog download detail error: %+v\n", err)
@@ -2252,7 +2252,7 @@ fmt.Printf(result)
 使用以下代码可以获取可用区列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 err = client.GetZoneList()
 if err != nil {
     fmt.Printf("get zone list error: %+v\n", err)
@@ -2267,7 +2267,7 @@ fmt.Println("rds instanceId: ", result.InstanceId)
 使用以下代码可以获取一个实例下的子网列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 args := &rds.ListSubnetsArgs{}
 _, err := client.ListSubnets(args)
 if err != nil {
@@ -2286,7 +2286,7 @@ fmt.Printf("get subnet list success\n")
 使用以下代码可以获取一个实例下的白名单列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSecurityIps(instanceId)
 if err != nil {
     fmt.Printf("get securityIp list error: %+v\n", err)
@@ -2307,7 +2307,7 @@ fmt.Printf("get securityIp list success\n")
 使用以下代码可以更新一个实例下的白名单列表。
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/rds"
+// import "github.com/wenyining/bce-sdk-go/services/rds"
 result, err := client.GetSecurityIps(instanceId)
 if err != nil {
     fmt.Printf("get securityIp list error: %+v\n", err)
@@ -2372,14 +2372,14 @@ if err != nil {
 
 ## SDK日志
 
-RDS GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/baidubce/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
+RDS GO SDK支持六个级别、三种输出（标准输出、标准错误、文件）、基本格式设置的日志模块，导入路径为`github.com/wenyining/bce-sdk-go/util/log`。输出为文件时支持设置五种日志滚动方式（不滚动、按天、按小时、按分钟、按大小），此时还需设置输出日志文件的目录。
 
 ### 默认日志
 
 RDS GO SDK自身使用包级别的全局日志对象，该对象默认情况下不记录日志，如果需要输出SDK相关日志需要用户自定指定输出方式和级别，详见如下示例：
 
 ```
-// import "github.com/baidubce/bce-sdk-go/util/log"
+// import "github.com/wenyining/bce-sdk-go/util/log"
 
 // 指定输出到标准错误，输出INFO及以上级别
 log.SetLogHandler(log.STDERR)

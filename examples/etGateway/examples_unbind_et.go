@@ -3,7 +3,7 @@ package etgatewayexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/etGateway"
+	"github.com/wenyining/bce-sdk-go/services/etGateway"
 )
 
 // UnBindEt 函数用于解绑ET。

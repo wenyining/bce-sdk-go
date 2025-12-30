@@ -18,7 +18,7 @@ package appblbexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/appblb"
+	"github.com/wenyining/bce-sdk-go/services/appblb"
 )
 
 func DescribeAppIpGroupMember() {

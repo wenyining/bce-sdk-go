@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	api "github.com/baidubce/bce-sdk-go/services/aihc/inference/v2"
+	api "github.com/wenyining/bce-sdk-go/services/aihc/inference/v2"
 )
 
 func ReadJson(fileName string) (*api.ServiceConf, error) {

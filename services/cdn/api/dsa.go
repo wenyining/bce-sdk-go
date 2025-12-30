@@ -3,7 +3,7 @@ package api
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/bce"
 )
 
 // DSARule configure the rule of speed up which asserts.
@@ -16,7 +16,8 @@ import (
 // The value is related to the rule type, for example, we can configure "method" type rule with 3 methods,
 // the value of it are "GET;POST;PUT" which come from 3 method string connect to each other by semicolon.
 // Here shows how to construct a DSARule object of above example:
-// 	var rule = &DSARule{
+//
+//	var rule = &DSARule{
 //		Type:  "method",
 //		Value: "GET;POST;PUT",
 //	}
@@ -57,9 +58,10 @@ func setDsa(cli bce.Client, action string) error {
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/7jwvyf1h5
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
+//   - cli: the client agent which can perform sending request
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func EnableDsa(cli bce.Client) error {
 	return setDsa(cli, "enable")
 }
@@ -68,9 +70,10 @@ func EnableDsa(cli bce.Client) error {
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/7jwvyf1h5
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
+//   - cli: the client agent which can perform sending request
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func DisableDsa(cli bce.Client) error {
 	return setDsa(cli, "disable")
 }
@@ -79,10 +82,11 @@ func DisableDsa(cli bce.Client) error {
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/5jwvyf1sq
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
+//   - cli: the client agent which can perform sending request
+//
 // RETURNS:
-//     - []DSADomain: the details about DSA domains
-//     - error: nil if success otherwise the specific error
+//   - []DSADomain: the details about DSA domains
+//   - error: nil if success otherwise the specific error
 func ListDsaDomains(cli bce.Client) ([]DSADomain, error) {
 	respObj := &struct {
 		Domains []DSADomain `json:"domains"`
@@ -100,11 +104,12 @@ func ListDsaDomains(cli bce.Client) ([]DSADomain, error) {
 // For details, please refer https://cloud.baidu.com/doc/CDN/s/0jwvyf26d
 //
 // PARAMS:
-//     - cli: the client agent which can perform sending request
-//     - domain: the specified domain
-//     - dsaConfig: the specified configuration for the specified domain
+//   - cli: the client agent which can perform sending request
+//   - domain: the specified domain
+//   - dsaConfig: the specified configuration for the specified domain
+//
 // RETURNS:
-//     - error: nil if success otherwise the specific error
+//   - error: nil if success otherwise the specific error
 func SetDsaConfig(cli bce.Client, domain string, dsaConfig *DSAConfig) error {
 	urlPath := fmt.Sprintf("/v2/domain/%s/config", domain)
 	params := map[string]string{

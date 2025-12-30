@@ -15,8 +15,8 @@
 package userserviceexamples
 
 import (
-	"github.com/baidubce/bce-sdk-go/services/userservice"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/services/userservice"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 // UpdateUserService 函数用于更新用户服务信息

@@ -31,12 +31,12 @@ import (
 	"os"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/auth"
-	"github.com/baidubce/bce-sdk-go/bce"
-	sdk_http "github.com/baidubce/bce-sdk-go/http"
-	"github.com/baidubce/bce-sdk-go/services/bos/api"
-	"github.com/baidubce/bce-sdk-go/services/sts"
-	"github.com/baidubce/bce-sdk-go/util/log"
+	"github.com/wenyining/bce-sdk-go/auth"
+	"github.com/wenyining/bce-sdk-go/bce"
+	sdk_http "github.com/wenyining/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/services/bos/api"
+	"github.com/wenyining/bce-sdk-go/services/sts"
+	"github.com/wenyining/bce-sdk-go/util/log"
 )
 
 const (

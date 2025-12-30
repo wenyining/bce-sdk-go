@@ -2,7 +2,7 @@ package peerconnexamples
 
 import (
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/services/vpc"
+	"github.com/wenyining/bce-sdk-go/services/vpc"
 )
 
 func ClosePeerConnSyncDns() {
@@ -16,13 +16,13 @@ func ClosePeerConnSyncDns() {
 		// 请求标识
 		ClientToken: getClientToken(),
 		// 指定对等连接的角色，发起端"initiator" 接收端"acceptor"
-		Role:        vpc.PEERCONN_ROLE_INITIATOR,
+		Role: vpc.PEERCONN_ROLE_INITIATOR,
 	}
 	peerConnId := "peer-conn-id"
 	if err := client.ClosePeerConnSyncDNS(peerConnId, args); err != nil {
 		fmt.Println("close peer conn sync dns error: ", err)
-		return 
+		return
 	}
-	
+
 	fmt.Printf("close peer conn %s sync dns success.", peerConnId)
 }

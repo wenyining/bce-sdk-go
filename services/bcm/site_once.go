@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 // 创建警报配置
@@ -72,7 +72,7 @@ func (c *Client) LoadData(request *SiteOnceTaskRequest) (*LoadDataResponse, erro
 	return &response, err
 }
 
-//  获取探测详情
+// 获取探测详情
 func (c *Client) DetailTask(request *SiteOnceTaskRequest) (*LoadDataResponse, error) {
 	if request == nil {
 		return nil, errors.New("SiteOnceTaskRequest is must not empty")
@@ -120,7 +120,7 @@ func (c *Client) ListHistoryTasks(request *SiteOnceTaskRequest) (*SiteOnceTaskLi
 	return &response, err
 }
 
-//获取当前探测点
+// 获取当前探测点
 func (c *Client) GetSiteAgent(userId, ipType string) (*SiteAgentResponseWrapper, error) {
 	parmas := map[string]string{
 		"userId": userId,

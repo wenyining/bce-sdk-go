@@ -10,7 +10,7 @@ modification history
 package types
 
 import (
-	bccapi "github.com/baidubce/bce-sdk-go/services/bcc/api"
+	bccapi "github.com/wenyining/bce-sdk-go/services/bcc/api"
 )
 
 // SupportedInstanceType - CCE 支持的 Instance 类型

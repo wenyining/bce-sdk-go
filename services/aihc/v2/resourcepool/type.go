@@ -1,7 +1,7 @@
 package resourcePool
 
 import (
-	v2 "github.com/baidubce/bce-sdk-go/services/aihc/v2/api"
+	v2 "github.com/wenyining/bce-sdk-go/services/aihc/v2/api"
 )
 
 type Interface interface {

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/baidubce/bce-sdk-go/services/aihc"
-	v2 "github.com/baidubce/bce-sdk-go/services/aihc/api/v2"
+	"github.com/wenyining/bce-sdk-go/services/aihc"
+	v2 "github.com/wenyining/bce-sdk-go/services/aihc/api/v2"
 )
 
 const (

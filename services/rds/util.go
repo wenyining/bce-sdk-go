@@ -18,7 +18,7 @@ package rds
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/baidubce/bce-sdk-go/util/crypto"
+	"github.com/wenyining/bce-sdk-go/util/crypto"
 )
 
 func Aes128EncryptUseSecreteKey(sk string, data string) (string, error) {

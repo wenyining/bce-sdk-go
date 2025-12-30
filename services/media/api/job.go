@@ -2,8 +2,8 @@ package api
 
 import (
 	"encoding/json"
-	"github.com/baidubce/bce-sdk-go/bce"
-	"github.com/baidubce/bce-sdk-go/http"
+	"github.com/wenyining/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/http"
 )
 
 func CreateJob(cli bce.Client, pipelineName, sourceKey, targetKey, presetName string) (*CreateJobResponse, error) {

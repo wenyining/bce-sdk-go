@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/baidubce/bce-sdk-go/bce"
+	"github.com/wenyining/bce-sdk-go/bce"
 )
 
 func PublishLayerVersion(cli bce.Client, args *PublishLayerVersionInput) (*PublishLayerVersionOutput, error) {

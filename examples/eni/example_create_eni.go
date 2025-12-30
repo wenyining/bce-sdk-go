@@ -3,9 +3,9 @@ package eniexamples
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/model"
+	"github.com/wenyining/bce-sdk-go/model"
 
-	"github.com/baidubce/bce-sdk-go/services/eni"
+	"github.com/wenyining/bce-sdk-go/services/eni"
 )
 
 func CreateEni() {

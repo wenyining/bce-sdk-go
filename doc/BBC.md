@@ -37,7 +37,7 @@ BBC Client是BBC服务的客户端，为开发者与BBC服务进行交互提供�
 通过AK/SK方式访问BBC，用户可以参考如下代码新建一个Bbc Client：
 
 ```go
-import "github.com/baidubce/bce-sdk-go/services/bbc"
+import "github.com/wenyining/bce-sdk-go/services/bbc"
 
 func main() {
 	// 用户的Access Key ID和Secret Access Key
@@ -61,7 +61,7 @@ func main() {
 BBC支持HTTPS传输协议，您可以通过在创建BBC Client对象时指定的Endpoint中指明HTTPS的方式，在BBC GO SDK中使用HTTPS访问BBC服务：
 
 ```go
-import "github.com/baidubce/bce-sdk-go/services/bbc"
+import "github.com/wenyining/bce-sdk-go/services/bbc"
 
 ENDPOINT := "https://bbc.bj.baidubce.com" //指明使用HTTPS协议
 AK, SK := <your-access-key-id>, <your-secret-access-key>
@@ -72,7 +72,7 @@ bbcClient, _ := bbc.NewClient(AK, SK, ENDPOINT)
 用户可以通过如下的示例代码进行网络参数的设置：
 
 ```go
-import "github.com/baidubce/bce-sdk-go/services/bbc"
+import "github.com/wenyining/bce-sdk-go/services/bbc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bbc.bj.baidubce.com"
@@ -88,7 +88,7 @@ client.Config.ConnectionTimeoutInMillis = 30 * 1000
 ### 配置生成签名字符串选项
 
 ```go
-// import "github.com/baidubce/bce-sdk-go/services/bbc"
+// import "github.com/wenyining/bce-sdk-go/services/bbc"
 
 AK, SK := <your-access-key-id>, <your-secret-access-key>
 ENDPOINT := "bbc.bj.baidubce.com"

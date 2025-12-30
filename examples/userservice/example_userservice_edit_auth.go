@@ -15,8 +15,8 @@
 package userserviceexamples
 
 import (
-	"github.com/baidubce/bce-sdk-go/services/userservice"
-	"github.com/baidubce/bce-sdk-go/util"
+	"github.com/wenyining/bce-sdk-go/services/userservice"
+	"github.com/wenyining/bce-sdk-go/util"
 )
 
 // UserServiceEditAuth 是一个函数，用于编辑用户服务授权。

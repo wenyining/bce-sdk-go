@@ -29,7 +29,7 @@ STS Client是STS服务的客户端，为开发者与STS服务进行交互提供�
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块
 )
 
 func main() {
@@ -63,8 +63,8 @@ func main() {
 import (
 	"fmt"
 
-	"github.com/baidubce/bce-sdk-go/services/sts" //导入STS服务模块 
-	"github.com/baidubce/bce-sdk-go/services/sts/api"
+	"github.com/wenyining/bce-sdk-go/services/sts" //导入STS服务模块 
+	"github.com/wenyining/bce-sdk-go/services/sts/api"
 )
 
 func main() {

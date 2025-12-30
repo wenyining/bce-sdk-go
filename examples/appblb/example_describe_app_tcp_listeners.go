@@ -16,26 +16,26 @@
 package appblbexamples
 
 import (
-    "fmt"
-    
-    "github.com/baidubce/bce-sdk-go/services/appblb"
+	"fmt"
+
+	"github.com/wenyining/bce-sdk-go/services/appblb"
 )
 
 func DescribeAppTCPListeners() {
-    ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
+	ak, sk, endpoint := "Your AK", "Your SK", "Your endpoint"
 
-    BlbClient, _ := appblb.NewClient(ak, sk, endpoint) // 初始化client
+	BlbClient, _ := appblb.NewClient(ak, sk, endpoint) // 初始化client
 
-    BlbID := "blb id"  // blb id
-    describeTCPListenersArgs := &appblb.DescribeAppListenerArgs{
-        ListenerPort: 53,    // listener端口号
-    }
+	BlbID := "blb id" // blb id
+	describeTCPListenersArgs := &appblb.DescribeAppListenerArgs{
+		ListenerPort: 53, // listener端口号
+	}
 
-    response, err := BlbClient.DescribeAppTCPListeners(BlbID, describeTCPListenersArgs) //查询TCP Listeners
+	response, err := BlbClient.DescribeAppTCPListeners(BlbID, describeTCPListenersArgs) //查询TCP Listeners
 
-    if err != nil {
-        panic(err)
-    }
-                    
-    fmt.Println(response)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(response)
 }
